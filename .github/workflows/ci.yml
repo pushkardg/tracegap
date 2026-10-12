@@ -1,0 +1,41 @@
+name: tracegap
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "17 6 * * 1"   # weekly: check the latest framework releases against the released results
+jobs:
+  pinned:
+    # Tests plus the core suite on the pinned versions used for the published results (envs/core.txt).
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: pip install -r envs/core.txt && pip install -e .
+      - run: python -m pytest -q tests
+      - run: python -m tracegap.cli --out ci-results/results.json --traces ci-results/traces --baseline results/results.json
+      - run: python -m tracegap.report ci-results/results.json --out ci-results/CORE.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tracegap-results-pinned
+          path: ci-results/
+  latest:
+    # Weekly: the four core-environment frameworks at their latest releases. Fails if a Stable-tier
+    # case that is complete or faithful in the released results regresses.
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: pip install -e ".[core]" pytest
+      - run: python -m tracegap.cli --tier stable --out ci-latest/results.json --traces ci-latest/traces --baseline results/results.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tracegap-results-latest
+          path: ci-latest/

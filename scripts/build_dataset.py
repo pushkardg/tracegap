@@ -304,6 +304,7 @@ BIBTEX = """@misc{{gopalakrishna2026tracegap,
   author = {{Gopalakrishna, Pushkar Devanahalli}},
   year   = {{2026}},
   note   = {{Benchmark and dataset, version {version}}},
+  doi    = {{10.5281/zenodo.23324532}},
   url    = {{{repo}}}
 }}"""
 

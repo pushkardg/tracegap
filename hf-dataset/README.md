@@ -209,6 +209,7 @@ Not suitable for evaluating model quality: the models are scripted.
   author = {Gopalakrishna, Pushkar Devanahalli},
   year   = {2026},
   note   = {Benchmark and dataset, version 1.0.0},
+  doi    = {10.5281/zenodo.23324532},
   url    = {https://github.com/pushkardg/tracegap}
 }
 ```

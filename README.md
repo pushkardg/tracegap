@@ -7,7 +7,7 @@
 [![PyPI](https://img.shields.io/pypi/v/tracegap)](https://pypi.org/project/tracegap/)
 [![CI](https://github.com/pushkardg/tracegap/actions/workflows/ci.yml/badge.svg)](https://github.com/pushkardg/tracegap/actions/workflows/ci.yml)
 [![Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20dataset-tracegap-yellow)](https://huggingface.co/datasets/pushkardg/tracegap)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23324532.svg)](https://doi.org/10.5281/zenodo.23324532)
 [![License](https://img.shields.io/badge/license-MIT%20%2B%20CC%20BY%204.0-blue)](LICENSE)
 [![Tests](https://img.shields.io/badge/tests-passing-brightgreen)](tests/)
 [![Frameworks](https://img.shields.io/badge/frameworks-9-purple)](#leaderboard)
@@ -161,7 +161,7 @@ Baselines and the task definitions are in the [dataset card](hf-dataset/README.m
   title  = {TraceGap: Measuring Whether {LLM} Agent Frameworks Record the Tool Calls Their Agents Make},
   author = {Gopalakrishna, Pushkar Devanahalli},
   year   = {2026},
-  doi    = {10.5281/zenodo.XXXXXXX},
+  doi    = {10.5281/zenodo.23324532},
   url    = {https://github.com/pushkardg/tracegap}
 }
 ```

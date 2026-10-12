@@ -6,6 +6,7 @@ authors:
   - family-names: Gopalakrishna
     given-names: Pushkar Devanahalli
     email: pushkar87dg@gmail.com
+doi: 10.5281/zenodo.23324532
 version: 1.0.0
 date-released: 2026-10-12
 license: MIT
@@ -25,6 +26,4 @@ abstract: >-
   compared with each framework's own trace for completeness and fidelity. The
   release includes a labeled corpus of about 11,500 cases, including a history
   across 65 framework releases.
-# After the first GitHub release is archived on Zenodo, add:
-# doi: 10.5281/zenodo.XXXXXXX
 repository-code: https://github.com/pushkardg/tracegap

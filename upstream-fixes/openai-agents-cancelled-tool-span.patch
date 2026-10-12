@@ -1,0 +1,107 @@
+diff --git a/src/agents/run_internal/tool_execution.py b/src/agents/run_internal/tool_execution.py
+index a83b68b..4c7846a 100644
+--- a/src/agents/run_internal/tool_execution.py
++++ b/src/agents/run_internal/tool_execution.py
+@@ -1833,6 +1833,20 @@ class _FunctionToolBatchExecutor:
+                         tool_context=tool_context,
+                         agent_hooks=agent_hooks,
+                     )
++            except asyncio.CancelledError:
++                # CancelledError is a BaseException, so the handler below does not see it. Without
++                # this, a tool interrupted by run cancellation closes its span with no error and no
++                # output, which trace consumers cannot tell apart from a successful call.
++                _error_tracing.attach_error_to_current_span(
++                    SpanError(
++                        message="Tool execution cancelled",
++                        data={
++                            "tool_name": func_tool.name,
++                            "error": "Tool execution was cancelled.",
++                        },
++                    )
++                )
++                raise
+             except Exception as e:
+                 trace_error = get_trace_tool_error(
+                     trace_include_sensitive_data=self.config.trace_include_sensitive_data,
+diff --git a/tests/test_tool_cancellation_span_error.py b/tests/test_tool_cancellation_span_error.py
+new file mode 100644
+index 0000000..fbe1b72
+--- /dev/null
++++ b/tests/test_tool_cancellation_span_error.py
+@@ -0,0 +1,76 @@
++"""A function tool interrupted by run cancellation must not leave a span that
++looks like a successful call."""
++
++from __future__ import annotations
++
++import asyncio
++
++import pytest
++
++from agents import Agent, Runner, function_tool
++from agents.testing import ScriptedModel
++from agents.testing.model import ModelStep, assistant_message, function_call
++from agents.tracing.span_data import FunctionSpanData
++
++from .testing_processor import fetch_ordered_spans
++
++
++def _agent_with_slow_tool(started: asyncio.Event) -> Agent:
++    @function_tool
++    async def slow_tool() -> str:
++        """Blocks until cancelled."""
++        started.set()
++        await asyncio.sleep(30)
++        return "unreachable"
++
++    model = ScriptedModel(
++        [
++            ModelStep(output=[function_call("slow_tool", {}, call_id="call_1")]),
++            ModelStep(output=[assistant_message("done")]),
++        ]
++    )
++    return Agent(name="test_agent", model=model, tools=[slow_tool])
++
++
++def _function_spans():
++    return [s for s in fetch_ordered_spans() if isinstance(s.span_data, FunctionSpanData)]
++
++
++@pytest.mark.asyncio
++async def test_cancelled_tool_span_records_error():
++    started = asyncio.Event()
++    task = asyncio.create_task(Runner.run(_agent_with_slow_tool(started), input="go"))
++    await asyncio.wait_for(started.wait(), timeout=5)
++    task.cancel()
++    with pytest.raises(asyncio.CancelledError):
++        await task
++
++    spans = _function_spans()
++    assert len(spans) == 1
++    assert spans[0].span_data.output is None
++    assert spans[0].error is not None
++    assert spans[0].error["message"] == "Tool execution cancelled"
++    assert spans[0].error["data"]["tool_name"] == "slow_tool"
++
++
++@pytest.mark.asyncio
++async def test_cancelled_tool_span_records_error_streamed():
++    started = asyncio.Event()
++    result = Runner.run_streamed(_agent_with_slow_tool(started), input="go")
++
++    async def consume():
++        async for _ in result.stream_events():
++            pass
++
++    consumer = asyncio.create_task(consume())
++    await asyncio.wait_for(started.wait(), timeout=5)
++    result.cancel()
++    await asyncio.wait_for(consumer, timeout=5)
++    if result.run_loop_task is not None:
++        await asyncio.gather(result.run_loop_task, return_exceptions=True)
++
++    spans = _function_spans()
++    assert len(spans) == 1
++    assert spans[0].span_data.output is None
++    assert spans[0].error is not None
++    assert spans[0].error["message"] == "Tool execution cancelled"

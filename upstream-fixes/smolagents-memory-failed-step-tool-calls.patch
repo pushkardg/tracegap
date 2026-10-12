@@ -1,0 +1,91 @@
+diff --git a/src/smolagents/agents.py b/src/smolagents/agents.py
+index a8f6e52..36ae0fd 100644
+--- a/src/smolagents/agents.py
++++ b/src/smolagents/agents.py
+@@ -1379,6 +1379,10 @@ class ToolCallingAgent(MultiStepAgent):
+             yield tool_call
+             parallel_calls[tool_call.id] = tool_call
+ 
++        # Record the calls before executing them, so the step's memory still lists every call
++        # when one of them raises.
++        memory_step.tool_calls = [parallel_calls[k] for k in sorted(parallel_calls.keys())]
++
+         # Helper function to process a single tool call
+         def process_single_tool_call(tool_call: ToolCall) -> ToolOutput:
+             tool_name = tool_call.name
+@@ -1433,7 +1437,6 @@ class ToolCallingAgent(MultiStepAgent):
+                     outputs[tool_output.id] = tool_output
+                     yield tool_output
+ 
+-        memory_step.tool_calls = [parallel_calls[k] for k in sorted(parallel_calls.keys())]
+         memory_step.observations = memory_step.observations or ""
+         for tool_output in [outputs[k] for k in sorted(outputs.keys())]:
+             memory_step.observations += tool_output.observation + "\n"
+diff --git a/tests/test_agents.py b/tests/test_agents.py
+index 65c2682..3f54a8f 100644
+--- a/tests/test_agents.py
++++ b/tests/test_agents.py
+@@ -2626,3 +2626,63 @@ def test_tool_calling_agents_raises_agent_execution_error_when_tool_raises():
+     agent = ToolCallingAgent(model=FakeToolCallModel(), tools=[_sample_tool])
+     with pytest.raises(AgentExecutionError):
+         agent.execute_tool_call(_sample_tool.name, "sample")
++
++
++def test_toolcalling_agent_memory_keeps_tool_calls_when_a_parallel_call_fails():
++    """If one tool call in a step fails, the step's memory must still list every tool call."""
++
++    @tool
++    def ok_tool(x: str) -> str:
++        """Returns its input.
++
++        Args:
++            x: Any string.
++        """
++        return x
++
++    @tool
++    def failing_tool(x: str) -> str:
++        """Always fails.
++
++        Args:
++            x: Any string.
++        """
++        raise RuntimeError("boom")
++
++    class TwoCallsThenAnswer(Model):
++        def __init__(self):
++            super().__init__(model_id="fake")
++            self.calls = 0
++
++        def generate(self, messages, stop_sequences=None, tools_to_call_from=None, **kwargs):
++            self.calls += 1
++            if self.calls == 1:
++                tool_calls = [
++                    ChatMessageToolCall(
++                        id="call_0",
++                        type="function",
++                        function=ChatMessageToolCallFunction(name="ok_tool", arguments={"x": "a"}),
++                    ),
++                    ChatMessageToolCall(
++                        id="call_1",
++                        type="function",
++                        function=ChatMessageToolCallFunction(name="failing_tool", arguments={"x": "b"}),
++                    ),
++                ]
++            else:
++                tool_calls = [
++                    ChatMessageToolCall(
++                        id="call_2",
++                        type="function",
++                        function=ChatMessageToolCallFunction(name="final_answer", arguments={"answer": "done"}),
++                    )
++                ]
++            return ChatMessage(role=MessageRole.ASSISTANT, content="", tool_calls=tool_calls)
++
++    agent = ToolCallingAgent(tools=[ok_tool, failing_tool], model=TwoCallsThenAnswer(), max_steps=3, verbosity_level=0)
++    agent.run("task")
++
++    step = next(s for s in agent.memory.steps if isinstance(s, ActionStep) and s.step_number == 1)
++    assert step.error is not None
++    assert step.tool_calls is not None
++    assert [tc.name for tc in step.tool_calls] == ["ok_tool", "failing_tool"]

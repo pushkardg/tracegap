@@ -1,0 +1,76 @@
+{
+  "train": {
+    "examples": 5884,
+    "frameworks": [
+      "autogen",
+      "crewai",
+      "langgraph",
+      "llamaindex",
+      "pydantic-ai"
+    ],
+    "complete": 4800,
+    "faithful": 5570,
+    "calls": 30740,
+    "defects": {
+      "missing_call": 315,
+      "invisible_attempt": 738,
+      "error_lost": 292,
+      "status_mismatch": 141,
+      "output_lost": 134,
+      "false_success": 22
+    },
+    "call_status": {
+      "ok": 23054,
+      "error": 3530,
+      "not_executed": 3634,
+      "running": 312,
+      "cancelled": 210
+    }
+  },
+  "validation": {
+    "examples": 2344,
+    "frameworks": [
+      "openai-agents",
+      "semantic-kernel"
+    ],
+    "complete": 1682,
+    "faithful": 2134,
+    "calls": 12854,
+    "defects": {
+      "error_lost": 210,
+      "invisible_attempt": 562,
+      "false_success": 118
+    },
+    "call_status": {
+      "ok": 9786,
+      "error": 1312,
+      "not_executed": 1570,
+      "cancelled": 186
+    }
+  },
+  "test": {
+    "examples": 2832,
+    "frameworks": [
+      "google-adk",
+      "smolagents"
+    ],
+    "complete": 1772,
+    "faithful": 2478,
+    "calls": 14212,
+    "defects": {
+      "missing_call": 430,
+      "invisible_attempt": 590,
+      "error_lost": 354,
+      "false_success": 60,
+      "status_mismatch": 250,
+      "output_lost": 242
+    },
+    "call_status": {
+      "ok": 10864,
+      "error": 1738,
+      "not_executed": 1354,
+      "running": 120,
+      "cancelled": 136
+    }
+  }
+}

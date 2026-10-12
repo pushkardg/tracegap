@@ -1,0 +1,3722 @@
+{
+ "none": [
+  {
+   "scenario": "S01",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S01",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S02",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S02",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S03",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S03",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S04",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S04",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S05",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S05",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S06",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S06",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S07",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S07",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S08",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S08",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S09",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S09",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S10",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S10",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S11",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S11",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S12",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S12",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S13",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S13",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S14",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S14",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S15",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S15",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S16",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S16",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S17",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S17",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S18",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S18",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S19",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S19",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S20",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S20",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S21",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S21",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S22",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S22",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  }
+ ],
+ "drop_rejected": [
+  {
+   "scenario": "S01",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S01",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S02",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S02",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S03",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S03",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S04",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S04",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S05",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S05",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S06",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S06",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S07",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S07",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S08",
+   "mode": "invoke",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S08",
+   "mode": "stream",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S09",
+   "mode": "invoke",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S09",
+   "mode": "stream",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S10",
+   "mode": "invoke",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S10",
+   "mode": "stream",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S11",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S11",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S12",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S12",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S13",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S13",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S14",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S14",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S15",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S15",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S16",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S16",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S17",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S17",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S18",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S18",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S19",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S19",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S20",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S20",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S21",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S21",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S22",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S22",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  }
+ ],
+ "cancelled_as_ok": [
+  {
+   "scenario": "S01",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S01",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S02",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S02",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S03",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S03",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S04",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S04",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S05",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S05",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S06",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S06",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S07",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S07",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S08",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S08",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S09",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S09",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S10",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S10",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S11",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S11",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S12",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S12",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S13",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S13",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S14",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S14",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S15",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S15",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S16",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S16",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S17",
+   "mode": "invoke",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S17",
+   "mode": "stream",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S18",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S18",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S19",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S19",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S20",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S20",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S21",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S21",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S22",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S22",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  }
+ ],
+ "drop_unfinished": [
+  {
+   "scenario": "S01",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S01",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S02",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S02",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S03",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S03",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S04",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S04",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S05",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S05",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S06",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S06",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S07",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S07",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S08",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S08",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S09",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S09",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S10",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S10",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S11",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S11",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S12",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S12",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S13",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S13",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S14",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S14",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S15",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S15",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S16",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S16",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S17",
+   "mode": "invoke",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S17",
+   "mode": "stream",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S18",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S18",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S19",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S19",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S20",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S20",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S21",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S21",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S22",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S22",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  }
+ ],
+ "failed_as_ok": [
+  {
+   "scenario": "S01",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S01",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S02",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S02",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S03",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S03",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S04",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S04",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S05",
+   "mode": "invoke",
+   "complete": false,
+   "faithful": false,
+   "harness_error": false
+  },
+  {
+   "scenario": "S05",
+   "mode": "stream",
+   "complete": false,
+   "faithful": false,
+   "harness_error": false
+  },
+  {
+   "scenario": "S06",
+   "mode": "invoke",
+   "complete": false,
+   "faithful": false,
+   "harness_error": false
+  },
+  {
+   "scenario": "S06",
+   "mode": "stream",
+   "complete": false,
+   "faithful": false,
+   "harness_error": false
+  },
+  {
+   "scenario": "S07",
+   "mode": "invoke",
+   "complete": false,
+   "faithful": false,
+   "harness_error": false
+  },
+  {
+   "scenario": "S07",
+   "mode": "stream",
+   "complete": false,
+   "faithful": false,
+   "harness_error": false
+  },
+  {
+   "scenario": "S08",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S08",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S09",
+   "mode": "invoke",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S09",
+   "mode": "stream",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S10",
+   "mode": "invoke",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S10",
+   "mode": "stream",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S11",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S11",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S12",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S12",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S13",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S13",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S14",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S14",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S15",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S15",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S16",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S16",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S17",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S17",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S18",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S18",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S19",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S19",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S20",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S20",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S21",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S21",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S22",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S22",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  }
+ ],
+ "shared_group": [
+  {
+   "scenario": "S01",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S01",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S02",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S02",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S03",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S03",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S04",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S04",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S05",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S05",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S06",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S06",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S07",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S07",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S08",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S08",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S09",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S09",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S10",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S10",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S11",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S11",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S12",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S12",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S13",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S13",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S14",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S14",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S15",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S15",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S16",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S16",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S17",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S17",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S18",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S18",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S19",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S19",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S20",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S20",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S21",
+   "mode": "invoke",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S21",
+   "mode": "stream",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S22",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S22",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  }
+ ],
+ "split_group": [
+  {
+   "scenario": "S01",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S01",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S02",
+   "mode": "invoke",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S02",
+   "mode": "stream",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S03",
+   "mode": "invoke",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S03",
+   "mode": "stream",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S04",
+   "mode": "invoke",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S04",
+   "mode": "stream",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S05",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S05",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S06",
+   "mode": "invoke",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S06",
+   "mode": "stream",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S07",
+   "mode": "invoke",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S07",
+   "mode": "stream",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S08",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S08",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S09",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S09",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S10",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S10",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S11",
+   "mode": "invoke",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S11",
+   "mode": "stream",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S12",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S12",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S13",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S13",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S14",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S14",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S15",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S15",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S16",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S16",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S17",
+   "mode": "invoke",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S17",
+   "mode": "stream",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S18",
+   "mode": "invoke",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S18",
+   "mode": "stream",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S19",
+   "mode": "invoke",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S19",
+   "mode": "stream",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S20",
+   "mode": "invoke",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S20",
+   "mode": "stream",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S21",
+   "mode": "invoke",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S21",
+   "mode": "stream",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S22",
+   "mode": "invoke",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S22",
+   "mode": "stream",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  }
+ ],
+ "truncate_output": [
+  {
+   "scenario": "S01",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S01",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S02",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S02",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S03",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S03",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S04",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S04",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S05",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S05",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S06",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S06",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S07",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S07",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S08",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S08",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S09",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S09",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S10",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S10",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S11",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S11",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S12",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S12",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S13",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": false,
+   "harness_error": false
+  },
+  {
+   "scenario": "S13",
+   "mode": "stream",
+   "complete": true,
+   "faithful": false,
+   "harness_error": false
+  },
+  {
+   "scenario": "S14",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S14",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S15",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S15",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S16",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S16",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S17",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S17",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S18",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S18",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S19",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S19",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S20",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S20",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S21",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S21",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S22",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S22",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  }
+ ],
+ "drop_error_detail": [
+  {
+   "scenario": "S01",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S01",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S02",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S02",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S03",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S03",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S04",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S04",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S05",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": false,
+   "harness_error": false
+  },
+  {
+   "scenario": "S05",
+   "mode": "stream",
+   "complete": true,
+   "faithful": false,
+   "harness_error": false
+  },
+  {
+   "scenario": "S06",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": false,
+   "harness_error": false
+  },
+  {
+   "scenario": "S06",
+   "mode": "stream",
+   "complete": true,
+   "faithful": false,
+   "harness_error": false
+  },
+  {
+   "scenario": "S07",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": false,
+   "harness_error": false
+  },
+  {
+   "scenario": "S07",
+   "mode": "stream",
+   "complete": true,
+   "faithful": false,
+   "harness_error": false
+  },
+  {
+   "scenario": "S08",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S08",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S09",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S09",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S10",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S10",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S11",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S11",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S12",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S12",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S13",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S13",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S14",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S14",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S15",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S15",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S16",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S16",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S17",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S17",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S18",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S18",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S19",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S19",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S20",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S20",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S21",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S21",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S22",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S22",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  }
+ ],
+ "drop_nested": [
+  {
+   "scenario": "S01",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S01",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S02",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S02",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S03",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S03",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S04",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S04",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S05",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S05",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S06",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S06",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S07",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S07",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S08",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S08",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S09",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S09",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S10",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S10",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S11",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S11",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S12",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S12",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S13",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S13",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S14",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S14",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S15",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S15",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S16",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S16",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S17",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S17",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S18",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S18",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S19",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S19",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S20",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S20",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S21",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S21",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S22",
+   "mode": "invoke",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S22",
+   "mode": "stream",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  }
+ ],
+ "double_record": [
+  {
+   "scenario": "S01",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S01",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S02",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S02",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S03",
+   "mode": "invoke",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S03",
+   "mode": "stream",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S04",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S04",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S05",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S05",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S06",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S06",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S07",
+   "mode": "invoke",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S07",
+   "mode": "stream",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S08",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S08",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S09",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S09",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S10",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S10",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S11",
+   "mode": "invoke",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S11",
+   "mode": "stream",
+   "complete": false,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S12",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S12",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S13",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S13",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S14",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S14",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S15",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S15",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S16",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S16",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S17",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S17",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S18",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S18",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S19",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S19",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S20",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S20",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S21",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S21",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S22",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S22",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  }
+ ],
+ "alter_args": [
+  {
+   "scenario": "S01",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S01",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S02",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S02",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S03",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S03",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S04",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S04",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S05",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S05",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S06",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S06",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S07",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S07",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S08",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S08",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S09",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S09",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S10",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S10",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S11",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S11",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S12",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": false,
+   "harness_error": false
+  },
+  {
+   "scenario": "S12",
+   "mode": "stream",
+   "complete": true,
+   "faithful": false,
+   "harness_error": false
+  },
+  {
+   "scenario": "S13",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S13",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S14",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S14",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S15",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S15",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S16",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S16",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S17",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S17",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S18",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S18",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S19",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S19",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S20",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S20",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S21",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S21",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S22",
+   "mode": "invoke",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  },
+  {
+   "scenario": "S22",
+   "mode": "stream",
+   "complete": true,
+   "faithful": true,
+   "harness_error": false
+  }
+ ]
+}

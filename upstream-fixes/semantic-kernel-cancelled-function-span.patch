@@ -1,0 +1,129 @@
+diff --git a/python/semantic_kernel/functions/kernel_function.py b/python/semantic_kernel/functions/kernel_function.py
+index 15f2ab3..5c28f7d 100644
+--- a/python/semantic_kernel/functions/kernel_function.py
++++ b/python/semantic_kernel/functions/kernel_function.py
+@@ -1,5 +1,6 @@
+ # Copyright (c) Microsoft. All rights reserved.
+ 
++import asyncio
+ import json
+ import logging
+ import time
+@@ -288,6 +289,11 @@ class KernelFunction(KernelBaseModel):
+                     current_span.set_attribute(TOOL_CALL_RESULT, result)
+ 
+                 return function_context.result
++            except asyncio.CancelledError as e:
++                # CancelledError is a BaseException, so it bypasses the handler below and the
++                # span would otherwise close with an unset (successful-looking) status.
++                self._handle_exception(current_span, e, attributes)
++                raise
+             except Exception as e:
+                 self._handle_exception(current_span, e, attributes)
+                 raise e
+@@ -370,6 +376,11 @@ class KernelFunction(KernelBaseModel):
+                     except Exception as e:
+                         results.append(str(e))
+                     current_span.set_attribute(TOOL_CALL_RESULT, json.dumps(results))
++            except asyncio.CancelledError as e:
++                # CancelledError is a BaseException, so it bypasses the handler below and the
++                # span would otherwise close with an unset (successful-looking) status.
++                self._handle_exception(current_span, e, attributes)
++                raise
+             except Exception as e:
+                 self._handle_exception(current_span, e, attributes)
+                 raise e
+@@ -393,12 +404,12 @@ class KernelFunction(KernelBaseModel):
+             cop.metadata.plugin_name = plugin_name
+         return cop
+ 
+-    def _handle_exception(self, current_span: trace.Span, exception: Exception, attributes: dict[str, str]) -> None:
++    def _handle_exception(self, current_span: trace.Span, exception: BaseException, attributes: dict[str, str]) -> None:
+         """Handle the exception.
+ 
+         Args:
+             current_span (trace.Span): The current span.
+-            exception (Exception): The exception.
++            exception (BaseException): The exception, including asyncio.CancelledError.
+             attributes (Attributes): The attributes to be modified.
+         """
+         attributes[ERROR_TYPE] = type(exception).__name__
+diff --git a/python/tests/unit/functions/test_kernel_function_cancellation_tracing.py b/python/tests/unit/functions/test_kernel_function_cancellation_tracing.py
+new file mode 100644
+index 0000000..cb69910
+--- /dev/null
++++ b/python/tests/unit/functions/test_kernel_function_cancellation_tracing.py
+@@ -0,0 +1,73 @@
++# Copyright (c) Microsoft. All rights reserved.
++
++import asyncio
++import importlib
++
++import pytest
++from opentelemetry.sdk.trace import TracerProvider
++from opentelemetry.sdk.trace.export import SimpleSpanProcessor
++from opentelemetry.sdk.trace.export.in_memory_span_exporter import InMemorySpanExporter
++from opentelemetry.trace import StatusCode
++
++from semantic_kernel.functions.kernel_function_decorator import kernel_function
++from semantic_kernel.functions.kernel_function_from_method import KernelFunctionFromMethod
++from semantic_kernel.kernel import Kernel
++
++# `semantic_kernel.functions.kernel_function` is shadowed by the decorator re-export.
++kernel_function_module = importlib.import_module("semantic_kernel.functions.kernel_function")
++
++
++@pytest.fixture
++def span_exporter(monkeypatch):
++    exporter = InMemorySpanExporter()
++    provider = TracerProvider()
++    provider.add_span_processor(SimpleSpanProcessor(exporter))
++    monkeypatch.setattr(kernel_function_module, "tracer", provider.get_tracer(__name__))
++    return exporter
++
++
++async def test_cancelled_function_invocation_marks_span_as_error(span_exporter):
++    started = asyncio.Event()
++
++    @kernel_function(name="blocking")
++    async def blocking() -> str:
++        started.set()
++        await asyncio.sleep(30)
++        return "unreachable"
++
++    function = KernelFunctionFromMethod(method=blocking, plugin_name="test")
++    task = asyncio.create_task(function.invoke(Kernel()))
++    await asyncio.wait_for(started.wait(), timeout=5)
++    task.cancel()
++    with pytest.raises(asyncio.CancelledError):
++        await task
++
++    spans = span_exporter.get_finished_spans()
++    assert len(spans) == 1
++    assert spans[0].status.status_code == StatusCode.ERROR
++
++
++async def test_cancelled_streaming_function_invocation_marks_span_as_error(span_exporter):
++    started = asyncio.Event()
++
++    @kernel_function(name="blocking_stream")
++    async def blocking_stream():
++        started.set()
++        await asyncio.sleep(30)
++        yield "unreachable"
++
++    function = KernelFunctionFromMethod(method=blocking_stream, plugin_name="test")
++
++    async def consume():
++        async for _ in function.invoke_stream(Kernel()):
++            pass
++
++    task = asyncio.create_task(consume())
++    await asyncio.wait_for(started.wait(), timeout=5)
++    task.cancel()
++    with pytest.raises(asyncio.CancelledError):
++        await task
++
++    spans = span_exporter.get_finished_spans()
++    assert len(spans) == 1
++    assert spans[0].status.status_code == StatusCode.ERROR

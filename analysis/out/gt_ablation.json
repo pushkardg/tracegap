@@ -1,0 +1,147 @@
+{
+ "ablation_current": {
+  "cases": 6660,
+  "incomplete": 2328,
+  "emission_only": {
+   "detected": 1866,
+   "false_alarms": 2,
+   "missed": {
+    "false_success": 88,
+    "status_mismatch": 374
+   },
+   "ambiguous_missing": 1866
+  },
+  "ledger_only": {
+   "detected": 1372,
+   "false_alarms": 1696,
+   "missed": {
+    "invisible_attempt": 956
+   }
+  },
+  "ledger_only_lenient": {
+   "detected": 1098,
+   "false_alarms": 2,
+   "missed": {
+    "invisible_attempt": 1230
+   }
+  }
+ },
+ "ablation_all": {
+  "cases": 11060,
+  "incomplete": 2806,
+  "emission_only": {
+   "detected": 2250,
+   "false_alarms": 8,
+   "missed": {
+    "false_success": 182,
+    "status_mismatch": 390,
+    "missing_call": 16
+   },
+   "ambiguous_missing": 2266
+  },
+  "ledger_only": {
+   "detected": 1593,
+   "false_alarms": 2033,
+   "missed": {
+    "invisible_attempt": 1213
+   }
+  },
+  "ledger_only_lenient": {
+   "detected": 1319,
+   "false_alarms": 8,
+   "missed": {
+    "invisible_attempt": 1487
+   }
+  }
+ },
+ "stats_current": {
+  "counts": {
+   "cases": 6660,
+   "calibrated": 6660,
+   "emitted": 44960,
+   "executed": 39058,
+   "never_executed": 5902,
+   "records": 39796,
+   "incomplete": 2328,
+   "unfaithful": 738,
+   "stress": 3570,
+   "false_success_calls": 108,
+   "duplicates": 0,
+   "phantoms": 0
+  },
+  "ledger_status": {
+   "ok": 32522,
+   "error": 5912,
+   "running": 364,
+   "cancelled": 260
+  },
+  "defect_labels": {
+   "missing_call": 618,
+   "invisible_attempt": 1617,
+   "error_lost": 732,
+   "false_success": 106,
+   "status_mismatch": 375,
+   "output_lost": 360
+  }
+ },
+ "stats_history": {
+  "counts": {
+   "cases": 4884,
+   "calibrated": 4400,
+   "emitted": 13946,
+   "executed": 13200,
+   "never_executed": 778,
+   "records": 13034,
+   "incomplete": 806,
+   "unfaithful": 318,
+   "stress": 222,
+   "false_success_calls": 114,
+   "duplicates": 0,
+   "phantoms": 32
+  },
+  "ledger_status": {
+   "ok": 12116,
+   "error": 732,
+   "running": 74,
+   "cancelled": 278
+  },
+  "defect_labels": {
+   "missing_call": 127,
+   "invisible_attempt": 273,
+   "false_success": 94,
+   "error_lost": 124,
+   "status_mismatch": 16,
+   "output_lost": 16
+  }
+ },
+ "stats_all": {
+  "counts": {
+   "cases": 11544,
+   "calibrated": 11060,
+   "emitted": 58906,
+   "executed": 52258,
+   "never_executed": 6680,
+   "records": 52830,
+   "incomplete": 3134,
+   "unfaithful": 1056,
+   "stress": 3792,
+   "false_success_calls": 222,
+   "duplicates": 0,
+   "phantoms": 32
+  },
+  "ledger_status": {
+   "ok": 44638,
+   "error": 6644,
+   "running": 438,
+   "cancelled": 538
+  },
+  "defect_labels": {
+   "missing_call": 745,
+   "invisible_attempt": 1890,
+   "error_lost": 856,
+   "false_success": 200,
+   "status_mismatch": 391,
+   "output_lost": 376
+  }
+ }
+}

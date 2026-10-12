@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tracegap"
+version = "1.0.0"
+description = "TraceGap: the agent tracing correctness benchmark. Does your agent framework record what actually happened?"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Pushkar Devanahalli Gopalakrishna", email = "pushkar87dg@gmail.com" }]
+requires-python = ">=3.11"
+dependencies = []
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "Programming Language :: Python :: 3",
+  "Topic :: Software Development :: Testing",
+  "Topic :: System :: Monitoring",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+keywords = ["llm", "agents", "observability", "tracing", "provenance", "benchmark", "opentelemetry"]
+
+[project.optional-dependencies]
+langgraph = ["langgraph>=1.2", "langchain-core>=1.6"]
+openai-agents = ["openai-agents>=0.23"]
+pydantic-ai = ["pydantic-ai-slim>=2.54", "opentelemetry-sdk>=1.40"]
+autogen = ["autogen-agentchat>=0.7.5", "autogen-core>=0.7.5", "autogen-ext>=0.7.5", "opentelemetry-sdk>=1.40"]
+# Each of these conflicts with the others or with the core set; install one at a time
+# (see envs/*.txt and scripts/run_all.sh).
+smolagents = ["smolagents>=1.26", "openinference-instrumentation-smolagents>=0.1.42", "opentelemetry-sdk>=1.40"]
+llamaindex = ["llama-index-core>=0.14.25", "openinference-instrumentation-llama-index>=4.5", "opentelemetry-sdk>=1.40"]
+semantic-kernel = ["semantic-kernel>=1.44", "opentelemetry-sdk>=1.40"]
+google-adk = ["google-adk>=2.11", "opentelemetry-sdk>=1.40"]
+crewai = ["crewai>=1.15", "opentelemetry-sdk>=1.40"]
+tasks = ["pyarrow>=15"]
+core = [
+  "langgraph>=1.2", "langchain-core>=1.6", "openai-agents>=0.23", "pydantic-ai-slim>=2.54",
+  "autogen-agentchat>=0.7.5", "autogen-core>=0.7.5", "autogen-ext>=0.7.5", "opentelemetry-sdk>=1.40",
+]
+dev = ["pytest>=8"]
+
+[project.scripts]
+tracegap = "tracegap.cli:main"
+tracegap-check-adapter = "tracegap.check_adapter:main"
+tracegap-tasks = "tracegap.tasks:main"
+
+[project.urls]
+Homepage = "https://github.com/pushkardg/tracegap"
+Leaderboard = "https://github.com/pushkardg/tracegap/blob/main/results/LEADERBOARD.md"
+Dataset = "https://huggingface.co/datasets/pushkardg/tracegap"
+Paper = "https://github.com/pushkardg/tracegap/blob/main/paper/tmlr/tracegap_preprint.pdf"
+
+[tool.setuptools.packages.find]
+include = ["tracegap*"]

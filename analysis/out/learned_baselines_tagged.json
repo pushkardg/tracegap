@@ -1,0 +1,724 @@
+{
+ "official": {
+  "majority": {
+   "T1_completeness": {
+    "accuracy": 0.6257062146892656,
+    "defect_f1": 0.0,
+    "balanced_accuracy": 0.5
+   },
+   "T2_fidelity": {
+    "accuracy": 0.875,
+    "defect_f1": 0.0,
+    "balanced_accuracy": 0.5
+   },
+   "T3_defects": {
+    "micro_f1": 0.0,
+    "macro_f1": 0.0,
+    "exact_match": 0.5889830508474576
+   },
+   "T4_reconstruction": {
+    "call_accuracy": 0.764424430059105,
+    "macro_f1": 0.1732971765831871,
+    "case_exact_match": 0.3827683615819209
+   }
+  },
+  "rules": {
+   "T1_completeness": {
+    "accuracy": 0.8177966101694916,
+    "defect_f1": 0.794912559618442,
+    "balanced_accuracy": 0.8430299416499851
+   },
+   "T2_fidelity": {
+    "accuracy": 0.818502824858757,
+    "defect_f1": 0.08540925266903915,
+    "balanced_accuracy": 0.496771589991929
+   },
+   "T3_defects": {
+    "micro_f1": 0.3731958762886598,
+    "macro_f1": 0.25796509320372674,
+    "exact_match": 0.4668079096045198
+   },
+   "T4_reconstruction": {
+    "call_accuracy": 0.7389529974669293,
+    "macro_f1": 0.40253633998997185,
+    "case_exact_match": 0.6009887005649718
+   }
+  },
+  "logreg": {
+   "T1_completeness": {
+    "accuracy": 0.9502118644067796,
+    "defect_f1": 0.9331436699857752,
+    "balanced_accuracy": 0.9458100856084161
+   },
+   "T2_fidelity": {
+    "accuracy": 0.9957627118644068,
+    "defect_f1": 0.9833333333333333,
+    "balanced_accuracy": 0.9975786924939467
+   },
+   "T3_defects": {
+    "micro_f1": 0.8880724957139359,
+    "macro_f1": 0.7739281765804177,
+    "exact_match": 0.8820621468926554
+   },
+   "T4_reconstruction": {
+    "call_accuracy": 0.8184632704756544,
+    "macro_f1": 0.6164785764327495,
+    "case_exact_match": 0.6666666666666666
+   }
+  },
+  "gbm": {
+   "T1_completeness": {
+    "accuracy": 0.9597457627118644,
+    "defect_f1": 0.9433399602385685,
+    "balanced_accuracy": 0.9467950083052941
+   },
+   "T2_fidelity": {
+    "accuracy": 0.9936440677966102,
+    "defect_f1": 0.9747899159663865,
+    "balanced_accuracy": 0.9891041162227603
+   },
+   "T3_defects": {
+    "micro_f1": 0.8734990226193801,
+    "macro_f1": 0.7279453500699545,
+    "exact_match": 0.8831214689265536
+   },
+   "T4_reconstruction": {
+    "call_accuracy": 0.8931888544891641,
+    "macro_f1": 0.7647898520671852,
+    "case_exact_match": 0.6892655367231638
+   }
+  }
+ },
+ "iid_runs": {
+  "gbm": [],
+  "logreg": []
+ },
+ "iid_gbm": null,
+ "config": {
+  "features": "all",
+  "tasks": "analysis/out/tasks_tagged"
+ },
+ "lofo": {
+  "autogen": {
+   "n": 1328,
+   "rules": {
+    "T1_completeness": {
+     "accuracy": 0.9600903614457831,
+     "defect_f1": 0.9149277688603531,
+     "balanced_accuracy": 0.9745925215723874
+    },
+    "T2_fidelity": {
+     "accuracy": 0.5828313253012049,
+     "defect_f1": 0.0,
+     "balanced_accuracy": 0.2914156626506024
+    },
+    "T3_defects": {
+     "micro_f1": 0.22629482071713147,
+     "macro_f1": 0.4307030540553458,
+     "exact_match": 0.4819277108433735
+    },
+    "T4_reconstruction": {
+     "call_accuracy": 0.8110687022900763,
+     "macro_f1": 0.4667092014254029,
+     "case_exact_match": 0.5278614457831325
+    }
+   },
+   "gbm": {
+    "T1_completeness": {
+     "accuracy": 0.9774096385542169,
+     "defect_f1": 0.9500000000000001,
+     "balanced_accuracy": 0.9856184084372004
+    },
+    "T2_fidelity": {
+     "accuracy": 1.0,
+     "defect_f1": 0.0,
+     "balanced_accuracy": 0.5
+    },
+    "T3_defects": {
+     "micro_f1": 0.8871391076115486,
+     "macro_f1": 0.9442472006554563,
+     "exact_match": 0.9442771084337349
+    },
+    "T4_reconstruction": {
+     "call_accuracy": 0.9486005089058525,
+     "macro_f1": 0.8001643333504131,
+     "case_exact_match": 0.7733433734939759
+    }
+   },
+   "logreg": {
+    "T1_completeness": {
+     "accuracy": 0.7831325301204819,
+     "defect_f1": 0.6643356643356644,
+     "balanced_accuracy": 0.8619367209971237
+    },
+    "T2_fidelity": {
+     "accuracy": 0.8019578313253012,
+     "defect_f1": 0.0,
+     "balanced_accuracy": 0.4009789156626506
+    },
+    "T3_defects": {
+     "micro_f1": 0.44632400780741704,
+     "macro_f1": 0.9229303148008581,
+     "exact_match": 0.5421686746987951
+    },
+    "T4_reconstruction": {
+     "call_accuracy": 0.9012722646310433,
+     "macro_f1": 0.8147701441673847,
+     "case_exact_match": 0.7274096385542169
+    }
+   }
+  },
+  "crewai": {
+   "n": 620,
+   "rules": {
+    "T1_completeness": {
+     "accuracy": 0.8935483870967742,
+     "defect_f1": 0.0,
+     "balanced_accuracy": 0.4511400651465798
+    },
+    "T2_fidelity": {
+     "accuracy": 1.0,
+     "defect_f1": 0.0,
+     "balanced_accuracy": 0.5
+    },
+    "T3_defects": {
+     "micro_f1": 0.0,
+     "macro_f1": 0.0,
+     "exact_match": 0.8935483870967742
+    },
+    "T4_reconstruction": {
+     "call_accuracy": 0.8704926358557643,
+     "macro_f1": 0.4164155786184578,
+     "case_exact_match": 0.4967741935483871
+    }
+   },
+   "gbm": {
+    "T1_completeness": {
+     "accuracy": 0.9887096774193549,
+     "defect_f1": 0.5333333333333333,
+     "balanced_accuracy": 0.8292616720955484
+    },
+    "T2_fidelity": {
+     "accuracy": 0.9951612903225806,
+     "defect_f1": 0.0,
+     "balanced_accuracy": 0.4975806451612903
+    },
+    "T3_defects": {
+     "micro_f1": 0.24242424242424243,
+     "macro_f1": 0.5333333333333333,
+     "exact_match": 0.9596774193548387
+    },
+    "T4_reconstruction": {
+     "call_accuracy": 0.9824784154393092,
+     "macro_f1": 0.8935622972537705,
+     "case_exact_match": 0.9
+    }
+   },
+   "logreg": {
+    "T1_completeness": {
+     "accuracy": 0.8935483870967742,
+     "defect_f1": 0.0,
+     "balanced_accuracy": 0.4511400651465798
+    },
+    "T2_fidelity": {
+     "accuracy": 0.635483870967742,
+     "defect_f1": 0.0,
+     "balanced_accuracy": 0.317741935483871
+    },
+    "T3_defects": {
+     "micro_f1": 0.011764705882352941,
+     "macro_f1": 0.037383177570093455,
+     "exact_match": 0.5370967741935484
+    },
+    "T4_reconstruction": {
+     "call_accuracy": 0.9263585576434739,
+     "macro_f1": 0.8506759586870027,
+     "case_exact_match": 0.8096774193548387
+    }
+   }
+  },
+  "google-adk": {
+   "n": 1592,
+   "rules": {
+    "T1_completeness": {
+     "accuracy": 0.8467336683417085,
+     "defect_f1": 0.6822916666666666,
+     "balanced_accuracy": 0.8343913532547562
+    },
+    "T2_fidelity": {
+     "accuracy": 0.6859296482412061,
+     "defect_f1": 0.08759124087591243,
+     "balanced_accuracy": 0.46523917745954385
+    },
+    "T3_defects": {
+     "micro_f1": 0.3645699614890886,
+     "macro_f1": 0.376320987654321,
+     "exact_match": 0.6080402010050251
+    },
+    "T4_reconstruction": {
+     "call_accuracy": 0.7828282828282829,
+     "macro_f1": 0.41113477151024086,
+     "case_exact_match": 0.5979899497487438
+    }
+   },
+   "gbm": {
+    "T1_completeness": {
+     "accuracy": 0.9277638190954773,
+     "defect_f1": 0.7850467289719626,
+     "balanced_accuracy": 0.8249058541595344
+    },
+    "T2_fidelity": {
+     "accuracy": 0.9591708542713567,
+     "defect_f1": 0.9141347424042271,
+     "balanced_accuracy": 0.9656795633562425
+    },
+    "T3_defects": {
+     "micro_f1": 0.8655172413793103,
+     "macro_f1": 0.7949805700260079,
+     "exact_match": 0.8913316582914573
+    },
+    "T4_reconstruction": {
+     "call_accuracy": 0.9165088383838383,
+     "macro_f1": 0.7403698901484117,
+     "case_exact_match": 0.7594221105527639
+    }
+   },
+   "logreg": {
+    "T1_completeness": {
+     "accuracy": 0.9258793969849246,
+     "defect_f1": 0.7915194346289752,
+     "balanced_accuracy": 0.8399520712084902
+    },
+    "T2_fidelity": {
+     "accuracy": 0.9170854271356784,
+     "defect_f1": 0.8428571428571429,
+     "balanced_accuracy": 0.9466882067851373
+    },
+    "T3_defects": {
+     "micro_f1": 0.8299065420560747,
+     "macro_f1": 0.798575586618546,
+     "exact_match": 0.8015075376884422
+    },
+    "T4_reconstruction": {
+     "call_accuracy": 0.8506944444444444,
+     "macro_f1": 0.628209032374656,
+     "case_exact_match": 0.6884422110552764
+    }
+   }
+  },
+  "langgraph": {
+   "n": 664,
+   "rules": {
+    "T1_completeness": {
+     "accuracy": 0.9307228915662651,
+     "defect_f1": 0.8756756756756757,
+     "balanced_accuracy": 0.954183266932271
+    },
+    "T2_fidelity": {
+     "accuracy": 0.9819277108433735,
+     "defect_f1": 0.0,
+     "balanced_accuracy": 0.49096385542168675
+    },
+    "T3_defects": {
+     "micro_f1": 0.41025641025641024,
+     "macro_f1": 0.6611570247933884,
+     "exact_match": 0.7951807228915663
+    },
+    "T4_reconstruction": {
+     "call_accuracy": 0.9268130405854956,
+     "macro_f1": 0.8563276882158172,
+     "case_exact_match": 0.7319277108433735
+    }
+   },
+   "gbm": {
+    "T1_completeness": {
+     "accuracy": 0.9819277108433735,
+     "defect_f1": 0.9642857142857143,
+     "balanced_accuracy": 0.9880478087649402
+    },
+    "T2_fidelity": {
+     "accuracy": 0.9879518072289156,
+     "defect_f1": 0.0,
+     "balanced_accuracy": 0.4939759036144578
+    },
+    "T3_defects": {
+     "micro_f1": 0.7055702917771883,
+     "macro_f1": 0.9016949152542373,
+     "exact_match": 0.8990963855421686
+    },
+    "T4_reconstruction": {
+     "call_accuracy": 0.9587491683300067,
+     "macro_f1": 0.8577115535125301,
+     "case_exact_match": 0.9036144578313253
+    }
+   },
+   "logreg": {
+    "T1_completeness": {
+     "accuracy": 0.9593373493975904,
+     "defect_f1": 0.923076923076923,
+     "balanced_accuracy": 0.9731075697211156
+    },
+    "T2_fidelity": {
+     "accuracy": 0.9819277108433735,
+     "defect_f1": 0.0,
+     "balanced_accuracy": 0.49096385542168675
+    },
+    "T3_defects": {
+     "micro_f1": 0.49746192893401014,
+     "macro_f1": 0.7538461538461538,
+     "exact_match": 0.7981927710843374
+    },
+    "T4_reconstruction": {
+     "call_accuracy": 0.9767132401862941,
+     "macro_f1": 0.8498247711508908,
+     "case_exact_match": 0.9006024096385542
+    }
+   }
+  },
+  "llamaindex": {
+   "n": 1592,
+   "rules": {
+    "T1_completeness": {
+     "accuracy": 0.9459798994974874,
+     "defect_f1": 0.878186968838527,
+     "balanced_accuracy": 0.9664586583463339
+    },
+    "T2_fidelity": {
+     "accuracy": 0.8404522613065326,
+     "defect_f1": 0.0,
+     "balanced_accuracy": 0.4202261306532663
+    },
+    "T3_defects": {
+     "micro_f1": 0.39344262295081966,
+     "macro_f1": 0.38247011952191234,
+     "exact_match": 0.7361809045226131
+    },
+    "T4_reconstruction": {
+     "call_accuracy": 0.9310344827586207,
+     "macro_f1": 0.6142649422208617,
+     "case_exact_match": 0.7097989949748744
+    }
+   },
+   "gbm": {
+    "T1_completeness": {
+     "accuracy": 0.9981155778894473,
+     "defect_f1": 0.9951845906902087,
+     "balanced_accuracy": 0.998829953198128
+    },
+    "T2_fidelity": {
+     "accuracy": 0.9629396984924623,
+     "defect_f1": 0.0,
+     "balanced_accuracy": 0.48146984924623115
+    },
+    "T3_defects": {
+     "micro_f1": 0.8971428571428571,
+     "macro_f1": 0.9880952380952381,
+     "exact_match": 0.9547738693467337
+    },
+    "T4_reconstruction": {
+     "call_accuracy": 0.9570085087326466,
+     "macro_f1": 0.8629442439472327,
+     "case_exact_match": 0.8090452261306532
+    }
+   },
+   "logreg": {
+    "T1_completeness": {
+     "accuracy": 0.9660804020100503,
+     "defect_f1": 0.9198813056379821,
+     "balanced_accuracy": 0.9789391575663027
+    },
+    "T2_fidelity": {
+     "accuracy": 0.8492462311557789,
+     "defect_f1": 0.0,
+     "balanced_accuracy": 0.42462311557788945
+    },
+    "T3_defects": {
+     "micro_f1": 0.5046413502109705,
+     "macro_f1": 0.7942779555814179,
+     "exact_match": 0.6972361809045227
+    },
+    "T4_reconstruction": {
+     "call_accuracy": 0.9362964621585311,
+     "macro_f1": 0.8722318657528273,
+     "case_exact_match": 0.7355527638190955
+    }
+   }
+  },
+  "openai-agents": {
+   "n": 884,
+   "rules": {
+    "T1_completeness": {
+     "accuracy": 0.9366515837104072,
+     "defect_f1": 0.8227848101265823,
+     "balanced_accuracy": 0.8494623655913979
+    },
+    "T2_fidelity": {
+     "accuracy": 0.7420814479638009,
+     "defect_f1": 0.3870967741935484,
+     "balanced_accuracy": 0.6046629927935566
+    },
+    "T3_defects": {
+     "micro_f1": 0.37790697674418605,
+     "macro_f1": 0.3333333333333333,
+     "exact_match": 0.6606334841628959
+    },
+    "T4_reconstruction": {
+     "call_accuracy": 0.9221861973135711,
+     "macro_f1": 0.6123070516890742,
+     "case_exact_match": 0.7104072398190046
+    }
+   },
+   "gbm": {
+    "T1_completeness": {
+     "accuracy": 0.9332579185520362,
+     "defect_f1": 0.8150470219435738,
+     "balanced_accuracy": 0.8473133684567273
+    },
+    "T2_fidelity": {
+     "accuracy": 0.7624434389140271,
+     "defect_f1": 0.0,
+     "balanced_accuracy": 0.5
+    },
+    "T3_defects": {
+     "micro_f1": 0.48872180451127817,
+     "macro_f1": 0.3333333333333333,
+     "exact_match": 0.7194570135746606
+    },
+    "T4_reconstruction": {
+     "call_accuracy": 0.9529874942102825,
+     "macro_f1": 0.8809984725239498,
+     "case_exact_match": 0.8065610859728507
+    }
+   },
+   "logreg": {
+    "T1_completeness": {
+     "accuracy": 0.9366515837104072,
+     "defect_f1": 0.8227848101265823,
+     "balanced_accuracy": 0.8494623655913979
+    },
+    "T2_fidelity": {
+     "accuracy": 0.7624434389140271,
+     "defect_f1": 0.0,
+     "balanced_accuracy": 0.5
+    },
+    "T3_defects": {
+     "micro_f1": 0.44075829383886256,
+     "macro_f1": 0.4537634408602151,
+     "exact_match": 0.5384615384615384
+    },
+    "T4_reconstruction": {
+     "call_accuracy": 0.9319129226493748,
+     "macro_f1": 0.8047224394712226,
+     "case_exact_match": 0.7579185520361991
+    }
+   }
+  },
+  "pydantic-ai": {
+   "n": 1680,
+   "rules": {
+    "T1_completeness": {
+     "accuracy": 0.868452380952381,
+     "defect_f1": 0.7403055229142185,
+     "balanced_accuracy": 0.9115519245184406
+    },
+    "T2_fidelity": {
+     "accuracy": 0.7529761904761905,
+     "defect_f1": 0.18467583497053044,
+     "balanced_accuracy": 0.5206679971276963
+    },
+    "T3_defects": {
+     "micro_f1": 0.33613445378151263,
+     "macro_f1": 0.29358426369433116,
+     "exact_match": 0.669047619047619
+    },
+    "T4_reconstruction": {
+     "call_accuracy": 0.8042547115933752,
+     "macro_f1": 0.4709230360263914,
+     "case_exact_match": 0.5476190476190477
+    }
+   },
+   "gbm": {
+    "T1_completeness": {
+     "accuracy": 0.9369047619047619,
+     "defect_f1": 0.8408408408408409,
+     "balanced_accuracy": 0.9122224285311492
+    },
+    "T2_fidelity": {
+     "accuracy": 0.9714285714285714,
+     "defect_f1": 0.9223300970873787,
+     "balanced_accuracy": 0.9468670440450989
+    },
+    "T3_defects": {
+     "micro_f1": 0.8225905463474524,
+     "macro_f1": 0.6722445811858972,
+     "exact_match": 0.919047619047619
+    },
+    "T4_reconstruction": {
+     "call_accuracy": 0.9474585950885208,
+     "macro_f1": 0.8585261723694915,
+     "case_exact_match": 0.8476190476190476
+    }
+   },
+   "logreg": {
+    "T1_completeness": {
+     "accuracy": 0.9130952380952381,
+     "defect_f1": 0.793201133144476,
+     "balanced_accuracy": 0.8975057250727239
+    },
+    "T2_fidelity": {
+     "accuracy": 0.9696428571428571,
+     "defect_f1": 0.9196850393700787,
+     "balanced_accuracy": 0.95435321875204
+    },
+    "T3_defects": {
+     "micro_f1": 0.7013123359580052,
+     "macro_f1": 0.6161149692613986,
+     "exact_match": 0.7577380952380952
+    },
+    "T4_reconstruction": {
+     "call_accuracy": 0.875214163335237,
+     "macro_f1": 0.7095160028965911,
+     "case_exact_match": 0.6172619047619048
+    }
+   }
+  },
+  "semantic-kernel": {
+   "n": 1460,
+   "rules": {
+    "T1_completeness": {
+     "accuracy": 0.9616438356164384,
+     "defect_f1": 0.9391304347826087,
+     "balanced_accuracy": 0.9476839516294322
+    },
+    "T2_fidelity": {
+     "accuracy": 0.8602739726027397,
+     "defect_f1": 0.0,
+     "balanced_accuracy": 0.4301369863013699
+    },
+    "T3_defects": {
+     "micro_f1": 0.2591943957968476,
+     "macro_f1": 0.25517241379310346,
+     "exact_match": 0.6904109589041096
+    },
+    "T4_reconstruction": {
+     "call_accuracy": 0.9489222118088098,
+     "macro_f1": 0.6572883057023291,
+     "case_exact_match": 0.7616438356164383
+    }
+   },
+   "gbm": {
+    "T1_completeness": {
+     "accuracy": 0.9671232876712329,
+     "defect_f1": 0.9473684210526315,
+     "balanced_accuracy": 0.9517489922798388
+    },
+    "T2_fidelity": {
+     "accuracy": 0.9849315068493151,
+     "defect_f1": 0.0,
+     "balanced_accuracy": 0.49246575342465754
+    },
+    "T3_defects": {
+     "micro_f1": 0.907563025210084,
+     "macro_f1": 0.5,
+     "exact_match": 0.9424657534246575
+    },
+    "T4_reconstruction": {
+     "call_accuracy": 0.978912839737582,
+     "macro_f1": 0.8433401637197973,
+     "case_exact_match": 0.8904109589041096
+    }
+   },
+   "logreg": {
+    "T1_completeness": {
+     "accuracy": 0.9684931506849315,
+     "defect_f1": 0.9494505494505494,
+     "balanced_accuracy": 0.9527652524424404
+    },
+    "T2_fidelity": {
+     "accuracy": 0.9068493150684932,
+     "defect_f1": 0.0,
+     "balanced_accuracy": 0.4534246575342466
+    },
+    "T3_defects": {
+     "micro_f1": 0.7005988023952096,
+     "macro_f1": 0.613564668769716,
+     "exact_match": 0.7547945205479452
+    },
+    "T4_reconstruction": {
+     "call_accuracy": 0.9518509840674789,
+     "macro_f1": 0.8063818824545463,
+     "case_exact_match": 0.8616438356164383
+    }
+   }
+  },
+  "smolagents": {
+   "n": 1240,
+   "rules": {
+    "T1_completeness": {
+     "accuracy": 0.7806451612903226,
+     "defect_f1": 0.8443935926773455,
+     "balanced_accuracy": 0.7290836653386454
+    },
+    "T2_fidelity": {
+     "accuracy": 0.9887096774193549,
+     "defect_f1": 0.0,
+     "balanced_accuracy": 0.49435483870967745
+    },
+    "T3_defects": {
+     "micro_f1": 0.3789836347975883,
+     "macro_f1": 0.5074617333361718,
+     "exact_match": 0.2854838709677419
+    },
+    "T4_reconstruction": {
+     "call_accuracy": 0.7036566785170137,
+     "macro_f1": 0.5002642784931167,
+     "case_exact_match": 0.6048387096774194
+    }
+   },
+   "gbm": {
+    "T1_completeness": {
+     "accuracy": 0.9967741935483871,
+     "defect_f1": 0.9972972972972972,
+     "balanced_accuracy": 0.9960159362549801
+    },
+    "T2_fidelity": {
+     "accuracy": 1.0,
+     "defect_f1": 0.0,
+     "balanced_accuracy": 0.5
+    },
+    "T3_defects": {
+     "micro_f1": 0.8470588235294118,
+     "macro_f1": 0.804953560371517,
+     "exact_match": 0.8258064516129032
+    },
+    "T4_reconstruction": {
+     "call_accuracy": 0.8819197562214321,
+     "macro_f1": 0.8146432641081589,
+     "case_exact_match": 0.6088709677419355
+    }
+   },
+   "logreg": {
+    "T1_completeness": {
+     "accuracy": 0.9903225806451613,
+     "defect_f1": 0.9918032786885246,
+     "balanced_accuracy": 0.9918699186991871
+    },
+    "T2_fidelity": {
+     "accuracy": 0.9403225806451613,
+     "defect_f1": 0.0,
+     "balanced_accuracy": 0.47016129032258064
+    },
+    "T3_defects": {
+     "micro_f1": 0.8563710040522288,
+     "macro_f1": 0.923660304454462,
+     "exact_match": 0.7653225806451613
+    },
+    "T4_reconstruction": {
+     "call_accuracy": 0.7726003047232097,
+     "macro_f1": 0.7412571807109148,
+     "case_exact_match": 0.5798387096774194
+    }
+   }
+  }
+ }
+}

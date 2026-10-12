@@ -1,0 +1,1019 @@
+{
+  "langgraph==1.1.10": {
+    "framework": "langgraph",
+    "version": "1.1.10",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-04-27",
+    "cases": 44,
+    "harness_errors": 0,
+    "adapters": {
+      "langgraph/callbacks": "langgraph 1.1.10, langchain-core 1.3.2"
+    },
+    "seconds": 8,
+    "resolution": "as of 2026-04-28"
+  },
+  "langgraph==1.2.12": {
+    "framework": "langgraph",
+    "version": "1.2.12",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-09-21",
+    "cases": 44,
+    "harness_errors": 0,
+    "adapters": {
+      "langgraph/callbacks": "langgraph 1.2.12, langchain-core 1.6.4"
+    },
+    "seconds": 8,
+    "resolution": "as of 2026-09-22"
+  },
+  "langgraph==1.0.10": {
+    "framework": "langgraph",
+    "version": "1.0.10",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-02-27",
+    "cases": 44,
+    "harness_errors": 0,
+    "adapters": {
+      "langgraph/callbacks": "langgraph 1.0.10, langchain-core 1.2.16"
+    },
+    "seconds": 7,
+    "resolution": "as of 2026-02-28"
+  },
+  "langgraph==0.6.11": {
+    "framework": "langgraph",
+    "version": "0.6.11",
+    "stage": "done",
+    "ok": true,
+    "released": "2025-10-21",
+    "cases": 44,
+    "harness_errors": 0,
+    "adapters": {
+      "langgraph/callbacks": "langgraph 0.6.11, langchain-core 1.0.0"
+    },
+    "seconds": 7,
+    "resolution": "as of 2025-10-22"
+  },
+  "langgraph==0.4.10": {
+    "framework": "langgraph",
+    "version": "0.4.10",
+    "stage": "done",
+    "ok": true,
+    "released": "2025-06-25",
+    "cases": 44,
+    "harness_errors": 44,
+    "adapters": {
+      "langgraph/callbacks": "langgraph 0.4.10, langchain-core 0.3.66"
+    },
+    "first_harness_error": "RuntimeError: invalid case: model emitted no tool calls (run outcome: raised TypeError; TypeError: StateGraph.add_node() got an unexpected keyword argument 'input_schema')",
+    "seconds": 5,
+    "resolution": "as of 2025-06-26"
+  },
+  "langgraph==0.5.4": {
+    "framework": "langgraph",
+    "version": "0.5.4",
+    "stage": "done",
+    "ok": true,
+    "released": "2025-07-21",
+    "cases": 44,
+    "harness_errors": 0,
+    "adapters": {
+      "langgraph/callbacks": "langgraph 0.5.4, langchain-core 0.3.71"
+    },
+    "seconds": 7,
+    "resolution": "as of 2025-07-22"
+  },
+  "openai-agents==0.23.1": {
+    "framework": "openai-agents",
+    "version": "0.23.1",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-10-02",
+    "cases": 44,
+    "harness_errors": 0,
+    "adapters": {
+      "openai-agents/tracing": "openai-agents 0.23.1"
+    },
+    "seconds": 9,
+    "resolution": "as of 2026-10-03"
+  },
+  "openai-agents==0.22.3": {
+    "framework": "openai-agents",
+    "version": "0.22.3",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-09-17",
+    "cases": 44,
+    "harness_errors": 0,
+    "adapters": {
+      "openai-agents/tracing": "openai-agents 0.22.3"
+    },
+    "seconds": 8,
+    "resolution": "as of 2026-09-18"
+  },
+  "openai-agents==0.20.0": {
+    "framework": "openai-agents",
+    "version": "0.20.0",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-08-11",
+    "resolution": "as of 2026-08-12",
+    "cases": 44,
+    "harness_errors": 0,
+    "adapters": {
+      "openai-agents/tracing": "openai-agents 0.20.0"
+    },
+    "seconds": 8
+  },
+  "openai-agents==0.21.1": {
+    "framework": "openai-agents",
+    "version": "0.21.1",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-08-16",
+    "cases": 44,
+    "harness_errors": 0,
+    "adapters": {
+      "openai-agents/tracing": "openai-agents 0.21.1"
+    },
+    "seconds": 9,
+    "resolution": "as of 2026-08-17"
+  },
+  "openai-agents==0.19.4": {
+    "framework": "openai-agents",
+    "version": "0.19.4",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-08-05",
+    "resolution": "as of 2026-08-06",
+    "cases": 44,
+    "harness_errors": 0,
+    "adapters": {
+      "openai-agents/tracing": "openai-agents 0.19.4"
+    },
+    "seconds": 8
+  },
+  "openai-agents==0.18.3": {
+    "framework": "openai-agents",
+    "version": "0.18.3",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-07-17",
+    "resolution": "as of 2026-07-18",
+    "cases": 44,
+    "harness_errors": 0,
+    "adapters": {
+      "openai-agents/tracing": "openai-agents 0.18.3"
+    },
+    "seconds": 8
+  },
+  "openai-agents==0.17.8": {
+    "framework": "openai-agents",
+    "version": "0.17.8",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-07-06",
+    "resolution": "as of 2026-07-07",
+    "cases": 44,
+    "harness_errors": 0,
+    "adapters": {
+      "openai-agents/tracing": "openai-agents 0.17.8"
+    },
+    "seconds": 7
+  },
+  "openai-agents==0.16.1": {
+    "framework": "openai-agents",
+    "version": "0.16.1",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-05-07",
+    "resolution": "as of 2026-05-08",
+    "cases": 44,
+    "harness_errors": 0,
+    "adapters": {
+      "openai-agents/tracing": "openai-agents 0.16.1"
+    },
+    "seconds": 7
+  },
+  "openai-agents==0.15.3": {
+    "framework": "openai-agents",
+    "version": "0.15.3",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-05-06",
+    "resolution": "as of 2026-05-07",
+    "cases": 44,
+    "harness_errors": 0,
+    "adapters": {
+      "openai-agents/tracing": "openai-agents 0.15.3"
+    },
+    "seconds": 8
+  },
+  "openai-agents==0.14.8": {
+    "framework": "openai-agents",
+    "version": "0.14.8",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-04-29",
+    "resolution": "as of 2026-04-30",
+    "cases": 44,
+    "harness_errors": 0,
+    "adapters": {
+      "openai-agents/tracing": "openai-agents 0.14.8"
+    },
+    "seconds": 7
+  },
+  "pydantic-ai==2.54.0": {
+    "framework": "pydantic-ai",
+    "version": "2.54.0",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-10-03",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "pydantic-ai/history": "pydantic-ai-slim 2.54.0",
+      "pydantic-ai/otel": "pydantic-ai-slim 2.54.0"
+    },
+    "seconds": 11,
+    "resolution": "as of 2026-10-04"
+  },
+  "pydantic-ai==2.50.0": {
+    "framework": "pydantic-ai",
+    "version": "2.50.0",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-09-25",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "pydantic-ai/history": "pydantic-ai-slim 2.50.0",
+      "pydantic-ai/otel": "pydantic-ai-slim 2.50.0"
+    },
+    "seconds": 11,
+    "resolution": "as of 2026-09-26"
+  },
+  "pydantic-ai==2.45.0": {
+    "framework": "pydantic-ai",
+    "version": "2.45.0",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-09-18",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "pydantic-ai/history": "pydantic-ai-slim 2.45.0",
+      "pydantic-ai/otel": "pydantic-ai-slim 2.45.0"
+    },
+    "seconds": 11,
+    "resolution": "as of 2026-09-19"
+  },
+  "pydantic-ai==2.40.0": {
+    "framework": "pydantic-ai",
+    "version": "2.40.0",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-09-05",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "pydantic-ai/history": "pydantic-ai-slim 2.40.0",
+      "pydantic-ai/otel": "pydantic-ai-slim 2.40.0"
+    },
+    "seconds": 11,
+    "resolution": "as of 2026-09-06"
+  },
+  "pydantic-ai==2.35.3": {
+    "framework": "pydantic-ai",
+    "version": "2.35.3",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-08-28",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "pydantic-ai/history": "pydantic-ai-slim 2.35.3",
+      "pydantic-ai/otel": "pydantic-ai-slim 2.35.3"
+    },
+    "seconds": 11,
+    "resolution": "as of 2026-08-29"
+  },
+  "pydantic-ai==2.30.0": {
+    "framework": "pydantic-ai",
+    "version": "2.30.0",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-08-14",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "pydantic-ai/history": "pydantic-ai-slim 2.30.0",
+      "pydantic-ai/otel": "pydantic-ai-slim 2.30.0"
+    },
+    "seconds": 11,
+    "resolution": "as of 2026-08-15"
+  },
+  "pydantic-ai==2.25.0": {
+    "framework": "pydantic-ai",
+    "version": "2.25.0",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-08-06",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "pydantic-ai/history": "pydantic-ai-slim 2.25.0",
+      "pydantic-ai/otel": "pydantic-ai-slim 2.25.0"
+    },
+    "seconds": 11,
+    "resolution": "as of 2026-08-07"
+  },
+  "pydantic-ai==2.20.0": {
+    "framework": "pydantic-ai",
+    "version": "2.20.0",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-07-29",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "pydantic-ai/history": "pydantic-ai-slim 2.20.0",
+      "pydantic-ai/otel": "pydantic-ai-slim 2.20.0"
+    },
+    "seconds": 11,
+    "resolution": "as of 2026-07-30"
+  },
+  "pydantic-ai==2.15.0": {
+    "framework": "pydantic-ai",
+    "version": "2.15.0",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-07-22",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "pydantic-ai/history": "pydantic-ai-slim 2.15.0",
+      "pydantic-ai/otel": "pydantic-ai-slim 2.15.0"
+    },
+    "seconds": 11,
+    "resolution": "as of 2026-07-23"
+  },
+  "autogen==0.7.5": {
+    "framework": "autogen",
+    "version": "0.7.5",
+    "stage": "done",
+    "ok": true,
+    "released": "2025-09-30",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "autogen/messages": "autogen-agentchat 0.7.5, autogen-core 0.7.5",
+      "autogen/otel": "autogen-agentchat 0.7.5, autogen-core 0.7.5"
+    },
+    "seconds": 16,
+    "resolution": "as of 2025-10-01"
+  },
+  "autogen==0.7.2": {
+    "framework": "autogen",
+    "version": "0.7.2",
+    "stage": "done",
+    "ok": true,
+    "released": "2025-08-07",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "autogen/messages": "autogen-agentchat 0.7.2, autogen-core 0.7.2",
+      "autogen/otel": "autogen-agentchat 0.7.2, autogen-core 0.7.2"
+    },
+    "seconds": 16,
+    "resolution": "as of 2025-08-08"
+  },
+  "autogen==0.6.4": {
+    "framework": "autogen",
+    "version": "0.6.4",
+    "stage": "done",
+    "ok": true,
+    "released": "2025-07-09",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "autogen/messages": "autogen-agentchat 0.6.4, autogen-core 0.6.4",
+      "autogen/otel": "autogen-agentchat 0.6.4, autogen-core 0.6.4"
+    },
+    "seconds": 16,
+    "resolution": "as of 2025-07-10"
+  },
+  "autogen==0.6.1": {
+    "framework": "autogen",
+    "version": "0.6.1",
+    "stage": "done",
+    "ok": true,
+    "released": "2025-06-05",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "autogen/messages": "autogen-agentchat 0.6.1, autogen-core 0.6.1",
+      "autogen/otel": "autogen-agentchat 0.6.1, autogen-core 0.6.1"
+    },
+    "seconds": 7,
+    "resolution": "as of 2025-06-06"
+  },
+  "autogen==0.5.7": {
+    "framework": "autogen",
+    "version": "0.5.7",
+    "stage": "done",
+    "ok": true,
+    "released": "2025-05-14",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "autogen/messages": "autogen-agentchat 0.5.7, autogen-core 0.5.7",
+      "autogen/otel": "autogen-agentchat 0.5.7, autogen-core 0.5.7"
+    },
+    "seconds": 7,
+    "resolution": "as of 2025-05-15"
+  },
+  "autogen==0.5.3": {
+    "framework": "autogen",
+    "version": "0.5.3",
+    "stage": "done",
+    "ok": true,
+    "released": "2025-04-17",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "autogen/messages": "autogen-agentchat 0.5.3, autogen-core 0.5.3",
+      "autogen/otel": "autogen-agentchat 0.5.3, autogen-core 0.5.3"
+    },
+    "seconds": 7,
+    "resolution": "as of 2025-04-18"
+  },
+  "autogen==0.4.9.3": {
+    "framework": "autogen",
+    "version": "0.4.9.3",
+    "stage": "done",
+    "ok": true,
+    "released": "2025-03-29",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "autogen/messages": "autogen-agentchat 0.4.9.3, autogen-core 0.4.9.3",
+      "autogen/otel": "autogen-agentchat 0.4.9.3, autogen-core 0.4.9.3"
+    },
+    "seconds": 7,
+    "resolution": "as of 2025-03-30"
+  },
+  "smolagents==1.26.0": {
+    "framework": "smolagents",
+    "version": "1.26.0",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-05-29",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "smolagents/memory": "smolagents 1.26.0",
+      "smolagents/openinference": "smolagents 1.26.0"
+    },
+    "seconds": 25,
+    "resolution": "as of 2026-05-30"
+  },
+  "smolagents==1.24.0": {
+    "framework": "smolagents",
+    "version": "1.24.0",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-01-16",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "smolagents/memory": "smolagents 1.24.0",
+      "smolagents/openinference": "smolagents 1.24.0"
+    },
+    "seconds": 24,
+    "resolution": "as of 2026-01-17"
+  },
+  "smolagents==1.22.0": {
+    "framework": "smolagents",
+    "version": "1.22.0",
+    "stage": "done",
+    "ok": true,
+    "released": "2025-09-25",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "smolagents/memory": "smolagents 1.22.0",
+      "smolagents/openinference": "smolagents 1.22.0"
+    },
+    "seconds": 24,
+    "resolution": "as of 2025-09-26"
+  },
+  "smolagents==1.20.0": {
+    "framework": "smolagents",
+    "version": "1.20.0",
+    "stage": "done",
+    "ok": true,
+    "released": "2025-07-10",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "smolagents/memory": "smolagents 1.20.0",
+      "smolagents/openinference": "smolagents 1.20.0"
+    },
+    "seconds": 24,
+    "resolution": "as of 2025-07-11"
+  },
+  "smolagents==1.16.1": {
+    "framework": "smolagents",
+    "version": "1.16.1",
+    "stage": "done",
+    "ok": true,
+    "released": "2025-05-16",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "smolagents/memory": "smolagents 1.16.1",
+      "smolagents/openinference": "smolagents 1.16.1"
+    },
+    "seconds": 16,
+    "resolution": "as of 2025-05-17"
+  },
+  "smolagents==1.18.0": {
+    "framework": "smolagents",
+    "version": "1.18.0",
+    "stage": "done",
+    "ok": true,
+    "released": "2025-06-10",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "smolagents/memory": "smolagents 1.18.0",
+      "smolagents/openinference": "smolagents 1.18.0"
+    },
+    "seconds": 24,
+    "resolution": "as of 2025-06-11"
+  },
+  "smolagents==1.14.0": {
+    "framework": "smolagents",
+    "version": "1.14.0",
+    "stage": "done",
+    "ok": true,
+    "released": "2025-04-18",
+    "cases": 88,
+    "harness_errors": 88,
+    "adapters": {
+      "smolagents/memory": "smolagents 1.14.0",
+      "smolagents/openinference": "smolagents 1.14.0"
+    },
+    "first_harness_error": "RuntimeError: invalid case: model emitted no tool calls (run outcome: raised AttributeError; AttributeError: 'NoneType' object has no attribute 'content')",
+    "seconds": 12,
+    "resolution": "as of 2025-04-19"
+  },
+  "llamaindex==0.14.25": {
+    "framework": "llamaindex",
+    "version": "0.14.25",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-09-21",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "llamaindex/events": "llama-index-core 0.14.25",
+      "llamaindex/openinference": "llama-index-core 0.14.25"
+    },
+    "seconds": 22,
+    "resolution": "as of 2026-09-22"
+  },
+  "llamaindex==0.14.20": {
+    "framework": "llamaindex",
+    "version": "0.14.20",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-04-03",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "llamaindex/events": "llama-index-core 0.14.20",
+      "llamaindex/openinference": "llama-index-core 0.14.20"
+    },
+    "seconds": 103,
+    "resolution": "as of 2026-04-04"
+  },
+  "llamaindex==0.14.15": {
+    "framework": "llamaindex",
+    "version": "0.14.15",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-02-18",
+    "resolution": "as of 2026-02-19",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "llamaindex/events": "llama-index-core 0.14.15",
+      "llamaindex/openinference": "llama-index-core 0.14.15"
+    },
+    "seconds": 176
+  },
+  "llamaindex==0.14.10": {
+    "framework": "llamaindex",
+    "version": "0.14.10",
+    "stage": "done",
+    "ok": true,
+    "released": "2025-12-04",
+    "resolution": "as of 2025-12-05",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "llamaindex/events": "llama-index-core 0.14.10",
+      "llamaindex/openinference": "llama-index-core 0.14.10"
+    },
+    "seconds": 179
+  },
+  "llamaindex==0.14.5": {
+    "framework": "llamaindex",
+    "version": "0.14.5",
+    "stage": "done",
+    "ok": true,
+    "released": "2025-10-15",
+    "resolution": "as of 2025-10-16",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "llamaindex/events": "llama-index-core 0.14.5",
+      "llamaindex/openinference": "llama-index-core 0.14.5"
+    },
+    "seconds": 178
+  },
+  "llamaindex==0.14.0": {
+    "framework": "llamaindex",
+    "version": "0.14.0",
+    "stage": "done",
+    "ok": true,
+    "released": "2025-09-08",
+    "resolution": "as of 2025-09-09",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "llamaindex/events": "llama-index-core 0.14.0",
+      "llamaindex/openinference": "llama-index-core 0.14.0"
+    },
+    "seconds": 177
+  },
+  "llamaindex==0.13.6": {
+    "framework": "llamaindex",
+    "version": "0.13.6",
+    "stage": "done",
+    "ok": true,
+    "released": "2025-09-07",
+    "resolution": "as of 2025-09-08",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "llamaindex/events": "llama-index-core 0.13.6",
+      "llamaindex/openinference": "llama-index-core 0.13.6"
+    },
+    "seconds": 174
+  },
+  "semantic-kernel==1.44.1": {
+    "framework": "semantic-kernel",
+    "version": "1.44.1",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-08-06",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "semantic-kernel/filters": "semantic-kernel 1.44.1",
+      "semantic-kernel/otel": "semantic-kernel 1.44.1"
+    },
+    "seconds": 16,
+    "resolution": "as of 2026-08-07"
+  },
+  "semantic-kernel==1.42.0": {
+    "framework": "semantic-kernel",
+    "version": "1.42.0",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-05-14",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "semantic-kernel/filters": "semantic-kernel 1.42.0",
+      "semantic-kernel/otel": "semantic-kernel 1.42.0"
+    },
+    "seconds": 14,
+    "resolution": "as of 2026-05-15"
+  },
+  "semantic-kernel==1.40.0": {
+    "framework": "semantic-kernel",
+    "version": "1.40.0",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-03-02",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "semantic-kernel/filters": "semantic-kernel 1.40.0",
+      "semantic-kernel/otel": "semantic-kernel 1.40.0"
+    },
+    "seconds": 13,
+    "resolution": "as of 2026-03-03"
+  },
+  "semantic-kernel==1.38.0": {
+    "framework": "semantic-kernel",
+    "version": "1.38.0",
+    "stage": "done",
+    "ok": true,
+    "released": "2025-11-11",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "semantic-kernel/filters": "semantic-kernel 1.38.0",
+      "semantic-kernel/otel": "semantic-kernel 1.38.0"
+    },
+    "seconds": 13,
+    "resolution": "as of 2025-11-12"
+  },
+  "semantic-kernel==1.36.2": {
+    "framework": "semantic-kernel",
+    "version": "1.36.2",
+    "stage": "done",
+    "ok": true,
+    "released": "2025-09-04",
+    "resolution": "latest compatible (release-date resolution failed to install)",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "semantic-kernel/filters": "semantic-kernel 1.36.2",
+      "semantic-kernel/otel": "semantic-kernel 1.36.2"
+    },
+    "seconds": 12
+  },
+  "semantic-kernel==1.34.0": {
+    "framework": "semantic-kernel",
+    "version": "1.34.0",
+    "stage": "done",
+    "ok": true,
+    "released": "2025-06-25",
+    "resolution": "latest compatible (release-date resolution failed to install)",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "semantic-kernel/filters": "semantic-kernel 1.34.0",
+      "semantic-kernel/otel": "semantic-kernel 1.34.0"
+    },
+    "seconds": 11
+  },
+  "semantic-kernel==1.32.2": {
+    "framework": "semantic-kernel",
+    "version": "1.32.2",
+    "stage": "done",
+    "ok": true,
+    "released": "2025-06-04",
+    "resolution": "latest compatible (release-date resolution failed to install)",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "semantic-kernel/filters": "semantic-kernel 1.32.2",
+      "semantic-kernel/otel": "semantic-kernel 1.32.2"
+    },
+    "seconds": 11
+  },
+  "semantic-kernel==1.30.0": {
+    "framework": "semantic-kernel",
+    "version": "1.30.0",
+    "stage": "done",
+    "ok": true,
+    "released": "2025-05-15",
+    "resolution": "latest compatible (release-date resolution failed to install)",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "semantic-kernel/filters": "semantic-kernel 1.30.0",
+      "semantic-kernel/otel": "semantic-kernel 1.30.0"
+    },
+    "seconds": 11
+  },
+  "google-adk==2.11.0": {
+    "framework": "google-adk",
+    "version": "2.11.0",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-10-02",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "google-adk/events": "google-adk 2.11.0",
+      "google-adk/otel": "google-adk 2.11.0"
+    },
+    "seconds": 15,
+    "resolution": "as of 2026-10-03"
+  },
+  "google-adk==2.9.2": {
+    "framework": "google-adk",
+    "version": "2.9.2",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-09-18",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "google-adk/events": "google-adk 2.9.2",
+      "google-adk/otel": "google-adk 2.9.2"
+    },
+    "seconds": 14,
+    "resolution": "as of 2026-09-19"
+  },
+  "google-adk==2.7.1": {
+    "framework": "google-adk",
+    "version": "2.7.1",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-08-17",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "google-adk/events": "google-adk 2.7.1",
+      "google-adk/otel": "google-adk 2.7.1"
+    },
+    "seconds": 13,
+    "resolution": "as of 2026-08-18"
+  },
+  "google-adk==2.5.0": {
+    "framework": "google-adk",
+    "version": "2.5.0",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-07-16",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "google-adk/events": "google-adk 2.5.0",
+      "google-adk/otel": "google-adk 2.5.0"
+    },
+    "seconds": 12,
+    "resolution": "as of 2026-07-17"
+  },
+  "llamaindex==0.12.52": {
+    "framework": "llamaindex",
+    "version": "0.12.52",
+    "stage": "done",
+    "ok": true,
+    "released": "2025-07-22",
+    "resolution": "as of 2025-07-23",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "llamaindex/events": "llama-index-core 0.12.52",
+      "llamaindex/openinference": "llama-index-core 0.12.52"
+    },
+    "seconds": 253
+  },
+  "google-adk==2.3.0": {
+    "framework": "google-adk",
+    "version": "2.3.0",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-06-18",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "google-adk/events": "google-adk 2.3.0",
+      "google-adk/otel": "google-adk 2.3.0"
+    },
+    "seconds": 13,
+    "resolution": "as of 2026-06-19"
+  },
+  "google-adk==2.0.0": {
+    "framework": "google-adk",
+    "version": "2.0.0",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-05-19",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "google-adk/events": "google-adk 2.0.0",
+      "google-adk/otel": "google-adk 2.0.0"
+    },
+    "seconds": 12,
+    "resolution": "as of 2026-05-20"
+  },
+  "google-adk==1.39.1": {
+    "framework": "google-adk",
+    "version": "1.39.1",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-08-27",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "google-adk/events": "google-adk 1.39.1",
+      "google-adk/otel": "google-adk 1.39.1"
+    },
+    "seconds": 13,
+    "resolution": "as of 2026-08-28"
+  },
+  "google-adk==1.35.2": {
+    "framework": "google-adk",
+    "version": "1.35.2",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-06-17",
+    "cases": 88,
+    "harness_errors": 0,
+    "adapters": {
+      "google-adk/events": "google-adk 1.35.2",
+      "google-adk/otel": "google-adk 1.35.2"
+    },
+    "seconds": 15,
+    "resolution": "as of 2026-06-18"
+  },
+  "crewai==1.15.23": {
+    "framework": "crewai",
+    "version": "1.15.23",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-09-28",
+    "cases": 44,
+    "harness_errors": 0,
+    "adapters": {
+      "crewai/events": "crewai 1.15.23"
+    },
+    "seconds": 21,
+    "resolution": "as of 2026-09-29"
+  },
+  "crewai==1.14.7": {
+    "framework": "crewai",
+    "version": "1.14.7",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-06-11",
+    "cases": 44,
+    "harness_errors": 0,
+    "adapters": {
+      "crewai/events": "crewai 1.14.7"
+    },
+    "seconds": 19,
+    "resolution": "as of 2026-06-12"
+  },
+  "crewai==1.10.1": {
+    "framework": "crewai",
+    "version": "1.10.1",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-03-04",
+    "cases": 44,
+    "harness_errors": 0,
+    "adapters": {
+      "crewai/events": "crewai 1.10.1"
+    },
+    "seconds": 17,
+    "resolution": "as of 2026-03-05"
+  },
+  "crewai==1.12.2": {
+    "framework": "crewai",
+    "version": "1.12.2",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-03-26",
+    "cases": 44,
+    "harness_errors": 0,
+    "adapters": {
+      "crewai/events": "crewai 1.12.2"
+    },
+    "seconds": 19,
+    "resolution": "as of 2026-03-27"
+  },
+  "crewai==1.8.1": {
+    "framework": "crewai",
+    "version": "1.8.1",
+    "stage": "done",
+    "ok": true,
+    "released": "2026-01-15",
+    "cases": 44,
+    "harness_errors": 44,
+    "adapters": {
+      "crewai/events": "crewai 1.8.1"
+    },
+    "first_harness_error": "RuntimeError: invalid case: model emitted no tool calls (run outcome: completed; no exception)",
+    "seconds": 52,
+    "resolution": "as of 2026-01-16"
+  },
+  "crewai==1.6.1": {
+    "framework": "crewai",
+    "version": "1.6.1",
+    "stage": "done",
+    "ok": true,
+    "released": "2025-11-29",
+    "cases": 44,
+    "harness_errors": 44,
+    "adapters": {
+      "crewai/events": "crewai 1.6.1"
+    },
+    "first_harness_error": "RuntimeError: invalid case: model emitted no tool calls (run outcome: completed; no exception)",
+    "seconds": 56,
+    "resolution": "as of 2025-11-30"
+  }
+}

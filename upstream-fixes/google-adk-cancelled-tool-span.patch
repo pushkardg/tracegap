@@ -1,0 +1,94 @@
+diff --git a/src/google/adk/telemetry/_instrumentation.py b/src/google/adk/telemetry/_instrumentation.py
+index f3b940f..735aa67 100644
+--- a/src/google/adk/telemetry/_instrumentation.py
++++ b/src/google/adk/telemetry/_instrumentation.py
+@@ -14,6 +14,7 @@
+ 
+ from __future__ import annotations
+ 
++import asyncio
+ import contextlib
+ import dataclasses
+ import logging
+@@ -611,6 +612,7 @@ async def record_tool_execution(
+   start_time = time.monotonic()
+   workflow_scope = _workflow_scope()
+   caught_error: Exception | None = None
++  cancelled = False
+   detected_error_type: str | None = None
+   span: trace.Span | None = None
+   span_name = f"execute_tool {tool.name}"
+@@ -629,8 +631,16 @@ async def record_tool_execution(
+       except Exception as e:
+         caught_error = e
+         raise
++      except asyncio.CancelledError:
++        # CancelledError is a BaseException: it skips the handler above, and
++        # OpenTelemetry does not mark the span either, so without this the
++        # interrupted tool call would be traced as a success.
++        cancelled = True
++        raise
+       finally:
+         context_api.detach(token)
++        if cancelled and tel_ctx.error_type is None:
++          tel_ctx.error_type = "CancelledError"
+         detected_error_type = tel_ctx.error_type
+         response_event = (
+             tel_ctx.function_response_event if caught_error is None else None
+diff --git a/tests/unittests/telemetry/test_instrumentation.py b/tests/unittests/telemetry/test_instrumentation.py
+index 203a268..abd825c 100644
+--- a/tests/unittests/telemetry/test_instrumentation.py
++++ b/tests/unittests/telemetry/test_instrumentation.py
+@@ -14,6 +14,7 @@
+ 
+ # pylint: disable=protected-access
+ 
++import asyncio
+ import time
+ from unittest import mock
+ 
+@@ -36,6 +37,8 @@ from google.genai import types
+ from opentelemetry import trace
+ from opentelemetry.sdk._logs.export import InMemoryLogRecordExporter
+ from opentelemetry.sdk.metrics.export import InMemoryMetricReader
++from opentelemetry.sdk.trace import TracerProvider
++from opentelemetry.sdk.trace.export import SimpleSpanProcessor
+ from opentelemetry.sdk.trace.export.in_memory_span_exporter import InMemorySpanExporter
+ from opentelemetry.trace import StatusCode
+ import pytest
+@@ -1681,3 +1684,35 @@ async def test_responses_after_the_finish_reason_still_count_for_metrics(
+     tel_ctx.record_llm_response(ctx, _llm_response())
+ 
+   assert len(tel_ctx.llm_responses) == 2
++
++
++@pytest.mark.asyncio
++async def test_record_tool_execution_marks_cancelled_tool_span_as_error():
++  """A cancelled tool must not leave a span that reads as a successful call."""
++  exporter = InMemorySpanExporter()
++  provider = TracerProvider()
++  provider.add_span_processor(SimpleSpanProcessor(exporter))
++  tool = mock.MagicMock()
++  tool.name = "sample_tool"
++  agent = mock.MagicMock()
++  agent.name = "sample_agent"
++
++  with (
++      mock.patch.object(tracing, "tracer", provider.get_tracer(__name__)),
++      mock.patch.object(
++          _metrics, "record_tool_execution_duration"
++      ) as mock_record,
++  ):
++    with pytest.raises(asyncio.CancelledError):
++      async with _instrumentation.record_tool_execution(
++          tool=tool,
++          agent=agent,
++          function_args={},
++          invocation_context=mock.MagicMock(),
++      ):
++        raise asyncio.CancelledError()
++
++  spans = exporter.get_finished_spans()
++  assert len(spans) == 1
++  assert spans[0].status.status_code == StatusCode.ERROR
++  assert mock_record.call_args.kwargs["error_type"] == "CancelledError"

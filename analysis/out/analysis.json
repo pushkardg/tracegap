@@ -1,0 +1,1330 @@
+{
+ "bootstrap": {
+  "n_scenarios": 103,
+  "reps": 2000,
+  "ci": {
+   "crewai/events": {
+    "point": 1.0,
+    "lo": 1.0,
+    "hi": 1.0
+   },
+   "google-adk/otel": {
+    "point": 0.9223300970873787,
+    "lo": 0.8640776699029126,
+    "hi": 0.970873786407767
+   },
+   "llamaindex/events": {
+    "point": 0.912621359223301,
+    "lo": 0.8543689320388349,
+    "hi": 0.9611650485436893
+   },
+   "pydantic-ai/history": {
+    "point": 0.8980582524271845,
+    "lo": 0.8446601941747572,
+    "hi": 0.9514563106796117
+   },
+   "pydantic-ai/otel": {
+    "point": 0.8058252427184466,
+    "lo": 0.7281553398058253,
+    "hi": 0.8737864077669902
+   },
+   "autogen/otel": {
+    "point": 0.7766990291262136,
+    "lo": 0.6990291262135923,
+    "hi": 0.8543689320388349
+   },
+   "langgraph/callbacks": {
+    "point": 0.7766990291262136,
+    "lo": 0.6990291262135923,
+    "hi": 0.8543689320388349
+   },
+   "google-adk/events": {
+    "point": 0.7766990291262136,
+    "lo": 0.6990291262135923,
+    "hi": 0.8543689320388349
+   },
+   "openai-agents/tracing": {
+    "point": 0.7669902912621359,
+    "lo": 0.6893203883495146,
+    "hi": 0.8446601941747572
+   },
+   "autogen/messages": {
+    "point": 0.7427184466019418,
+    "lo": 0.6796116504854369,
+    "hi": 0.8058252427184466
+   },
+   "llamaindex/openinference": {
+    "point": 0.6990291262135923,
+    "lo": 0.6116504854368932,
+    "hi": 0.7864077669902912
+   },
+   "semantic-kernel/filters": {
+    "point": 0.6699029126213593,
+    "lo": 0.5825242718446602,
+    "hi": 0.7572815533980582
+   },
+   "semantic-kernel/otel": {
+    "point": 0.6019417475728155,
+    "lo": 0.5143203883495145,
+    "hi": 0.6893203883495146
+   },
+   "smolagents/openinference": {
+    "point": 0.44660194174757284,
+    "lo": 0.3592233009708738,
+    "hi": 0.5436893203883495
+   },
+   "smolagents/memory": {
+    "point": 0.3883495145631068,
+    "lo": 0.30097087378640774,
+    "hi": 0.4854368932038835
+   }
+  },
+  "adjacent": [
+   {
+    "higher": "crewai/events",
+    "lower": "google-adk/otel",
+    "p_higher": 0.9995,
+    "p_ge": 1.0
+   },
+   {
+    "higher": "google-adk/otel",
+    "lower": "llamaindex/events",
+    "p_higher": 0.567,
+    "p_ge": 0.656
+   },
+   {
+    "higher": "llamaindex/events",
+    "lower": "pydantic-ai/history",
+    "p_higher": 0.6225,
+    "p_ge": 0.6635
+   },
+   {
+    "higher": "pydantic-ai/history",
+    "lower": "pydantic-ai/otel",
+    "p_higher": 0.988,
+    "p_ge": 0.992
+   },
+   {
+    "higher": "pydantic-ai/otel",
+    "lower": "autogen/otel",
+    "p_higher": 0.7515,
+    "p_ge": 0.8305
+   },
+   {
+    "higher": "autogen/otel",
+    "lower": "langgraph/callbacks",
+    "p_higher": 0.462,
+    "p_ge": 0.5655
+   },
+   {
+    "higher": "langgraph/callbacks",
+    "lower": "google-adk/events",
+    "p_higher": 0.478,
+    "p_ge": 0.543
+   },
+   {
+    "higher": "google-adk/events",
+    "lower": "openai-agents/tracing",
+    "p_higher": 0.5125,
+    "p_ge": 0.5875
+   },
+   {
+    "higher": "openai-agents/tracing",
+    "lower": "autogen/messages",
+    "p_higher": 0.6975,
+    "p_ge": 0.732
+   },
+   {
+    "higher": "autogen/messages",
+    "lower": "llamaindex/openinference",
+    "p_higher": 0.7685,
+    "p_ge": 0.7995
+   },
+   {
+    "higher": "llamaindex/openinference",
+    "lower": "semantic-kernel/filters",
+    "p_higher": 0.668,
+    "p_ge": 0.7325
+   },
+   {
+    "higher": "semantic-kernel/filters",
+    "lower": "semantic-kernel/otel",
+    "p_higher": 1.0,
+    "p_ge": 1.0
+   },
+   {
+    "higher": "semantic-kernel/otel",
+    "lower": "smolagents/openinference",
+    "p_higher": 1.0,
+    "p_ge": 1.0
+   },
+   {
+    "higher": "smolagents/openinference",
+    "lower": "smolagents/memory",
+    "p_higher": 0.997,
+    "p_ge": 1.0
+   }
+  ]
+ },
+ "categories": {
+  "cats": [
+   "basic",
+   "failure",
+   "rejected",
+   "identity",
+   "payload",
+   "interrupt",
+   "structure"
+  ],
+  "matrix": {
+   "autogen/messages": {
+    "basic": [
+     8,
+     8
+    ],
+    "failure": [
+     6,
+     6
+    ],
+    "rejected": [
+     6,
+     6
+    ],
+    "identity": [
+     2,
+     2
+    ],
+    "payload": [
+     10,
+     10
+    ],
+    "interrupt": [
+     5,
+     8
+    ],
+    "structure": [
+     2,
+     4
+    ]
+   },
+   "autogen/otel": {
+    "basic": [
+     8,
+     8
+    ],
+    "failure": [
+     6,
+     6
+    ],
+    "rejected": [
+     4,
+     6
+    ],
+    "identity": [
+     2,
+     2
+    ],
+    "payload": [
+     10,
+     10
+    ],
+    "interrupt": [
+     6,
+     8
+    ],
+    "structure": [
+     4,
+     4
+    ]
+   },
+   "langgraph/callbacks": {
+    "basic": [
+     8,
+     8
+    ],
+    "failure": [
+     6,
+     6
+    ],
+    "rejected": [
+     4,
+     6
+    ],
+    "identity": [
+     2,
+     2
+    ],
+    "payload": [
+     10,
+     10
+    ],
+    "interrupt": [
+     6,
+     8
+    ],
+    "structure": [
+     4,
+     4
+    ]
+   },
+   "openai-agents/tracing": {
+    "basic": [
+     8,
+     8
+    ],
+    "failure": [
+     6,
+     6
+    ],
+    "rejected": [
+     4,
+     6
+    ],
+    "identity": [
+     0,
+     2
+    ],
+    "payload": [
+     10,
+     10
+    ],
+    "interrupt": [
+     6,
+     8
+    ],
+    "structure": [
+     4,
+     4
+    ]
+   },
+   "pydantic-ai/history": {
+    "basic": [
+     8,
+     8
+    ],
+    "failure": [
+     6,
+     6
+    ],
+    "rejected": [
+     6,
+     6
+    ],
+    "identity": [
+     1,
+     2
+    ],
+    "payload": [
+     10,
+     10
+    ],
+    "interrupt": [
+     8,
+     8
+    ],
+    "structure": [
+     2,
+     4
+    ]
+   },
+   "pydantic-ai/otel": {
+    "basic": [
+     8,
+     8
+    ],
+    "failure": [
+     6,
+     6
+    ],
+    "rejected": [
+     4,
+     6
+    ],
+    "identity": [
+     0,
+     2
+    ],
+    "payload": [
+     10,
+     10
+    ],
+    "interrupt": [
+     8,
+     8
+    ],
+    "structure": [
+     4,
+     4
+    ]
+   },
+   "smolagents/memory": {
+    "basic": [
+     8,
+     8
+    ],
+    "failure": [
+     0,
+     6
+    ],
+    "rejected": [
+     0,
+     6
+    ],
+    "identity": [
+     0,
+     2
+    ],
+    "payload": [
+     10,
+     10
+    ],
+    "interrupt": [
+     6,
+     8
+    ],
+    "structure": [
+     4,
+     4
+    ]
+   },
+   "smolagents/openinference": {
+    "basic": [
+     8,
+     8
+    ],
+    "failure": [
+     6,
+     6
+    ],
+    "rejected": [
+     0,
+     6
+    ],
+    "identity": [
+     0,
+     2
+    ],
+    "payload": [
+     10,
+     10
+    ],
+    "interrupt": [
+     6,
+     8
+    ],
+    "structure": [
+     4,
+     4
+    ]
+   },
+   "llamaindex/events": {
+    "basic": [
+     8,
+     8
+    ],
+    "failure": [
+     6,
+     6
+    ],
+    "rejected": [
+     6,
+     6
+    ],
+    "identity": [
+     2,
+     2
+    ],
+    "payload": [
+     10,
+     10
+    ],
+    "interrupt": [
+     6,
+     8
+    ],
+    "structure": [
+     4,
+     4
+    ]
+   },
+   "llamaindex/openinference": {
+    "basic": [
+     8,
+     8
+    ],
+    "failure": [
+     6,
+     6
+    ],
+    "rejected": [
+     4,
+     6
+    ],
+    "identity": [
+     2,
+     2
+    ],
+    "payload": [
+     10,
+     10
+    ],
+    "interrupt": [
+     4,
+     8
+    ],
+    "structure": [
+     4,
+     4
+    ]
+   },
+   "semantic-kernel/filters": {
+    "basic": [
+     8,
+     8
+    ],
+    "failure": [
+     6,
+     6
+    ],
+    "rejected": [
+     2,
+     6
+    ],
+    "identity": [
+     2,
+     2
+    ],
+    "payload": [
+     10,
+     10
+    ],
+    "interrupt": [
+     8,
+     8
+    ],
+    "structure": [
+     4,
+     4
+    ]
+   },
+   "semantic-kernel/otel": {
+    "basic": [
+     8,
+     8
+    ],
+    "failure": [
+     6,
+     6
+    ],
+    "rejected": [
+     2,
+     6
+    ],
+    "identity": [
+     2,
+     2
+    ],
+    "payload": [
+     10,
+     10
+    ],
+    "interrupt": [
+     6,
+     8
+    ],
+    "structure": [
+     4,
+     4
+    ]
+   },
+   "google-adk/events": {
+    "basic": [
+     8,
+     8
+    ],
+    "failure": [
+     6,
+     6
+    ],
+    "rejected": [
+     6,
+     6
+    ],
+    "identity": [
+     2,
+     2
+    ],
+    "payload": [
+     10,
+     10
+    ],
+    "interrupt": [
+     8,
+     8
+    ],
+    "structure": [
+     4,
+     4
+    ]
+   },
+   "google-adk/otel": {
+    "basic": [
+     8,
+     8
+    ],
+    "failure": [
+     4,
+     6
+    ],
+    "rejected": [
+     6,
+     6
+    ],
+    "identity": [
+     2,
+     2
+    ],
+    "payload": [
+     10,
+     10
+    ],
+    "interrupt": [
+     6,
+     8
+    ],
+    "structure": [
+     4,
+     4
+    ]
+   },
+   "crewai/events": {
+    "basic": [
+     8,
+     8
+    ],
+    "failure": [
+     6,
+     6
+    ],
+    "rejected": [
+     6,
+     6
+    ],
+    "identity": [
+     2,
+     2
+    ],
+    "payload": [
+     10,
+     10
+    ],
+    "interrupt": [
+     8,
+     8
+    ],
+    "structure": [
+     4,
+     4
+    ]
+   }
+  }
+ },
+ "conditions": {
+  "conditions": [
+   {
+    "key": "parallel",
+    "label": "parallel calls in a turn",
+    "scenarios": 192,
+    "with": 0.6123263888888889,
+    "without": 0.9125,
+    "n_with": 5760,
+    "n_without": 240
+   },
+   {
+    "key": "raising_tool",
+    "label": "a tool raises",
+    "scenarios": 126,
+    "with": 0.5796296296296296,
+    "without": 0.7004504504504504,
+    "n_with": 3780,
+    "n_without": 2220
+   },
+   {
+    "key": "stress",
+    "label": "a tool raises inside a parallel batch (Stress)",
+    "scenarios": 118,
+    "with": 0.5655367231638418,
+    "without": 0.7089430894308943,
+    "n_with": 3540,
+    "n_without": 2460
+   },
+   {
+    "key": "rejected",
+    "label": "a call is rejected",
+    "scenarios": 133,
+    "with": 0.5340852130325815,
+    "without": 0.8034825870646766,
+    "n_with": 3990,
+    "n_without": 2010
+   },
+   {
+    "key": "cancelled",
+    "label": "run is cancelled",
+    "scenarios": 52,
+    "with": 0.5538461538461539,
+    "without": 0.6490990990990991,
+    "n_with": 1560,
+    "n_without": 4440
+   },
+   {
+    "key": "model_error",
+    "label": "model call fails",
+    "scenarios": 27,
+    "with": 0.6234567901234568,
+    "without": 0.6244701348747591,
+    "n_with": 810,
+    "n_without": 5190
+   },
+   {
+    "key": "limit",
+    "label": "turn limit reached",
+    "scenarios": 29,
+    "with": 0.6344827586206897,
+    "without": 0.6226120857699805,
+    "n_with": 870,
+    "n_without": 5130
+   },
+   {
+    "key": "concurrent",
+    "label": "two concurrent runs",
+    "scenarios": 14,
+    "with": 0.6095238095238096,
+    "without": 0.6254480286738351,
+    "n_with": 420,
+    "n_without": 5580
+   },
+   {
+    "key": "nested",
+    "label": "nested agent",
+    "scenarios": 15,
+    "with": 0.56,
+    "without": 0.6295495495495496,
+    "n_with": 450,
+    "n_without": 5550
+   },
+   {
+    "key": "sync_tool",
+    "label": "synchronous tool",
+    "scenarios": 103,
+    "with": 0.597411003236246,
+    "without": 0.6529209621993127,
+    "n_with": 3090,
+    "n_without": 2910
+   },
+   {
+    "key": "large_output",
+    "label": "large output",
+    "scenarios": 53,
+    "with": 0.6534591194968553,
+    "without": 0.6138321995464853,
+    "n_with": 1590,
+    "n_without": 4410
+   }
+  ],
+  "logit": {
+   "parallel": -1.2294439543775797,
+   "raising_tool": -0.5045203695591784,
+   "rejected": -1.500047290680512,
+   "cancelled": -0.7041678155685405,
+   "model_error": -0.10182851716697434,
+   "limit": -0.3276995113013661,
+   "concurrent": -0.04559227764116892,
+   "nested": -0.3720465824561288,
+   "sync_tool": 0.16228776257256178,
+   "large_output": 0.36899096027231015,
+   "log1p_calls": -0.3229366053671096
+  },
+  "curve": {
+   "all": [
+    [
+     "1-3",
+     0.8346153846153846,
+     780
+    ],
+    [
+     "4-6",
+     0.6457364341085271,
+     1290
+    ],
+    [
+     "7-10",
+     0.6009950248756218,
+     2010
+    ],
+    [
+     "11-15",
+     0.5612244897959183,
+     1470
+    ],
+    [
+     "16+",
+     0.5088888888888888,
+     450
+    ]
+   ],
+   "autogen/messages": [
+    [
+     "1-3",
+     0.8846153846153846,
+     52
+    ],
+    [
+     "4-6",
+     0.7441860465116279,
+     86
+    ],
+    [
+     "7-10",
+     0.7238805970149254,
+     134
+    ],
+    [
+     "11-15",
+     0.6632653061224489,
+     98
+    ],
+    [
+     "16+",
+     0.6333333333333333,
+     30
+    ]
+   ],
+   "autogen/otel": [
+    [
+     "1-3",
+     0.9230769230769231,
+     52
+    ],
+    [
+     "4-6",
+     0.627906976744186,
+     86
+    ],
+    [
+     "7-10",
+     0.6716417910447762,
+     134
+    ],
+    [
+     "11-15",
+     0.5918367346938775,
+     98
+    ],
+    [
+     "16+",
+     0.6,
+     30
+    ]
+   ],
+   "crewai/events": [
+    [
+     "1-3",
+     1.0,
+     52
+    ],
+    [
+     "4-6",
+     1.0,
+     86
+    ],
+    [
+     "7-10",
+     1.0,
+     134
+    ],
+    [
+     "11-15",
+     1.0,
+     98
+    ],
+    [
+     "16+",
+     1.0,
+     30
+    ]
+   ],
+   "google-adk/events": [
+    [
+     "1-3",
+     0.8461538461538461,
+     52
+    ],
+    [
+     "4-6",
+     0.46511627906976744,
+     86
+    ],
+    [
+     "7-10",
+     0.29850746268656714,
+     134
+    ],
+    [
+     "11-15",
+     0.20408163265306123,
+     98
+    ],
+    [
+     "16+",
+     0.2,
+     30
+    ]
+   ],
+   "google-adk/otel": [
+    [
+     "1-3",
+     1.0,
+     52
+    ],
+    [
+     "4-6",
+     0.8837209302325582,
+     86
+    ],
+    [
+     "7-10",
+     0.9701492537313433,
+     134
+    ],
+    [
+     "11-15",
+     1.0,
+     98
+    ],
+    [
+     "16+",
+     1.0,
+     30
+    ]
+   ],
+   "langgraph/callbacks": [
+    [
+     "1-3",
+     0.6923076923076923,
+     52
+    ],
+    [
+     "4-6",
+     0.6395348837209303,
+     86
+    ],
+    [
+     "7-10",
+     0.6492537313432836,
+     134
+    ],
+    [
+     "11-15",
+     0.6530612244897959,
+     98
+    ],
+    [
+     "16+",
+     0.6666666666666666,
+     30
+    ]
+   ],
+   "llamaindex/events": [
+    [
+     "1-3",
+     0.7692307692307693,
+     52
+    ],
+    [
+     "4-6",
+     0.8604651162790697,
+     86
+    ],
+    [
+     "7-10",
+     0.8507462686567164,
+     134
+    ],
+    [
+     "11-15",
+     0.9183673469387755,
+     98
+    ],
+    [
+     "16+",
+     0.8,
+     30
+    ]
+   ],
+   "llamaindex/openinference": [
+    [
+     "1-3",
+     0.6923076923076923,
+     52
+    ],
+    [
+     "4-6",
+     0.5348837209302325,
+     86
+    ],
+    [
+     "7-10",
+     0.5522388059701493,
+     134
+    ],
+    [
+     "11-15",
+     0.5306122448979592,
+     98
+    ],
+    [
+     "16+",
+     0.4,
+     30
+    ]
+   ],
+   "openai-agents/tracing": [
+    [
+     "1-3",
+     0.9230769230769231,
+     52
+    ],
+    [
+     "4-6",
+     0.627906976744186,
+     86
+    ],
+    [
+     "7-10",
+     0.6716417910447762,
+     134
+    ],
+    [
+     "11-15",
+     0.5918367346938775,
+     98
+    ],
+    [
+     "16+",
+     0.6,
+     30
+    ]
+   ],
+   "pydantic-ai/history": [
+    [
+     "1-3",
+     0.9423076923076923,
+     52
+    ],
+    [
+     "4-6",
+     0.7790697674418605,
+     86
+    ],
+    [
+     "7-10",
+     0.5522388059701493,
+     134
+    ],
+    [
+     "11-15",
+     0.5816326530612245,
+     98
+    ],
+    [
+     "16+",
+     0.4,
+     30
+    ]
+   ],
+   "pydantic-ai/otel": [
+    [
+     "1-3",
+     0.9230769230769231,
+     52
+    ],
+    [
+     "4-6",
+     0.7790697674418605,
+     86
+    ],
+    [
+     "7-10",
+     0.7611940298507462,
+     134
+    ],
+    [
+     "11-15",
+     0.7244897959183674,
+     98
+    ],
+    [
+     "16+",
+     0.7333333333333333,
+     30
+    ]
+   ],
+   "semantic-kernel/filters": [
+    [
+     "1-3",
+     0.7692307692307693,
+     52
+    ],
+    [
+     "4-6",
+     0.6511627906976745,
+     86
+    ],
+    [
+     "7-10",
+     0.5074626865671642,
+     134
+    ],
+    [
+     "11-15",
+     0.4489795918367347,
+     98
+    ],
+    [
+     "16+",
+     0.2,
+     30
+    ]
+   ],
+   "semantic-kernel/otel": [
+    [
+     "1-3",
+     0.7692307692307693,
+     52
+    ],
+    [
+     "4-6",
+     0.5116279069767442,
+     86
+    ],
+    [
+     "7-10",
+     0.43283582089552236,
+     134
+    ],
+    [
+     "11-15",
+     0.3469387755102041,
+     98
+    ],
+    [
+     "16+",
+     0.2,
+     30
+    ]
+   ],
+   "smolagents/memory": [
+    [
+     "1-3",
+     0.6538461538461539,
+     52
+    ],
+    [
+     "4-6",
+     0.13953488372093023,
+     86
+    ],
+    [
+     "7-10",
+     0.1044776119402985,
+     134
+    ],
+    [
+     "11-15",
+     0.04081632653061224,
+     98
+    ],
+    [
+     "16+",
+     0.06666666666666667,
+     30
+    ]
+   ],
+   "smolagents/openinference": [
+    [
+     "1-3",
+     0.7307692307692307,
+     52
+    ],
+    [
+     "4-6",
+     0.4418604651162791,
+     86
+    ],
+    [
+     "7-10",
+     0.26865671641791045,
+     134
+    ],
+    [
+     "11-15",
+     0.12244897959183673,
+     98
+    ],
+    [
+     "16+",
+     0.13333333333333333,
+     30
+    ]
+   ]
+  },
+  "calls_total": 1744
+ },
+ "ablation": {
+  "cases": 6660,
+  "incomplete": 2328,
+  "by_defect": {
+   "missing_call": 618,
+   "invisible_attempt": 1617,
+   "false_success": 106,
+   "status_mismatch": 375
+  },
+  "only_reason": {
+   "missing_call": 248,
+   "invisible_attempt": 1230,
+   "false_success": 88,
+   "status_mismatch": 374
+  },
+  "recall_only_misses": 1710,
+  "recall_status_misses": 1230
+ },
+ "agreement": {
+  "core_vs_generated_stable": 0.7148814489299585,
+  "seed1_vs_seed2": 0.7707408773999105,
+  "seed2_rates": {
+   "autogen/messages": 0.7222222222222222,
+   "autogen/otel": 0.6222222222222222,
+   "langgraph/callbacks": 0.6,
+   "openai-agents/tracing": 0.6222222222222222,
+   "pydantic-ai/history": 0.9111111111111111,
+   "pydantic-ai/otel": 0.7111111111111111,
+   "smolagents/memory": 0.35555555555555557,
+   "smolagents/openinference": 0.35555555555555557,
+   "llamaindex/events": 0.8222222222222222,
+   "llamaindex/openinference": 0.5111111111111111,
+   "semantic-kernel/filters": 0.5555555555555556,
+   "semantic-kernel/otel": 0.4888888888888889,
+   "google-adk/events": 0.8666666666666667,
+   "google-adk/otel": 0.9333333333333333,
+   "crewai/events": 1.0
+  },
+  "seed1_vs_seed3": 0.7767356373806175,
+  "seed3_rates": {
+   "autogen/messages": 0.7073170731707317,
+   "autogen/otel": 0.6585365853658537,
+   "langgraph/callbacks": 0.7560975609756098,
+   "openai-agents/tracing": 0.6585365853658537,
+   "pydantic-ai/history": 0.9146341463414634,
+   "pydantic-ai/otel": 0.7317073170731707,
+   "smolagents/memory": 0.34146341463414637,
+   "smolagents/openinference": 0.43902439024390244,
+   "llamaindex/events": 0.926829268292683,
+   "llamaindex/openinference": 0.5853658536585366,
+   "semantic-kernel/filters": 0.6341463414634146,
+   "semantic-kernel/otel": 0.4878048780487805,
+   "google-adk/events": 0.8536585365853658,
+   "google-adk/otel": 0.7804878048780488,
+   "crewai/events": 1.0
+  },
+  "seed2_vs_seed3": 0.8019417249691232,
+  "seed1_rates": {
+   "autogen/messages": 0.7073170731707317,
+   "autogen/otel": 0.7439024390243902,
+   "langgraph/callbacks": 0.7439024390243902,
+   "openai-agents/tracing": 0.7439024390243902,
+   "pydantic-ai/history": 0.8902439024390244,
+   "pydantic-ai/otel": 0.7804878048780488,
+   "smolagents/memory": 0.3170731707317073,
+   "smolagents/openinference": 0.36585365853658536,
+   "llamaindex/events": 0.9024390243902439,
+   "llamaindex/openinference": 0.6585365853658537,
+   "semantic-kernel/filters": 0.6097560975609756,
+   "semantic-kernel/otel": 0.5365853658536586,
+   "google-adk/events": 0.7195121951219512,
+   "google-adk/otel": 0.9146341463414634,
+   "crewai/events": 1.0
+  }
+ },
+ "cost": {
+  "autogen/messages": {
+   "median_s": 0.0755,
+   "total_min": 3.9983333333333335
+  },
+  "autogen/otel": {
+   "median_s": 0.078,
+   "total_min": 4.020816666666667
+  },
+  "crewai/events": {
+   "median_s": 0.126,
+   "total_min": 6.285266666666667
+  },
+  "google-adk/events": {
+   "median_s": 0.0755,
+   "total_min": 1.0277
+  },
+  "google-adk/otel": {
+   "median_s": 0.077,
+   "total_min": 1.0254166666666664
+  },
+  "langgraph/callbacks": {
+   "median_s": 0.077,
+   "total_min": 1.3538500000000002
+  },
+  "llamaindex/events": {
+   "median_s": 0.107,
+   "total_min": 4.180000000000001
+  },
+  "llamaindex/openinference": {
+   "median_s": 0.126,
+   "total_min": 4.28175
+  },
+  "openai-agents/tracing": {
+   "median_s": 0.076,
+   "total_min": 1.8869166666666666
+  },
+  "pydantic-ai/history": {
+   "median_s": 0.064,
+   "total_min": 1.1902166666666667
+  },
+  "pydantic-ai/otel": {
+   "median_s": 0.074,
+   "total_min": 1.25235
+  },
+  "semantic-kernel/filters": {
+   "median_s": 0.067,
+   "total_min": 2.259716666666667
+  },
+  "semantic-kernel/otel": {
+   "median_s": 0.067,
+   "total_min": 2.256716666666667
+  },
+  "smolagents/memory": {
+   "median_s": 0.08,
+   "total_min": 5.847583333333334
+  },
+  "smolagents/openinference": {
+   "median_s": 0.091,
+   "total_min": 5.91865
+  }
+ },
+ "stable_total": [
+  2304,
+  2980,
+  3090
+ ],
+ "stress_total": [
+  2028,
+  2942,
+  3570
+ ]
+}

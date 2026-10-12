@@ -1,0 +1,22 @@
+S01 & basic & Single call & One successful tool call, then a final answer. \\
+S02 & basic & Sequential calls & Three tool calls across three model turns. \\
+S03 & basic & Parallel calls & Five tool calls emitted in one model turn. \\
+S04 & basic & Long session & Twenty-five sequential tool turns (limits raised so the run can finish). \\
+S05 & failure & Tool raises & A tool raises an exception. The trace should record the call as failed. \\
+S06 & failure & Failure then retry & A failing call is followed by a successful call in the next turn. \\
+S07 & failure & Parallel batch with one failure & Three calls in one turn; the middle one raises. Siblings may or may not be cancelled. \\
+S08 & rejected & Unknown tool & The model calls a tool that does not exist. Nothing executes; the attempt should still be visible. \\
+S09 & rejected & Invalid argument type & The model passes a string where an integer is required. \\
+S10 & rejected & Missing required argument & The model omits a required argument. \\
+S11 & identity & Duplicate call ids & Two different calls in one turn share the same call id (a real provider glitch). \\
+S12 & payload & Unicode and escape characters & Arguments contain emoji, quotes, newlines, backslashes and non-Latin script. \\
+S13 & payload & Large output & A tool returns 200,000 characters. \\
+S14 & payload & Structured output & A tool returns a dict rather than a string. \\
+S15 & payload & None output & A tool returns None. \\
+S16 & payload & Synchronous tool & A plain (non-async) tool, which frameworks typically run in a worker thread. \\
+S17 & interrupt & Cancelled during a tool & The run is cancelled 0.3 s into a 2 s tool call. The call started but never finished. \\
+S18 & interrupt & Cancelled after tools completed & Two tools finish, then the run is cancelled while the model is thinking. Completed calls must not disappear. \\
+S19 & interrupt & Model error after tools & Two tools finish, then the model provider fails. Completed calls must not disappear. \\
+S20 & interrupt & Turn limit exceeded & The model keeps calling tools past the framework's turn limit (3 model calls). \\
+S21 & structure & Concurrent runs & Two runs of the same agent execute concurrently. Each run's trace must contain only its own calls. \\
+S22 & structure & Nested agent as tool & The outer agent calls a 'delegate' tool that runs an inner agent, which calls its own tools. \\

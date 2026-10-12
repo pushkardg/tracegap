@@ -1,0 +1,9 @@
+{
+  "current": 6660,
+  "history": 4884,
+  "tasks": {
+    "train": 5884,
+    "validation": 2344,
+    "test": 2832
+  }
+}

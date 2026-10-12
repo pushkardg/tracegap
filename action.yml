@@ -1,0 +1,65 @@
+name: TraceGap
+description: Check that an agent framework's trace records every tool call, honestly and exactly.
+branding:
+  icon: activity
+  color: blue
+inputs:
+  adapters:
+    description: Built-in adapter keys or framework names to run (space separated). Empty runs all installed ones.
+    default: ""
+  adapter-module:
+    description: Your own adapters as module:Class (space separated), importable after `install` runs.
+    default: ""
+  scenarios:
+    description: Scenario ids to run (space separated). Empty runs all.
+    default: ""
+  tier:
+    description: stable (default, deterministic) | stress | all
+    default: stable
+  install:
+    description: Extra pip install arguments, e.g. "-e ." to test the framework checkout itself.
+    default: ""
+  baseline:
+    description: Path to an earlier results.json. The step fails only if a case regressed.
+    default: ""
+  fail-on:
+    description: none | incomplete | any. Fail the step if any case is incomplete (or also unfaithful).
+    default: none
+  python-version:
+    default: "3.13"
+outputs:
+  results:
+    description: Path to results.json
+    value: ${{ steps.run.outputs.results }}
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-python@v5
+      with:
+        python-version: ${{ inputs.python-version }}
+    - shell: bash
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install "${{ github.action_path }}"
+        if [ -n "${{ inputs.install }}" ]; then python -m pip install ${{ inputs.install }}; fi
+    - id: run
+      shell: bash
+      run: |
+        set +e
+        mkdir -p tracegap-results
+        args=(--out tracegap-results/results.json --traces tracegap-results/traces --fail-on "${{ inputs.fail-on }}" --tier "${{ inputs.tier }}")
+        [ -n "${{ inputs.adapters }}" ] && args+=(--adapters ${{ inputs.adapters }})
+        [ -n "${{ inputs.adapter-module }}" ] && args+=(--adapter-module ${{ inputs.adapter-module }})
+        [ -n "${{ inputs.scenarios }}" ] && args+=(--scenarios ${{ inputs.scenarios }})
+        [ -n "${{ inputs.baseline }}" ] && args+=(--baseline "${{ inputs.baseline }}")
+        python -m tracegap.cli "${args[@]}" -v | tee tracegap-results/log.txt
+        status=${PIPESTATUS[0]}
+        python -m tracegap.report tracegap-results/results.json --out tracegap-results/LEADERBOARD.md
+        cat tracegap-results/LEADERBOARD.md >> "$GITHUB_STEP_SUMMARY"
+        echo "results=tracegap-results/results.json" >> "$GITHUB_OUTPUT"
+        exit $status
+    - if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: tracegap-results
+        path: tracegap-results/

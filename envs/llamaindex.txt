@@ -1,0 +1,8 @@
+# Pinned versions used for TraceGap v1.0 results (llamaindex environment)
+llama-index-core==0.14.25
+llama-index-workflows==2.25.0
+openinference-instrumentation-llama-index==4.5.4
+openinference-instrumentation==0.1.70
+opentelemetry-api==1.45.0
+opentelemetry-sdk==1.45.0
+pytest

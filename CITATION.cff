@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use TraceGap, please cite it as below."
+title: "TraceGap: Measuring Whether LLM Agent Frameworks Record the Tool Calls Their Agents Make"
+type: software
+authors:
+  - family-names: Gopalakrishna
+    given-names: Pushkar Devanahalli
+    email: pushkar87dg@gmail.com
+version: 1.0.0
+date-released: 2026-10-03
+license: MIT
+keywords:
+  - LLM agents
+  - observability
+  - tracing
+  - provenance
+  - benchmark
+  - OpenTelemetry
+abstract: >-
+  TraceGap measures whether LLM agent frameworks faithfully record the tool
+  calls their agents make. Scripted models drive nine frameworks (15 trace
+  surfaces) through 22 hand-written fault scenarios and a seeded generated
+  suite, in two execution modes. Framework-independent ground truth (the
+  emitted calls and an execution ledger written by the tools themselves) is
+  compared with each framework's own trace for completeness and fidelity. The
+  release includes a labeled corpus of about 11,500 cases, including a history
+  across 65 framework releases.
+# After the first GitHub release is archived on Zenodo, add:
+# doi: 10.5281/zenodo.XXXXXXX
+repository-code: https://github.com/pushkardg/tracegap

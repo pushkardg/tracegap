@@ -1,0 +1,6 @@
+# Pinned versions used for TraceGap v1.0 results (google-adk environment)
+google-adk==2.11.0
+google-genai==2.28.0
+opentelemetry-api==1.42.1
+opentelemetry-sdk==1.42.1
+pytest

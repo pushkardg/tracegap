@@ -1,0 +1,11 @@
+\texttt{drop\_rejected} & rejected calls (unknown tool, bad arguments) are not recorded & S08--S10 & C & 252/400 \\
+\texttt{cancelled\_as\_ok} & a cancelled call is closed as a success & S17 & C & 50/400 \\
+\texttt{drop\_unfinished} & calls that never finish are removed from the record & S17 & C & 50/400 \\
+\texttt{failed\_as\_ok} & a call that raised is recorded as a success & S05--S07, S09--S10 & C+F & 312/400 \\
+\texttt{shared\_group} & every run is recorded under the same trace id & S21 & C & 28/400 \\
+\texttt{split\_group} & every call gets its own trace id & S02--S04, S06--S07, S11, S17--S22 & C & 378/400 \\
+\texttt{truncate\_output} & outputs are cut to 1,000 characters & S13 & F & 102/400 \\
+\texttt{drop\_error\_detail} & error messages are not recorded & S05--S07 & F & 234/400 \\
+\texttt{drop\_nested} & calls made inside a nested agent are not recorded & S22 & C & 30/400 \\
+\texttt{double\_record} & parallel calls are recorded twice & S03, S07, S11 & C & 374/400 \\
+\texttt{alter\_args} & arguments are re-serialized lossily (non-ASCII replaced) & S12 & F & 294/400 \\

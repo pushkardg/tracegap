@@ -1,0 +1,225 @@
+diff --git a/python/packages/autogen-agentchat/src/autogen_agentchat/agents/_assistant_agent.py b/python/packages/autogen-agentchat/src/autogen_agentchat/agents/_assistant_agent.py
+index 8b8316f..2976554 100644
+--- a/python/packages/autogen-agentchat/src/autogen_agentchat/agents/_assistant_agent.py
++++ b/python/packages/autogen-agentchat/src/autogen_agentchat/agents/_assistant_agent.py
+@@ -1197,38 +1197,48 @@ async def _execute_tool_calls(
+                 function_calls: List[FunctionCall],
+                 stream_queue: asyncio.Queue[BaseAgentEvent | BaseChatMessage | None],
+             ) -> List[Tuple[FunctionCall, FunctionExecutionResult]]:
+-                results = await asyncio.gather(
+-                    *[
+-                        cls._execute_tool_call(
+-                            tool_call=call,
+-                            workbench=workbench,
+-                            handoff_tools=handoff_tools,
+-                            agent_name=agent_name,
+-                            cancellation_token=cancellation_token,
+-                            stream=stream_queue,
+-                        )
+-                        for call in function_calls
+-                    ]
+-                )
+-                # Signal the end of streaming by putting None in the queue.
+-                stream_queue.put_nowait(None)
++                try:
++                    results = await asyncio.gather(
++                        *[
++                            cls._execute_tool_call(
++                                tool_call=call,
++                                workbench=workbench,
++                                handoff_tools=handoff_tools,
++                                agent_name=agent_name,
++                                cancellation_token=cancellation_token,
++                                stream=stream_queue,
++                            )
++                            for call in function_calls
++                        ]
++                    )
++                finally:
++                    # Signal the end of streaming by putting None in the queue. This must also
++                    # happen when a tool call is cancelled or raises; otherwise the consumer
++                    # loop below waits on the queue forever.
++                    stream_queue.put_nowait(None)
+                 return results
+ 
+             task = asyncio.create_task(_execute_tool_calls(current_model_result.content, stream))
+ 
+-            while True:
+-                event = await stream.get()
+-                if event is None:
+-                    # End of streaming, break the loop.
+-                    break
+-                if isinstance(event, BaseAgentEvent) or isinstance(event, BaseChatMessage):
+-                    yield event
+-                    inner_messages.append(event)
+-                else:
+-                    raise RuntimeError(f"Unexpected event type: {type(event)}")
+-
+-            # Wait for all tool calls to complete.
+-            executed_calls_and_results = await task
++            try:
++                while True:
++                    event = await stream.get()
++                    if event is None:
++                        # End of streaming, break the loop.
++                        break
++                    if isinstance(event, BaseAgentEvent) or isinstance(event, BaseChatMessage):
++                        yield event
++                        inner_messages.append(event)
++                    else:
++                        raise RuntimeError(f"Unexpected event type: {type(event)}")
++
++                # Wait for all tool calls to complete.
++                executed_calls_and_results = await task
++            finally:
++                # If this generator is cancelled or closed before the tool calls finish, cancel
++                # them too, so tools do not keep running after the agent run has ended.
++                if not task.done():
++                    task.cancel()
+             exec_results = [result for _, result in executed_calls_and_results]
+ 
+             # Yield ToolCallExecutionEvent
+diff --git a/python/packages/autogen-agentchat/tests/test_assistant_agent.py b/python/packages/autogen-agentchat/tests/test_assistant_agent.py
+index 935f247..d06fabb 100644
+--- a/python/packages/autogen-agentchat/tests/test_assistant_agent.py
++++ b/python/packages/autogen-agentchat/tests/test_assistant_agent.py
+@@ -3560,3 +3560,77 @@ async def test_anthropic_basic_text_response(self) -> None:
+         usage = client.total_usage()
+         assert usage.prompt_tokens > 0
+         assert usage.completion_tokens > 0
++
++
++def _slow_tool_client() -> ReplayChatCompletionClient:
++    return ReplayChatCompletionClient(
++        [
++            CreateResult(
++                finish_reason="function_calls",
++                content=[FunctionCall(id="1", arguments=json.dumps({}), name="blocking_tool")],
++                usage=RequestUsage(prompt_tokens=10, completion_tokens=5),
++                cached=False,
++            ),
++            "done",
++        ],
++        model_info={
++            "function_calling": True,
++            "vision": False,
++            "json_output": False,
++            "family": ModelFamily.GPT_4O,
++            "structured_output": False,
++        },
++    )
++
++
++@pytest.mark.asyncio
++async def test_cancellation_token_cancelled_during_tool_execution_ends_run() -> None:
++    """Cancelling the token while a tool runs must end the run instead of hanging it."""
++    started = asyncio.Event()
++
++    async def blocking_tool() -> str:
++        started.set()
++        await asyncio.sleep(30)
++        return "unreachable"
++
++    agent = AssistantAgent(name="test_agent", model_client=_slow_tool_client(), tools=[blocking_tool])
++    cancellation_token = CancellationToken()
++    run = asyncio.create_task(agent.run(task="Test", cancellation_token=cancellation_token))
++    await asyncio.wait_for(started.wait(), timeout=5)
++    cancellation_token.cancel()
++
++    done, _ = await asyncio.wait([run], timeout=5)
++    if not done:
++        run.cancel()
++        pytest.fail("run() did not finish after the cancellation token was cancelled")
++    with pytest.raises(asyncio.CancelledError):
++        run.result()
++
++
++@pytest.mark.asyncio
++async def test_cancelling_run_task_cancels_in_flight_tool() -> None:
++    """Cancelling the task that runs the agent must also cancel the tool it is running."""
++    started = asyncio.Event()
++    tool_cancelled = asyncio.Event()
++    tool_finished = asyncio.Event()
++
++    async def blocking_tool() -> str:
++        started.set()
++        try:
++            await asyncio.sleep(0.5)
++        except asyncio.CancelledError:
++            tool_cancelled.set()
++            raise
++        tool_finished.set()
++        return "finished"
++
++    agent = AssistantAgent(name="test_agent", model_client=_slow_tool_client(), tools=[blocking_tool])
++    run = asyncio.create_task(agent.run(task="Test"))
++    await asyncio.wait_for(started.wait(), timeout=5)
++    run.cancel()
++    with pytest.raises(asyncio.CancelledError):
++        await run
++
++    await asyncio.sleep(0.8)
++    assert tool_cancelled.is_set()
++    assert not tool_finished.is_set()
+diff --git a/python/packages/autogen-core/src/autogen_core/_telemetry/_genai.py b/python/packages/autogen-core/src/autogen_core/_telemetry/_genai.py
+index ccbb5a3..a102c2f 100644
+--- a/python/packages/autogen-core/src/autogen_core/_telemetry/_genai.py
++++ b/python/packages/autogen-core/src/autogen_core/_telemetry/_genai.py
+@@ -1,3 +1,4 @@
++import asyncio
+ from collections.abc import Generator
+ from contextlib import contextmanager
+ from enum import Enum
+@@ -98,6 +99,12 @@ def trace_tool_span(
+             span.set_status(trace.Status(trace.StatusCode.ERROR, str(e)))
+             span.set_attribute(ERROR_TYPE, type(e).__name__)
+             raise
++        except asyncio.CancelledError:
++            # CancelledError is a BaseException, so it skips the handler above and OpenTelemetry
++            # leaves the status unset; the cancelled tool call would otherwise look successful.
++            span.set_status(trace.Status(trace.StatusCode.ERROR, "Tool execution was cancelled."))
++            span.set_attribute(ERROR_TYPE, "CancelledError")
++            raise
+ 
+ 
+ @contextmanager
+diff --git a/python/packages/autogen-core/tests/test_telemetry_tool_span_cancellation.py b/python/packages/autogen-core/tests/test_telemetry_tool_span_cancellation.py
+new file mode 100644
+index 0000000..4fdf861
+--- /dev/null
++++ b/python/packages/autogen-core/tests/test_telemetry_tool_span_cancellation.py
+@@ -0,0 +1,34 @@
++import asyncio
++
++import pytest
++from opentelemetry.sdk.trace import TracerProvider
++from opentelemetry.sdk.trace.export import SimpleSpanProcessor
++from opentelemetry.sdk.trace.export.in_memory_span_exporter import InMemorySpanExporter
++from opentelemetry.trace import StatusCode
++
++from autogen_core import trace_tool_span
++
++
++@pytest.mark.asyncio
++async def test_trace_tool_span_marks_cancelled_tool_as_error() -> None:
++    exporter = InMemorySpanExporter()
++    provider = TracerProvider()
++    provider.add_span_processor(SimpleSpanProcessor(exporter))
++    started = asyncio.Event()
++
++    async def run_tool() -> None:
++        with trace_tool_span("slow_tool", tracer=provider.get_tracer(__name__), tool_call_id="1"):
++            started.set()
++            await asyncio.sleep(30)
++
++    task = asyncio.create_task(run_tool())
++    await asyncio.wait_for(started.wait(), timeout=5)
++    task.cancel()
++    with pytest.raises(asyncio.CancelledError):
++        await task
++
++    spans = exporter.get_finished_spans()
++    assert len(spans) == 1
++    assert spans[0].status.status_code == StatusCode.ERROR
++    assert spans[0].attributes is not None
++    assert spans[0].attributes["error.type"] == "CancelledError"

@@ -1,0 +1,7 @@
+# Pinned versions used for TraceGap v1.0 results (smolagents environment)
+smolagents==1.26.0
+openinference-instrumentation-smolagents==0.1.42
+openinference-instrumentation==0.1.70
+opentelemetry-api==1.45.0
+opentelemetry-sdk==1.45.0
+pytest

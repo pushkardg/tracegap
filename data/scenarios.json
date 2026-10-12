@@ -1,0 +1,1604 @@
+{
+  "name": "TraceGap scenario suite",
+  "version": "1.0.0",
+  "modes": [
+    "invoke",
+    "stream"
+  ],
+  "scenarios": [
+    {
+      "id": "S01",
+      "category": "basic",
+      "title": "Single call",
+      "description": "One successful tool call, then a final answer.",
+      "runs": [
+        {
+          "turns": [
+            {
+              "calls": [
+                {
+                  "name": "echo",
+                  "args": {
+                    "tag": "t1",
+                    "text": "hello"
+                  },
+                  "call_id": "call_r0_t1"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [],
+              "final": "done",
+              "raise_error": null,
+              "delay": 0.0
+            }
+          ],
+          "nested": null
+        }
+      ],
+      "tools": [
+        "echo"
+      ],
+      "cancel_after": null,
+      "max_model_calls": null,
+      "notes": ""
+    },
+    {
+      "id": "S02",
+      "category": "basic",
+      "title": "Sequential calls",
+      "description": "Three tool calls across three model turns.",
+      "runs": [
+        {
+          "turns": [
+            {
+              "calls": [
+                {
+                  "name": "echo",
+                  "args": {
+                    "tag": "t1",
+                    "text": "a"
+                  },
+                  "call_id": "call_r0_t1"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "add",
+                  "args": {
+                    "tag": "t2",
+                    "a": 2,
+                    "b": 3
+                  },
+                  "call_id": "call_r0_t2"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "echo",
+                  "args": {
+                    "tag": "t3",
+                    "text": "c"
+                  },
+                  "call_id": "call_r0_t3"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [],
+              "final": "done",
+              "raise_error": null,
+              "delay": 0.0
+            }
+          ],
+          "nested": null
+        }
+      ],
+      "tools": [
+        "echo",
+        "add"
+      ],
+      "cancel_after": null,
+      "max_model_calls": null,
+      "notes": ""
+    },
+    {
+      "id": "S03",
+      "category": "basic",
+      "title": "Parallel calls",
+      "description": "Five tool calls emitted in one model turn.",
+      "runs": [
+        {
+          "turns": [
+            {
+              "calls": [
+                {
+                  "name": "echo",
+                  "args": {
+                    "tag": "t1",
+                    "text": "p1"
+                  },
+                  "call_id": "call_r0_t1"
+                },
+                {
+                  "name": "echo",
+                  "args": {
+                    "tag": "t2",
+                    "text": "p2"
+                  },
+                  "call_id": "call_r0_t2"
+                },
+                {
+                  "name": "echo",
+                  "args": {
+                    "tag": "t3",
+                    "text": "p3"
+                  },
+                  "call_id": "call_r0_t3"
+                },
+                {
+                  "name": "echo",
+                  "args": {
+                    "tag": "t4",
+                    "text": "p4"
+                  },
+                  "call_id": "call_r0_t4"
+                },
+                {
+                  "name": "echo",
+                  "args": {
+                    "tag": "t5",
+                    "text": "p5"
+                  },
+                  "call_id": "call_r0_t5"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [],
+              "final": "done",
+              "raise_error": null,
+              "delay": 0.0
+            }
+          ],
+          "nested": null
+        }
+      ],
+      "tools": [
+        "echo"
+      ],
+      "cancel_after": null,
+      "max_model_calls": null,
+      "notes": ""
+    },
+    {
+      "id": "S04",
+      "category": "basic",
+      "title": "Long session",
+      "description": "Twenty-five sequential tool turns (limits raised so the run can finish).",
+      "runs": [
+        {
+          "turns": [
+            {
+              "calls": [
+                {
+                  "name": "add",
+                  "args": {
+                    "tag": "t1",
+                    "a": 1,
+                    "b": 1
+                  },
+                  "call_id": "call_r0_t1"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "add",
+                  "args": {
+                    "tag": "t2",
+                    "a": 2,
+                    "b": 2
+                  },
+                  "call_id": "call_r0_t2"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "add",
+                  "args": {
+                    "tag": "t3",
+                    "a": 3,
+                    "b": 3
+                  },
+                  "call_id": "call_r0_t3"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "add",
+                  "args": {
+                    "tag": "t4",
+                    "a": 4,
+                    "b": 4
+                  },
+                  "call_id": "call_r0_t4"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "add",
+                  "args": {
+                    "tag": "t5",
+                    "a": 5,
+                    "b": 5
+                  },
+                  "call_id": "call_r0_t5"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "add",
+                  "args": {
+                    "tag": "t6",
+                    "a": 6,
+                    "b": 6
+                  },
+                  "call_id": "call_r0_t6"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "add",
+                  "args": {
+                    "tag": "t7",
+                    "a": 7,
+                    "b": 7
+                  },
+                  "call_id": "call_r0_t7"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "add",
+                  "args": {
+                    "tag": "t8",
+                    "a": 8,
+                    "b": 8
+                  },
+                  "call_id": "call_r0_t8"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "add",
+                  "args": {
+                    "tag": "t9",
+                    "a": 9,
+                    "b": 9
+                  },
+                  "call_id": "call_r0_t9"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "add",
+                  "args": {
+                    "tag": "t10",
+                    "a": 10,
+                    "b": 10
+                  },
+                  "call_id": "call_r0_t10"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "add",
+                  "args": {
+                    "tag": "t11",
+                    "a": 11,
+                    "b": 11
+                  },
+                  "call_id": "call_r0_t11"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "add",
+                  "args": {
+                    "tag": "t12",
+                    "a": 12,
+                    "b": 12
+                  },
+                  "call_id": "call_r0_t12"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "add",
+                  "args": {
+                    "tag": "t13",
+                    "a": 13,
+                    "b": 13
+                  },
+                  "call_id": "call_r0_t13"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "add",
+                  "args": {
+                    "tag": "t14",
+                    "a": 14,
+                    "b": 14
+                  },
+                  "call_id": "call_r0_t14"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "add",
+                  "args": {
+                    "tag": "t15",
+                    "a": 15,
+                    "b": 15
+                  },
+                  "call_id": "call_r0_t15"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "add",
+                  "args": {
+                    "tag": "t16",
+                    "a": 16,
+                    "b": 16
+                  },
+                  "call_id": "call_r0_t16"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "add",
+                  "args": {
+                    "tag": "t17",
+                    "a": 17,
+                    "b": 17
+                  },
+                  "call_id": "call_r0_t17"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "add",
+                  "args": {
+                    "tag": "t18",
+                    "a": 18,
+                    "b": 18
+                  },
+                  "call_id": "call_r0_t18"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "add",
+                  "args": {
+                    "tag": "t19",
+                    "a": 19,
+                    "b": 19
+                  },
+                  "call_id": "call_r0_t19"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "add",
+                  "args": {
+                    "tag": "t20",
+                    "a": 20,
+                    "b": 20
+                  },
+                  "call_id": "call_r0_t20"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "add",
+                  "args": {
+                    "tag": "t21",
+                    "a": 21,
+                    "b": 21
+                  },
+                  "call_id": "call_r0_t21"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "add",
+                  "args": {
+                    "tag": "t22",
+                    "a": 22,
+                    "b": 22
+                  },
+                  "call_id": "call_r0_t22"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "add",
+                  "args": {
+                    "tag": "t23",
+                    "a": 23,
+                    "b": 23
+                  },
+                  "call_id": "call_r0_t23"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "add",
+                  "args": {
+                    "tag": "t24",
+                    "a": 24,
+                    "b": 24
+                  },
+                  "call_id": "call_r0_t24"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "add",
+                  "args": {
+                    "tag": "t25",
+                    "a": 25,
+                    "b": 25
+                  },
+                  "call_id": "call_r0_t25"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [],
+              "final": "done",
+              "raise_error": null,
+              "delay": 0.0
+            }
+          ],
+          "nested": null
+        }
+      ],
+      "tools": [
+        "add"
+      ],
+      "cancel_after": null,
+      "max_model_calls": 40,
+      "notes": ""
+    },
+    {
+      "id": "S05",
+      "category": "failure",
+      "title": "Tool raises",
+      "description": "A tool raises an exception. The trace should record the call as failed.",
+      "runs": [
+        {
+          "turns": [
+            {
+              "calls": [
+                {
+                  "name": "fail",
+                  "args": {
+                    "tag": "t1",
+                    "reason": "disk full"
+                  },
+                  "call_id": "call_r0_t1"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [],
+              "final": "done",
+              "raise_error": null,
+              "delay": 0.0
+            }
+          ],
+          "nested": null
+        }
+      ],
+      "tools": [
+        "fail"
+      ],
+      "cancel_after": null,
+      "max_model_calls": null,
+      "notes": ""
+    },
+    {
+      "id": "S06",
+      "category": "failure",
+      "title": "Failure then retry",
+      "description": "A failing call is followed by a successful call in the next turn.",
+      "runs": [
+        {
+          "turns": [
+            {
+              "calls": [
+                {
+                  "name": "fail",
+                  "args": {
+                    "tag": "t1",
+                    "reason": "transient"
+                  },
+                  "call_id": "call_r0_t1"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "echo",
+                  "args": {
+                    "tag": "t2",
+                    "text": "retry ok"
+                  },
+                  "call_id": "call_r0_t2"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [],
+              "final": "done",
+              "raise_error": null,
+              "delay": 0.0
+            }
+          ],
+          "nested": null
+        }
+      ],
+      "tools": [
+        "fail",
+        "echo"
+      ],
+      "cancel_after": null,
+      "max_model_calls": null,
+      "notes": ""
+    },
+    {
+      "id": "S07",
+      "category": "failure",
+      "title": "Parallel batch with one failure",
+      "description": "Three calls in one turn; the middle one raises. Siblings may or may not be cancelled.",
+      "runs": [
+        {
+          "turns": [
+            {
+              "calls": [
+                {
+                  "name": "slow",
+                  "args": {
+                    "tag": "t1",
+                    "seconds": 0.05
+                  },
+                  "call_id": "call_r0_t1"
+                },
+                {
+                  "name": "fail",
+                  "args": {
+                    "tag": "t2",
+                    "reason": "boom"
+                  },
+                  "call_id": "call_r0_t2"
+                },
+                {
+                  "name": "slow",
+                  "args": {
+                    "tag": "t3",
+                    "seconds": 0.05
+                  },
+                  "call_id": "call_r0_t3"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [],
+              "final": "done",
+              "raise_error": null,
+              "delay": 0.0
+            }
+          ],
+          "nested": null
+        }
+      ],
+      "tools": [
+        "slow",
+        "fail"
+      ],
+      "cancel_after": null,
+      "max_model_calls": null,
+      "notes": ""
+    },
+    {
+      "id": "S08",
+      "category": "rejected",
+      "title": "Unknown tool",
+      "description": "The model calls a tool that does not exist. Nothing executes; the attempt should still be visible.",
+      "runs": [
+        {
+          "turns": [
+            {
+              "calls": [
+                {
+                  "name": "delete_everything",
+                  "args": {
+                    "tag": "t1",
+                    "path": "/"
+                  },
+                  "call_id": "call_r0_t1"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [],
+              "final": "done",
+              "raise_error": null,
+              "delay": 0.0
+            }
+          ],
+          "nested": null
+        }
+      ],
+      "tools": [
+        "echo"
+      ],
+      "cancel_after": null,
+      "max_model_calls": null,
+      "notes": ""
+    },
+    {
+      "id": "S09",
+      "category": "rejected",
+      "title": "Invalid argument type",
+      "description": "The model passes a string where an integer is required.",
+      "runs": [
+        {
+          "turns": [
+            {
+              "calls": [
+                {
+                  "name": "add",
+                  "args": {
+                    "tag": "t1",
+                    "a": "two",
+                    "b": 3
+                  },
+                  "call_id": "call_r0_t1"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [],
+              "final": "done",
+              "raise_error": null,
+              "delay": 0.0
+            }
+          ],
+          "nested": null
+        }
+      ],
+      "tools": [
+        "add"
+      ],
+      "cancel_after": null,
+      "max_model_calls": null,
+      "notes": ""
+    },
+    {
+      "id": "S10",
+      "category": "rejected",
+      "title": "Missing required argument",
+      "description": "The model omits a required argument.",
+      "runs": [
+        {
+          "turns": [
+            {
+              "calls": [
+                {
+                  "name": "add",
+                  "args": {
+                    "tag": "t1",
+                    "a": 1
+                  },
+                  "call_id": "call_r0_t1"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [],
+              "final": "done",
+              "raise_error": null,
+              "delay": 0.0
+            }
+          ],
+          "nested": null
+        }
+      ],
+      "tools": [
+        "add"
+      ],
+      "cancel_after": null,
+      "max_model_calls": null,
+      "notes": ""
+    },
+    {
+      "id": "S11",
+      "category": "identity",
+      "title": "Duplicate call ids",
+      "description": "Two different calls in one turn share the same call id (a real provider glitch).",
+      "runs": [
+        {
+          "turns": [
+            {
+              "calls": [
+                {
+                  "name": "echo",
+                  "args": {
+                    "tag": "t1",
+                    "text": "first"
+                  },
+                  "call_id": "dup"
+                },
+                {
+                  "name": "echo",
+                  "args": {
+                    "tag": "t2",
+                    "text": "second"
+                  },
+                  "call_id": "dup"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [],
+              "final": "done",
+              "raise_error": null,
+              "delay": 0.0
+            }
+          ],
+          "nested": null
+        }
+      ],
+      "tools": [
+        "echo"
+      ],
+      "cancel_after": null,
+      "max_model_calls": null,
+      "notes": ""
+    },
+    {
+      "id": "S12",
+      "category": "payload",
+      "title": "Unicode and escape characters",
+      "description": "Arguments contain emoji, quotes, newlines, backslashes and non-Latin script.",
+      "runs": [
+        {
+          "turns": [
+            {
+              "calls": [
+                {
+                  "name": "echo",
+                  "args": {
+                    "tag": "t1",
+                    "text": "he said \"hi\"\n\tpath C:\\tmp — नमस्ते 🚀"
+                  },
+                  "call_id": "call_r0_t1"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [],
+              "final": "done",
+              "raise_error": null,
+              "delay": 0.0
+            }
+          ],
+          "nested": null
+        }
+      ],
+      "tools": [
+        "echo"
+      ],
+      "cancel_after": null,
+      "max_model_calls": null,
+      "notes": ""
+    },
+    {
+      "id": "S13",
+      "category": "payload",
+      "title": "Large output",
+      "description": "A tool returns 200,000 characters.",
+      "runs": [
+        {
+          "turns": [
+            {
+              "calls": [
+                {
+                  "name": "big",
+                  "args": {
+                    "tag": "t1",
+                    "size": 200000
+                  },
+                  "call_id": "call_r0_t1"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [],
+              "final": "done",
+              "raise_error": null,
+              "delay": 0.0
+            }
+          ],
+          "nested": null
+        }
+      ],
+      "tools": [
+        "big"
+      ],
+      "cancel_after": null,
+      "max_model_calls": null,
+      "notes": ""
+    },
+    {
+      "id": "S14",
+      "category": "payload",
+      "title": "Structured output",
+      "description": "A tool returns a dict rather than a string.",
+      "runs": [
+        {
+          "turns": [
+            {
+              "calls": [
+                {
+                  "name": "record",
+                  "args": {
+                    "tag": "t1"
+                  },
+                  "call_id": "call_r0_t1"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [],
+              "final": "done",
+              "raise_error": null,
+              "delay": 0.0
+            }
+          ],
+          "nested": null
+        }
+      ],
+      "tools": [
+        "record"
+      ],
+      "cancel_after": null,
+      "max_model_calls": null,
+      "notes": ""
+    },
+    {
+      "id": "S15",
+      "category": "payload",
+      "title": "None output",
+      "description": "A tool returns None.",
+      "runs": [
+        {
+          "turns": [
+            {
+              "calls": [
+                {
+                  "name": "nothing",
+                  "args": {
+                    "tag": "t1"
+                  },
+                  "call_id": "call_r0_t1"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [],
+              "final": "done",
+              "raise_error": null,
+              "delay": 0.0
+            }
+          ],
+          "nested": null
+        }
+      ],
+      "tools": [
+        "nothing"
+      ],
+      "cancel_after": null,
+      "max_model_calls": null,
+      "notes": ""
+    },
+    {
+      "id": "S16",
+      "category": "payload",
+      "title": "Synchronous tool",
+      "description": "A plain (non-async) tool, which frameworks typically run in a worker thread.",
+      "runs": [
+        {
+          "turns": [
+            {
+              "calls": [
+                {
+                  "name": "echo_sync",
+                  "args": {
+                    "tag": "t1",
+                    "text": "threaded"
+                  },
+                  "call_id": "call_r0_t1"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [],
+              "final": "done",
+              "raise_error": null,
+              "delay": 0.0
+            }
+          ],
+          "nested": null
+        }
+      ],
+      "tools": [
+        "echo_sync"
+      ],
+      "cancel_after": null,
+      "max_model_calls": null,
+      "notes": ""
+    },
+    {
+      "id": "S17",
+      "category": "interrupt",
+      "title": "Cancelled during a tool",
+      "description": "The run is cancelled 0.3 s into a 2 s tool call. The call started but never finished.",
+      "runs": [
+        {
+          "turns": [
+            {
+              "calls": [
+                {
+                  "name": "echo",
+                  "args": {
+                    "tag": "t1",
+                    "text": "before"
+                  },
+                  "call_id": "call_r0_t1"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "slow",
+                  "args": {
+                    "tag": "t2",
+                    "seconds": 2.0
+                  },
+                  "call_id": "call_r0_t2"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [],
+              "final": "done",
+              "raise_error": null,
+              "delay": 0.0
+            }
+          ],
+          "nested": null
+        }
+      ],
+      "tools": [
+        "echo",
+        "slow"
+      ],
+      "cancel_after": 0.3,
+      "max_model_calls": null,
+      "notes": ""
+    },
+    {
+      "id": "S18",
+      "category": "interrupt",
+      "title": "Cancelled after tools completed",
+      "description": "Two tools finish, then the run is cancelled while the model is thinking. Completed calls must not disappear.",
+      "runs": [
+        {
+          "turns": [
+            {
+              "calls": [
+                {
+                  "name": "echo",
+                  "args": {
+                    "tag": "t1",
+                    "text": "a"
+                  },
+                  "call_id": "call_r0_t1"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "add",
+                  "args": {
+                    "tag": "t2",
+                    "a": 1,
+                    "b": 1
+                  },
+                  "call_id": "call_r0_t2"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [],
+              "final": "done",
+              "raise_error": null,
+              "delay": 2.0
+            }
+          ],
+          "nested": null
+        }
+      ],
+      "tools": [
+        "echo",
+        "add"
+      ],
+      "cancel_after": 0.3,
+      "max_model_calls": null,
+      "notes": ""
+    },
+    {
+      "id": "S19",
+      "category": "interrupt",
+      "title": "Model error after tools",
+      "description": "Two tools finish, then the model provider fails. Completed calls must not disappear.",
+      "runs": [
+        {
+          "turns": [
+            {
+              "calls": [
+                {
+                  "name": "echo",
+                  "args": {
+                    "tag": "t1",
+                    "text": "a"
+                  },
+                  "call_id": "call_r0_t1"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "add",
+                  "args": {
+                    "tag": "t2",
+                    "a": 1,
+                    "b": 1
+                  },
+                  "call_id": "call_r0_t2"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [],
+              "final": null,
+              "raise_error": "simulated provider 500",
+              "delay": 0.0
+            }
+          ],
+          "nested": null
+        }
+      ],
+      "tools": [
+        "echo",
+        "add"
+      ],
+      "cancel_after": null,
+      "max_model_calls": null,
+      "notes": ""
+    },
+    {
+      "id": "S20",
+      "category": "interrupt",
+      "title": "Turn limit exceeded",
+      "description": "The model keeps calling tools past the framework's turn limit (3 model calls).",
+      "runs": [
+        {
+          "turns": [
+            {
+              "calls": [
+                {
+                  "name": "echo",
+                  "args": {
+                    "tag": "t1",
+                    "text": "n1"
+                  },
+                  "call_id": "call_r0_t1"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "echo",
+                  "args": {
+                    "tag": "t2",
+                    "text": "n2"
+                  },
+                  "call_id": "call_r0_t2"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "echo",
+                  "args": {
+                    "tag": "t3",
+                    "text": "n3"
+                  },
+                  "call_id": "call_r0_t3"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "echo",
+                  "args": {
+                    "tag": "t4",
+                    "text": "n4"
+                  },
+                  "call_id": "call_r0_t4"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "echo",
+                  "args": {
+                    "tag": "t5",
+                    "text": "n5"
+                  },
+                  "call_id": "call_r0_t5"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "echo",
+                  "args": {
+                    "tag": "t6",
+                    "text": "n6"
+                  },
+                  "call_id": "call_r0_t6"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [],
+              "final": "done",
+              "raise_error": null,
+              "delay": 0.0
+            }
+          ],
+          "nested": null
+        }
+      ],
+      "tools": [
+        "echo"
+      ],
+      "cancel_after": null,
+      "max_model_calls": 3,
+      "notes": ""
+    },
+    {
+      "id": "S21",
+      "category": "structure",
+      "title": "Concurrent runs",
+      "description": "Two runs of the same agent execute concurrently. Each run's trace must contain only its own calls.",
+      "runs": [
+        {
+          "turns": [
+            {
+              "calls": [
+                {
+                  "name": "slow",
+                  "args": {
+                    "tag": "a1",
+                    "seconds": 0.05
+                  },
+                  "call_id": "call_r0_a1"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "echo",
+                  "args": {
+                    "tag": "a2",
+                    "text": "A"
+                  },
+                  "call_id": "call_r0_a2"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [],
+              "final": "done",
+              "raise_error": null,
+              "delay": 0.0
+            }
+          ],
+          "nested": null
+        },
+        {
+          "turns": [
+            {
+              "calls": [
+                {
+                  "name": "echo",
+                  "args": {
+                    "tag": "b1",
+                    "text": "B"
+                  },
+                  "call_id": "call_r1_b1"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [
+                {
+                  "name": "slow",
+                  "args": {
+                    "tag": "b2",
+                    "seconds": 0.05
+                  },
+                  "call_id": "call_r1_b2"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [],
+              "final": "done",
+              "raise_error": null,
+              "delay": 0.0
+            }
+          ],
+          "nested": null
+        }
+      ],
+      "tools": [
+        "slow",
+        "echo"
+      ],
+      "cancel_after": null,
+      "max_model_calls": null,
+      "notes": ""
+    },
+    {
+      "id": "S22",
+      "category": "structure",
+      "title": "Nested agent as tool",
+      "description": "The outer agent calls a 'delegate' tool that runs an inner agent, which calls its own tools.",
+      "runs": [
+        {
+          "turns": [
+            {
+              "calls": [
+                {
+                  "name": "delegate",
+                  "args": {
+                    "tag": "t1",
+                    "task": "sub-task"
+                  },
+                  "call_id": "call_r0_t1"
+                }
+              ],
+              "final": null,
+              "raise_error": null,
+              "delay": 0.0
+            },
+            {
+              "calls": [],
+              "final": "done",
+              "raise_error": null,
+              "delay": 0.0
+            }
+          ],
+          "nested": {
+            "turns": [
+              {
+                "calls": [
+                  {
+                    "name": "echo",
+                    "args": {
+                      "tag": "n1",
+                      "text": "inner"
+                    },
+                    "call_id": "call_r0_n_n1"
+                  }
+                ],
+                "final": null,
+                "raise_error": null,
+                "delay": 0.0
+              },
+              {
+                "calls": [
+                  {
+                    "name": "add",
+                    "args": {
+                      "tag": "n2",
+                      "a": 4,
+                      "b": 5
+                    },
+                    "call_id": "call_r0_n_n2"
+                  }
+                ],
+                "final": null,
+                "raise_error": null,
+                "delay": 0.0
+              },
+              {
+                "calls": [],
+                "final": "inner done",
+                "raise_error": null,
+                "delay": 0.0
+              }
+            ],
+            "nested": null
+          }
+        }
+      ],
+      "tools": [
+        "delegate",
+        "echo",
+        "add"
+      ],
+      "cancel_after": null,
+      "max_model_calls": null,
+      "notes": ""
+    }
+  ]
+}

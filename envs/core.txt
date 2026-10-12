@@ -1,0 +1,13 @@
+# Pinned versions used for TraceGap v1.0 results (core environment)
+langgraph==1.2.12
+langchain-core==1.6.6
+openai-agents==0.23.1
+openai==3.24.0
+pydantic-ai-slim==2.54.0
+pydantic==2.13.5
+autogen-agentchat==0.7.5
+autogen-core==0.7.5
+autogen-ext==0.7.5
+opentelemetry-api==1.45.0
+opentelemetry-sdk==1.45.0
+pytest

@@ -1,0 +1,4199 @@
+# TraceGap 1.0.0 results
+
+Generated 2026-10-04T20:20:16+00:00 on Python 3.13.16. 100 scenarios x 2 modes = 200 cases per surface.
+
+## Leaderboard
+
+| Framework / surface | Complete | Faithful | Executed calls recorded | Status correct | Failed calls shown as success | Unexecuted attempts visible | Args exact | Output/error exact |
+|---|---|---|---|---|---|---|---|---|
+| crewai/events | 200/200 | 200/200 | 100.0% | 100.0% | 0 | 210/210 | 100.0% | 100.0% |
+| google-adk/otel | 182/200 | 200/200 | 100.0% | 98.0% | 18 | 86/86 | 100.0% | 100.0% |
+| llamaindex/events | 176/200 | 200/200 | 100.0% | 100.0% | 0 | 136/188 | 100.0% | 100.0% |
+| pydantic-ai/otel | 147/200 | 197/200 | 100.0% | 99.7% | 0 | 113/195 | 100.0% | 99.6% |
+| autogen/messages | 143/200 | 200/200 | 76.1% | 100.0% | 0 | 169/210 | 100.0% | 100.0% |
+| langgraph/callbacks | 128/200 | 200/200 | 100.0% | 100.0% | 0 | 106/206 | 100.0% | 100.0% |
+| pydantic-ai/history | 126/200 | 90/200 | 97.9% | 90.9% | 0 | 175/192 | 100.0% | 75.2% |
+| autogen/otel | 118/200 | 200/200 | 96.6% | 100.0% | 0 | 140/210 | n/a | n/a |
+| openai-agents/tracing | 118/200 | 98/200 | 100.0% | 97.7% | 26 | 112/288 | 100.0% | 84.2% |
+| semantic-kernel/filters | 102/200 | 200/200 | 100.0% | 100.0% | 0 | 70/210 | 100.0% | 100.0% |
+| llamaindex/openinference | 94/200 | 200/200 | 96.6% | 100.0% | 0 | 66/188 | 100.0% | 100.0% |
+| google-adk/events | 92/200 | 68/200 | 100.0% | 78.1% | 0 | 86/86 | 100.0% | 58.7% |
+| semantic-kernel/otel | 82/200 | 200/200 | 100.0% | 96.6% | 46 | 70/210 | 100.0% | 100.0% |
+| smolagents/openinference | 68/200 | 200/200 | 96.6% | 100.0% | 0 | 0/210 | 100.0% | 100.0% |
+| smolagents/memory | 36/200 | 200/200 | 46.4% | n/a | 0 | 0/210 | 100.0% | n/a |
+
+Complete = every call present with an honest status, no phantoms or duplicates, runs neither mixed nor fragmented. Faithful = every captured argument, output and error message exact. n/a = the surface does not capture that field.
+
+## Scenario matrix
+
+C = complete, F = faithful, `-` = failed. Left of the slash is invoke mode, right is stream mode.
+
+| Scenario | crewai/events | google-adk/otel | llamaindex/events | pydantic-ai/otel | autogen/messages | langgraph/callbacks | pydantic-ai/history | autogen/otel | openai-agents/tracing | semantic-kernel/filters | llamaindex/openinference | google-adk/events | semantic-kernel/otel | smolagents/openinference | smolagents/memory |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| G3-0001 Generated 1 | CF/CF | CF/CF | CF/CF | -F/-F | -F/-F | -F/-F | --/-- | -F/-F | --/-- | -F/-F | -F/-F | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0002 Generated 2 | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | C-/C- | CF/CF | C-/C- | -F/-F | CF/CF | C-/C- | -F/-F | -F/-F | -F/-F |
+| G3-0003 Generated 3 | CF/CF | CF/CF | CF/CF | -F/-F | -F/CF | -F/-F | C-/C- | -F/-F | -F/-F | -F/-F | -F/-F | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0004 Generated 4 | CF/CF | CF/CF | CF/CF | -F/-F | CF/CF | -F/-F | CF/-F | -F/-F | -F/-F | -F/-F | -F/-F | C-/C- | -F/-F | -F/-F | -F/-F |
+| G3-0005 Generated 5 | CF/CF | CF/CF | CF/CF | CF/CF | -F/-F | CF/CF | C-/C- | -F/-F | --/-- | -F/-F | -F/-F | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0006 Generated 6 | CF/CF | CF/CF | CF/CF | -F/-F | CF/CF | -F/-F | CF/CF | -F/-F | -F/-F | -F/-F | -F/-F | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0007 Generated 7 | CF/CF | CF/CF | CF/CF | CF/CF | -F/CF | CF/CF | --/C- | CF/CF | C-/C- | CF/CF | CF/CF | --/-- | CF/CF | CF/CF | -F/-F |
+| G3-0008 Generated 8 | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | --/-- | -F/-F | --/-- | -F/-F | -F/-F | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0009 Generated 9 | CF/CF | CF/CF | -F/-F | CF/CF | CF/CF | -F/-F | CF/CF | CF/CF | CF/CF | CF/CF | -F/-F | CF/CF | CF/CF | CF/CF | CF/CF |
+| G3-0010 Generated 10 | CF/CF | CF/CF | CF/CF | CF/CF | -F/CF | CF/CF | --/-- | -F/-F | --/-- | -F/-F | -F/-F | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0011 Generated 11 | CF/CF | CF/CF | -F/-F | CF/CF | CF/CF | CF/CF | C-/C- | CF/CF | C-/C- | -F/-F | -F/-F | C-/C- | -F/-F | -F/-F | -F/-F |
+| G3-0012 Generated 12 | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF |
+| G3-0013 Generated 13 | CF/CF | CF/CF | -F/-F | CF/CF | CF/CF | -F/-F | --/-- | CF/CF | C-/C- | CF/CF | -F/-F | --/-- | CF/CF | CF/CF | -F/-F |
+| G3-0014 Generated 14 | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | --/-- | CF/CF | C-/C- | -F/-F | CF/CF | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0015 Generated 15 | CF/CF | CF/CF | CF/CF | -F/-F | CF/CF | CF/CF | --/-- | CF/CF | C-/C- | -F/-F | CF/CF | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0016 Generated 16 | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF |
+| G3-0017 Generated 17 | CF/CF | CF/CF | CF/CF | -F/-F | -F/CF | CF/CF | CF/-F | CF/CF | CF/CF | CF/CF | CF/CF | C-/C- | CF/CF | -F/-F | -F/-F |
+| G3-0018 Generated 18 | CF/CF | CF/CF | CF/CF | CF/CF | -F/CF | CF/CF | CF/CF | CF/CF | CF/CF | -F/-F | CF/CF | CF/CF | -F/-F | -F/-F | -F/-F |
+| G3-0019 Generated 19 | CF/CF | CF/CF | CF/CF | CF/CF | -F/CF | CF/CF | C-/C- | -F/-F | --/-- | -F/-F | -F/-F | C-/C- | -F/-F | -F/-F | -F/-F |
+| G3-0020 Generated 20 | CF/CF | CF/CF | -F/-F | CF/CF | CF/CF | -F/-F | CF/CF | CF/CF | CF/CF | -F/-F | -F/-F | CF/CF | -F/-F | -F/-F | -F/-F |
+| G3-0021 Generated 21 | CF/CF | CF/CF | -F/-F | CF/CF | CF/CF | -F/-F | CF/CF | CF/CF | CF/CF | CF/CF | -F/-F | CF/CF | CF/CF | CF/CF | CF/CF |
+| G3-0022 Generated 22 | CF/CF | CF/CF | -F/-F | CF/CF | CF/CF | -F/-F | CF/CF | CF/CF | CF/CF | CF/CF | -F/-F | CF/CF | CF/CF | CF/CF | CF/CF |
+| G3-0023 Generated 23 | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | --/C- | -F/-F | --/-- | -F/-F | -F/-F | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0024 Generated 24 | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | C-/C- | CF/CF | C-/C- | -F/-F | CF/CF | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0025 Generated 25 | CF/CF | CF/CF | CF/CF | CF/CF | -F/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF |
+| G3-0026 Generated 26 | CF/CF | CF/CF | -F/-F | CF/CF | CF/CF | -F/-F | CF/CF | CF/CF | CF/CF | CF/CF | -F/-F | CF/CF | CF/CF | CF/CF | CF/CF |
+| G3-0027 Generated 27 | CF/CF | -F/-F | CF/CF | -F/-F | -F/CF | CF/CF | CF/-F | -F/-F | -F/-F | -F/-F | -F/-F | CF/CF | -F/-F | -F/-F | -F/-F |
+| G3-0028 Generated 28 | CF/CF | CF/CF | CF/CF | CF/CF | -F/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF |
+| G3-0029 Generated 29 | CF/CF | CF/CF | CF/CF | CF/CF | -F/CF | CF/CF | C-/-- | -F/-F | --/-- | -F/-F | -F/-F | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0030 Generated 30 | CF/CF | CF/CF | CF/CF | -F/-F | CF/CF | -F/-F | --/-- | -F/-F | -F/-F | -F/-F | -F/-F | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0031 Generated 31 | CF/CF | CF/CF | CF/CF | CF/CF | -F/CF | CF/CF | --/C- | CF/CF | C-/C- | CF/CF | CF/CF | --/-- | CF/CF | CF/CF | -F/-F |
+| G3-0032 Generated 32 | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | -F/-F | CF/CF | CF/CF | -F/-F | -F/-F | -F/-F |
+| G3-0033 Generated 33 | CF/CF | CF/CF | CF/CF | CF/CF | -F/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF |
+| G3-0034 Generated 34 | CF/CF | -F/-F | CF/CF | CF/CF | -F/CF | CF/CF | CF/CF | -F/-F | -F/-F | CF/CF | -F/-F | CF/CF | -F/-F | -F/-F | -F/-F |
+| G3-0035 Generated 35 | CF/CF | CF/CF | CF/CF | CF/CF | -F/-F | -F/-F | --/-- | CF/CF | C-/C- | CF/CF | CF/CF | --/-- | CF/CF | CF/CF | -F/-F |
+| G3-0036 Generated 36 | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF |
+| G3-0037 Generated 37 | CF/CF | -F/-F | CF/CF | -F/-F | -F/CF | -F/-F | CF/CF | -F/-F | -F/-F | -F/-F | -F/-F | CF/CF | -F/-F | -F/-F | -F/-F |
+| G3-0038 Generated 38 | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | -F/-F | CF/CF | CF/CF | -F/-F | -F/-F | -F/-F |
+| G3-0039 Generated 39 | CF/CF | -F/-F | CF/CF | CF/CF | -F/CF | CF/CF | CF/CF | -F/-F | -F/-F | CF/CF | -F/-F | CF/CF | -F/-F | -F/-F | -F/-F |
+| G3-0040 Generated 40 | CF/CF | CF/CF | CF/CF | CF/CF | -F/-F | CF/CF | --/C- | CF/CF | C-/C- | -F/-F | CF/CF | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0041 Generated 41 | CF/CF | CF/CF | CF/CF | CF/CF | -F/CF | CF/CF | C-/-- | CF/CF | C-/C- | CF/CF | CF/CF | C-/C- | CF/CF | -F/-F | -F/-F |
+| G3-0042 Generated 42 | CF/CF | CF/CF | CF/CF | -F/-F | CF/CF | -F/-F | CF/CF | -F/-F | -F/-F | -F/-F | -F/-F | CF/CF | -F/-F | -F/-F | -F/-F |
+| G3-0043 Generated 43 | CF/CF | CF/CF | CF/CF | CF/CF | -F/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF |
+| G3-0044 Generated 44 | CF/CF | CF/CF | -F/-F | --/CF | CF/CF | -F/CF | --/-- | CF/CF | C-/C- | CF/CF | -F/-F | --/-- | CF/CF | CF/CF | -F/-F |
+| G3-0045 Generated 45 | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | --/-- | CF/CF | C-/C- | CF/CF | CF/CF | --/-- | CF/CF | CF/CF | -F/-F |
+| G3-0046 Generated 46 | CF/CF | CF/CF | CF/CF | CF/CF | -F/CF | CF/CF | --/-- | -F/-F | --/-- | CF/CF | -F/-F | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0047 Generated 47 | CF/CF | CF/CF | -F/-F | CF/CF | CF/CF | -F/-F | C-/C- | CF/CF | C-/C- | CF/CF | -F/-F | C-/C- | CF/CF | CF/CF | -F/-F |
+| G3-0048 Generated 48 | CF/CF | CF/CF | CF/CF | -F/-F | CF/CF | -F/-F | CF/CF | -F/-F | -F/-F | -F/-F | -F/-F | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0049 Generated 49 | CF/CF | CF/CF | CF/CF | -F/-F | CF/CF | -F/-F | CF/CF | -F/-F | -F/-F | -F/-F | -F/-F | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0050 Generated 50 | CF/CF | CF/CF | CF/CF | CF/CF | -F/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF |
+| G3-0051 Generated 51 | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | --/C- | CF/CF | C-/C- | -F/-F | CF/CF | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0052 Generated 52 | CF/CF | CF/CF | CF/CF | -F/-F | CF/CF | -F/-F | --/-- | -F/-F | --/-- | -F/-F | -F/-F | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0053 Generated 53 | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | --/-- | CF/CF | C-/C- | CF/CF | CF/CF | --/-- | CF/CF | -F/-F | -F/-F |
+| G3-0054 Generated 54 | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | --/-- | -F/-F | --/-- | -F/-F | -F/-F | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0055 Generated 55 | CF/CF | CF/CF | CF/CF | CF/CF | -F/-F | CF/CF | -F/-F | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF |
+| G3-0056 Generated 56 | CF/CF | CF/CF | CF/CF | --/CF | -F/CF | -F/-F | C-/-- | -F/-F | --/-- | CF/CF | -F/-F | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0057 Generated 57 | CF/CF | CF/CF | CF/CF | -F/-F | CF/CF | -F/-F | C-/-- | -F/-F | -F/-F | -F/-F | -F/-F | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0058 Generated 58 | CF/CF | CF/CF | CF/CF | -F/-F | CF/CF | -F/-F | C-/C- | -F/-F | --/-- | -F/-F | -F/-F | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0059 Generated 59 | CF/CF | -F/-F | CF/CF | CF/CF | -F/CF | CF/CF | CF/CF | -F/-F | -F/-F | CF/CF | -F/-F | CF/CF | -F/-F | -F/-F | -F/-F |
+| G3-0060 Generated 60 | CF/CF | -F/-F | CF/CF | -F/-F | -F/CF | -F/-F | CF/CF | -F/-F | -F/-F | -F/-F | -F/-F | CF/CF | -F/-F | -F/-F | -F/-F |
+| G3-0061 Generated 61 | CF/CF | CF/CF | CF/CF | CF/CF | -F/CF | CF/CF | CF/CF | CF/CF | CF/CF | -F/-F | CF/CF | CF/CF | -F/-F | -F/-F | -F/-F |
+| G3-0062 Generated 62 | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | --/C- | CF/CF | C-/C- | -F/-F | CF/CF | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0063 Generated 63 | CF/CF | CF/CF | CF/CF | CF/CF | -F/CF | CF/CF | --/C- | -F/-F | --/-- | -F/-F | -F/-F | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0064 Generated 64 | CF/CF | CF/CF | CF/CF | CF/CF | -F/CF | -F/-F | --/-- | -F/-F | --/-- | CF/CF | -F/-F | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0065 Generated 65 | CF/CF | CF/CF | CF/CF | -F/-F | -F/CF | -F/-F | --/C- | -F/-F | -F/-F | -F/-F | -F/-F | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0066 Generated 66 | CF/CF | CF/CF | -F/-F | CF/CF | CF/CF | -F/-F | CF/CF | CF/CF | CF/CF | CF/CF | -F/-F | CF/CF | CF/CF | CF/CF | CF/CF |
+| G3-0067 Generated 67 | CF/CF | -F/-F | CF/CF | CF/CF | -F/CF | CF/CF | CF/CF | -F/-F | -F/-F | CF/CF | -F/-F | CF/CF | -F/-F | -F/-F | -F/-F |
+| G3-0068 Generated 68 | CF/CF | CF/CF | CF/CF | CF/CF | -F/CF | CF/CF | C-/C- | CF/CF | C-/C- | CF/CF | CF/CF | --/-- | CF/CF | CF/CF | -F/-F |
+| G3-0069 Generated 69 | CF/CF | CF/CF | CF/CF | -F/-F | CF/CF | CF/CF | CF/-F | CF/CF | CF/CF | -F/-F | CF/CF | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0070 Generated 70 | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF |
+| G3-0071 Generated 71 | CF/CF | CF/CF | CF/CF | CF/CF | -F/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF |
+| G3-0072 Generated 72 | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | --/-- | CF/CF | C-/C- | CF/CF | CF/CF | --/-- | CF/CF | -F/-F | -F/-F |
+| G3-0073 Generated 73 | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | C-/C- | CF/CF | C-/C- | CF/CF | CF/CF | C-/C- | CF/CF | CF/CF | -F/-F |
+| G3-0074 Generated 74 | CF/CF | CF/CF | -F/-F | CF/CF | CF/CF | -F/-F | --/-- | CF/CF | C-/C- | CF/CF | -F/-F | --/-- | CF/CF | CF/CF | -F/-F |
+| G3-0075 Generated 75 | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF |
+| G3-0076 Generated 76 | CF/CF | CF/CF | CF/CF | CF/CF | -F/CF | CF/CF | C-/C- | CF/CF | C-/C- | CF/CF | CF/CF | C-/C- | CF/CF | CF/CF | -F/-F |
+| G3-0077 Generated 77 | CF/CF | CF/CF | CF/CF | CF/CF | -F/CF | -F/-F | --/C- | CF/CF | C-/C- | CF/CF | CF/CF | --/-- | CF/CF | -F/-F | -F/-F |
+| G3-0078 Generated 78 | CF/CF | CF/CF | CF/CF | -F/-F | CF/CF | -F/-F | CF/-F | -F/-F | -F/-F | -F/-F | -F/-F | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0079 Generated 79 | CF/CF | CF/CF | CF/CF | -F/-F | -F/CF | -F/-F | C-/-- | -F/-F | -F/-F | -F/-F | -F/-F | C-/C- | -F/-F | -F/-F | -F/-F |
+| G3-0080 Generated 80 | CF/CF | CF/CF | CF/CF | CF/CF | -F/CF | -F/-F | C-/C- | CF/CF | C-/C- | CF/CF | CF/CF | --/-- | CF/CF | CF/CF | -F/-F |
+| G3-0081 Generated 81 | CF/CF | CF/CF | CF/CF | CF/CF | -F/CF | -F/-F | C-/-- | -F/-F | --/-- | -F/-F | -F/-F | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0082 Generated 82 | CF/CF | CF/CF | CF/CF | CF/CF | -F/CF | CF/CF | --/C- | -F/-F | --/-- | CF/CF | -F/-F | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0083 Generated 83 | CF/CF | -F/-F | CF/CF | CF/CF | -F/CF | CF/CF | CF/CF | -F/-F | -F/-F | CF/CF | -F/-F | CF/CF | -F/-F | -F/-F | -F/-F |
+| G3-0084 Generated 84 | CF/CF | CF/CF | CF/CF | --/CF | CF/CF | -F/CF | --/-- | CF/CF | C-/C- | CF/CF | CF/CF | --/-- | CF/CF | CF/CF | -F/-F |
+| G3-0085 Generated 85 | CF/CF | CF/CF | CF/CF | CF/CF | -F/-F | CF/CF | --/-- | -F/-F | --/-- | -F/-F | -F/-F | C-/C- | -F/-F | -F/-F | -F/-F |
+| G3-0086 Generated 86 | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | C-/-- | CF/CF | C-/C- | CF/CF | CF/CF | --/-- | CF/CF | CF/CF | -F/-F |
+| G3-0087 Generated 87 | CF/CF | CF/CF | CF/CF | CF/CF | -F/-F | CF/CF | --/-- | CF/CF | C-/C- | CF/CF | CF/CF | --/-- | CF/CF | -F/-F | -F/-F |
+| G3-0088 Generated 88 | CF/CF | CF/CF | CF/CF | -F/-F | CF/CF | CF/CF | CF/-F | CF/CF | CF/CF | -F/-F | CF/CF | CF/CF | -F/-F | -F/-F | -F/-F |
+| G3-0089 Generated 89 | CF/CF | CF/CF | CF/CF | -F/-F | -F/CF | -F/-F | CF/CF | -F/-F | -F/-F | -F/-F | -F/-F | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0090 Generated 90 | CF/CF | CF/CF | CF/CF | CF/CF | -F/CF | CF/CF | C-/-- | -F/-F | --/-- | -F/-F | -F/-F | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0091 Generated 91 | CF/CF | CF/CF | CF/CF | CF/CF | -F/CF | CF/CF | C-/-- | CF/CF | C-/C- | -F/-F | CF/CF | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0092 Generated 92 | CF/CF | CF/CF | CF/CF | -F/-F | CF/CF | -F/-F | C-/-- | -F/-F | --/-- | -F/-F | -F/-F | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0093 Generated 93 | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | C-/C- | CF/CF | C-/C- | CF/CF | CF/CF | C-/C- | CF/CF | CF/CF | -F/-F |
+| G3-0094 Generated 94 | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | --/-- | CF/CF | C-/C- | -F/-F | CF/CF | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0095 Generated 95 | CF/CF | -F/-F | CF/CF | CF/CF | -F/CF | CF/CF | CF/CF | -F/-F | -F/-F | CF/CF | -F/-F | CF/CF | -F/-F | -F/-F | -F/-F |
+| G3-0096 Generated 96 | CF/CF | CF/CF | CF/CF | -F/-F | -F/CF | -F/-F | CF/-F | -F/-F | -F/-F | -F/-F | -F/-F | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0097 Generated 97 | CF/CF | CF/CF | CF/CF | CF/CF | -F/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | --/-- | CF/CF | -F/-F | -F/-F |
+| G3-0098 Generated 98 | CF/CF | CF/CF | CF/CF | -F/-F | -F/CF | CF/CF | CF/-F | CF/CF | C-/C- | -F/-F | CF/CF | --/-- | -F/-F | -F/-F | -F/-F |
+| G3-0099 Generated 99 | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF | CF/CF |
+| G3-0100 Generated 100 | CF/CF | CF/CF | -F/-F | CF/CF | CF/CF | -F/-F | --/-- | CF/CF | C-/C- | CF/CF | -F/-F | --/-- | CF/CF | CF/CF | -F/-F |
+
+## Every failure
+
+### google-adk/otel
+
+- G3-0027 invoke: **completeness**: a15: actual=cancelled but trace status=ok
+- G3-0027 stream: **completeness**: a15: actual=cancelled but trace status=ok
+- G3-0034 invoke: **completeness**: a3: actual=cancelled but trace status=ok
+- G3-0034 stream: **completeness**: a3: actual=cancelled but trace status=ok
+- G3-0037 invoke: **completeness**: a4: actual=cancelled but trace status=ok
+- G3-0037 stream: **completeness**: a4: actual=cancelled but trace status=ok
+- G3-0039 invoke: **completeness**: a3: actual=cancelled but trace status=ok
+- G3-0039 stream: **completeness**: a3: actual=cancelled but trace status=ok
+- G3-0059 invoke: **completeness**: a4: actual=cancelled but trace status=ok
+- G3-0059 stream: **completeness**: a4: actual=cancelled but trace status=ok
+- G3-0060 invoke: **completeness**: a6: actual=cancelled but trace status=ok
+- G3-0060 stream: **completeness**: a6: actual=cancelled but trace status=ok
+- G3-0067 invoke: **completeness**: a6: actual=cancelled but trace status=ok
+- G3-0067 stream: **completeness**: a6: actual=cancelled but trace status=ok
+- G3-0083 invoke: **completeness**: a4: actual=cancelled but trace status=ok
+- G3-0083 stream: **completeness**: a4: actual=cancelled but trace status=ok
+- G3-0095 invoke: **completeness**: a14: actual=cancelled but trace status=ok
+- G3-0095 stream: **completeness**: a14: actual=cancelled but trace status=ok
+
+### llamaindex/events
+
+- G3-0009 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0009 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0011 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0011 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0011 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0011 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0011 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0011 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0011 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0011 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0013 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0013 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0013 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0013 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0013 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0013 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0020 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0020 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0020 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0020 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0021 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0021 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0021 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0021 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0022 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0022 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0026 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0026 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0044 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0044 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0047 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0047 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0066 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0066 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0066 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0066 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0074 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0074 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0074 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0074 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0074 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0074 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0074 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0074 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0100 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0100 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0100 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0100 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0100 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0100 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0100 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0100 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+
+### pydantic-ai/otel
+
+- G3-0001 invoke: **completeness**: n1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: n1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0003 invoke: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0003 stream: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0006 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0006 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 invoke: **completeness**: b5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 invoke: **completeness**: b7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 stream: **completeness**: b5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 stream: **completeness**: b7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0017 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0017 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0017 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0017 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0027 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0027 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0027 invoke: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0027 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0027 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0027 stream: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0030 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0030 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0037 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0037 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0042 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0042 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0044 invoke: **completeness**: a1: actual=ok but trace status=error
+- G3-0044 invoke: fidelity: a1: output missing: trace=None actual='echo:🚀'
+- G3-0048 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0049 invoke: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0049 stream: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0052 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0052 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0056 invoke: **completeness**: a3: actual=ok but trace status=error
+- G3-0056 invoke: fidelity: a3: output missing: trace=None actual='echo:line\nbreak'
+- G3-0057 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0057 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 invoke: **completeness**: b6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 stream: **completeness**: b6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0060 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0060 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0065 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0065 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0069 invoke: **completeness**: a10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0069 invoke: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0069 invoke: **completeness**: a12: emitted but never executed, and the attempt is invisible in the trace
+- G3-0069 stream: **completeness**: a10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0069 stream: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0069 stream: **completeness**: a12: emitted but never executed, and the attempt is invisible in the trace
+- G3-0078 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0078 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0079 invoke: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0079 stream: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0084 invoke: **completeness**: a7: actual=ok but trace status=error
+- G3-0084 invoke: fidelity: a7: output missing: trace=None actual='echo:gamma éè'
+- G3-0088 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0088 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0089 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0089 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0092 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0092 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0098 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0098 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0098 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0098 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+
+### autogen/messages
+
+- G3-0001 invoke: **completeness**: n1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 invoke: **completeness**: n2: executed (ok) but missing from trace
+- G3-0001 invoke: **completeness**: n3: executed (ok) but missing from trace
+- G3-0001 invoke: **completeness**: n4: executed (ok) but missing from trace
+- G3-0001 stream: **completeness**: n1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: n2: executed (ok) but missing from trace
+- G3-0001 stream: **completeness**: n3: executed (ok) but missing from trace
+- G3-0001 stream: **completeness**: n4: executed (ok) but missing from trace
+- G3-0003 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0003 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0003 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0003 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0003 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0003 invoke: **completeness**: a6: executed (ok) but missing from trace
+- G3-0003 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0003 invoke: **completeness**: a8: executed (ok) but missing from trace
+- G3-0003 invoke: **completeness**: a9: executed (error) but missing from trace
+- G3-0003 invoke: **completeness**: a10: executed (ok) but missing from trace
+- G3-0003 invoke: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0005 invoke: **completeness**: n1: executed (ok) but missing from trace
+- G3-0005 invoke: **completeness**: n2: executed (ok) but missing from trace
+- G3-0005 invoke: **completeness**: n3: executed (ok) but missing from trace
+- G3-0005 invoke: **completeness**: n4: executed (ok) but missing from trace
+- G3-0005 stream: **completeness**: n1: executed (ok) but missing from trace
+- G3-0005 stream: **completeness**: n2: executed (ok) but missing from trace
+- G3-0005 stream: **completeness**: n3: executed (ok) but missing from trace
+- G3-0005 stream: **completeness**: n4: executed (ok) but missing from trace
+- G3-0007 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0007 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0007 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0007 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0007 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0007 invoke: **completeness**: a6: executed (ok) but missing from trace
+- G3-0007 invoke: **completeness**: a7: executed (error) but missing from trace
+- G3-0007 invoke: **completeness**: a8: executed (error) but missing from trace
+- G3-0007 invoke: **completeness**: a9: executed (ok) but missing from trace
+- G3-0007 invoke: **completeness**: a10: executed (ok) but missing from trace
+- G3-0010 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0010 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0010 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0010 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0010 invoke: **completeness**: a5: executed (error) but missing from trace
+- G3-0010 invoke: **completeness**: a6: executed (ok) but missing from trace
+- G3-0010 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0010 invoke: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 invoke: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 invoke: **completeness**: a10: executed (ok) but missing from trace
+- G3-0010 invoke: **completeness**: a11: executed (error) but missing from trace
+- G3-0010 invoke: **completeness**: a12: executed (ok) but missing from trace
+- G3-0010 invoke: **completeness**: a13: executed (error) but missing from trace
+- G3-0010 invoke: **completeness**: a14: executed (ok) but missing from trace
+- G3-0010 invoke: **completeness**: a15: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 invoke: **completeness**: a16: executed (running) but missing from trace
+- G3-0017 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0017 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0017 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0017 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0017 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0018 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0018 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0018 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0018 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0019 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0019 invoke: **completeness**: a2: executed (error) but missing from trace
+- G3-0019 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0019 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0019 invoke: **completeness**: a5: executed (error) but missing from trace
+- G3-0019 invoke: **completeness**: a6: executed (ok) but missing from trace
+- G3-0019 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0019 invoke: **completeness**: a8: executed (error) but missing from trace
+- G3-0019 invoke: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0019 invoke: **completeness**: a10: executed (ok) but missing from trace
+- G3-0019 invoke: **completeness**: a11: executed (error) but missing from trace
+- G3-0019 invoke: **completeness**: a12: executed (ok) but missing from trace
+- G3-0019 invoke: **completeness**: a13: executed (ok) but missing from trace
+- G3-0019 invoke: **completeness**: a14: emitted but never executed, and the attempt is invisible in the trace
+- G3-0019 invoke: **completeness**: a15: executed (running) but missing from trace
+- G3-0025 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0027 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0027 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0027 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0027 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0027 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0027 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0027 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0027 invoke: **completeness**: a8: executed (ok) but missing from trace
+- G3-0027 invoke: **completeness**: a9: executed (ok) but missing from trace
+- G3-0027 invoke: **completeness**: a10: executed (ok) but missing from trace
+- G3-0027 invoke: **completeness**: a11: executed (ok) but missing from trace
+- G3-0027 invoke: **completeness**: a12: executed (ok) but missing from trace
+- G3-0027 invoke: **completeness**: a13: executed (ok) but missing from trace
+- G3-0027 invoke: **completeness**: a14: executed (ok) but missing from trace
+- G3-0027 invoke: **completeness**: a15: executed (running) but missing from trace
+- G3-0028 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0028 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0028 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0029 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0029 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0029 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0029 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0029 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0029 invoke: **completeness**: a6: executed (error) but missing from trace
+- G3-0029 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0029 invoke: **completeness**: a8: executed (ok) but missing from trace
+- G3-0029 invoke: **completeness**: a9: executed (ok) but missing from trace
+- G3-0029 invoke: **completeness**: a10: executed (running) but missing from trace
+- G3-0031 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0031 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0031 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0031 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0031 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0031 invoke: **completeness**: a6: executed (ok) but missing from trace
+- G3-0031 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0031 invoke: **completeness**: a8: executed (ok) but missing from trace
+- G3-0031 invoke: **completeness**: a9: executed (error) but missing from trace
+- G3-0033 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0033 invoke: **completeness**: b1: executed (ok) but missing from trace
+- G3-0033 invoke: **completeness**: b2: executed (ok) but missing from trace
+- G3-0033 invoke: **completeness**: b3: executed (ok) but missing from trace
+- G3-0033 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0033 invoke: **completeness**: b4: executed (ok) but missing from trace
+- G3-0034 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0034 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0034 invoke: **completeness**: a3: executed (running) but missing from trace
+- G3-0035 invoke: **completeness**: n1: executed (ok) but missing from trace
+- G3-0035 stream: **completeness**: n1: executed (ok) but missing from trace
+- G3-0037 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0037 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0037 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0037 invoke: **completeness**: a4: executed (running) but missing from trace
+- G3-0039 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0039 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0039 invoke: **completeness**: a3: executed (running) but missing from trace
+- G3-0040 invoke: **completeness**: n1: executed (ok) but missing from trace
+- G3-0040 invoke: **completeness**: n2: executed (ok) but missing from trace
+- G3-0040 invoke: **completeness**: n3: executed (ok) but missing from trace
+- G3-0040 stream: **completeness**: n1: executed (ok) but missing from trace
+- G3-0040 stream: **completeness**: n2: executed (ok) but missing from trace
+- G3-0040 stream: **completeness**: n3: executed (ok) but missing from trace
+- G3-0041 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0041 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0041 invoke: **completeness**: a3: executed (error) but missing from trace
+- G3-0041 invoke: **completeness**: a4: executed (error) but missing from trace
+- G3-0041 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0041 invoke: **completeness**: a6: executed (ok) but missing from trace
+- G3-0041 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0041 invoke: **completeness**: a8: executed (ok) but missing from trace
+- G3-0041 invoke: **completeness**: a9: executed (error) but missing from trace
+- G3-0041 invoke: **completeness**: a10: executed (ok) but missing from trace
+- G3-0041 invoke: **completeness**: a11: executed (ok) but missing from trace
+- G3-0041 invoke: **completeness**: a12: executed (ok) but missing from trace
+- G3-0041 invoke: **completeness**: a13: executed (error) but missing from trace
+- G3-0043 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0043 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0046 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0046 invoke: **completeness**: a2: executed (error) but missing from trace
+- G3-0046 invoke: **completeness**: a3: executed (error) but missing from trace
+- G3-0046 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0046 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0046 invoke: **completeness**: a6: executed (ok) but missing from trace
+- G3-0046 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0046 invoke: **completeness**: a8: executed (error) but missing from trace
+- G3-0046 invoke: **completeness**: a9: executed (running) but missing from trace
+- G3-0050 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0050 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0050 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0050 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0050 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0050 invoke: **completeness**: a6: executed (ok) but missing from trace
+- G3-0050 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0050 invoke: **completeness**: a8: executed (ok) but missing from trace
+- G3-0055 invoke: **completeness**: n1: executed (ok) but missing from trace
+- G3-0055 invoke: **completeness**: n2: executed (ok) but missing from trace
+- G3-0055 stream: **completeness**: n1: executed (ok) but missing from trace
+- G3-0055 stream: **completeness**: n2: executed (ok) but missing from trace
+- G3-0056 invoke: **completeness**: a1: executed (error) but missing from trace
+- G3-0056 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0056 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0056 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0056 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0056 invoke: **completeness**: a6: executed (running) but missing from trace
+- G3-0059 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0059 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0059 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0059 invoke: **completeness**: a4: executed (running) but missing from trace
+- G3-0060 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0060 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0060 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0060 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0060 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0060 invoke: **completeness**: a6: executed (running) but missing from trace
+- G3-0061 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0061 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0061 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0061 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0061 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0061 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0061 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0063 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0063 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0063 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0063 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0063 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0063 invoke: **completeness**: a6: executed (error) but missing from trace
+- G3-0063 invoke: **completeness**: a7: executed (error) but missing from trace
+- G3-0063 invoke: **completeness**: a8: executed (ok) but missing from trace
+- G3-0063 invoke: **completeness**: a9: executed (ok) but missing from trace
+- G3-0063 invoke: **completeness**: a10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0063 invoke: **completeness**: a11: executed (ok) but missing from trace
+- G3-0063 invoke: **completeness**: a12: executed (ok) but missing from trace
+- G3-0063 invoke: **completeness**: a13: executed (ok) but missing from trace
+- G3-0063 invoke: **completeness**: a14: executed (running) but missing from trace
+- G3-0064 invoke: **completeness**: a1: executed (error) but missing from trace
+- G3-0064 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0064 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0064 invoke: **completeness**: a4: executed (running) but missing from trace
+- G3-0065 invoke: **completeness**: a1: executed (error) but missing from trace
+- G3-0065 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0065 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0065 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0065 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0065 invoke: **completeness**: a6: executed (error) but missing from trace
+- G3-0065 invoke: **completeness**: a7: executed (running) but missing from trace
+- G3-0067 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0067 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0067 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0067 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0067 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0067 invoke: **completeness**: a6: executed (running) but missing from trace
+- G3-0068 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0068 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0068 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0068 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0068 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0068 invoke: **completeness**: a6: executed (error) but missing from trace
+- G3-0068 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0068 invoke: **completeness**: a8: executed (ok) but missing from trace
+- G3-0068 invoke: **completeness**: a9: executed (error) but missing from trace
+- G3-0068 invoke: **completeness**: a10: executed (ok) but missing from trace
+- G3-0071 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0071 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0071 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0071 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0071 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0071 invoke: **completeness**: a6: executed (ok) but missing from trace
+- G3-0076 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0076 invoke: **completeness**: a2: executed (error) but missing from trace
+- G3-0077 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0077 invoke: **completeness**: a2: executed (error) but missing from trace
+- G3-0077 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0077 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0079 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0079 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0079 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0079 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0079 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0079 invoke: **completeness**: a6: executed (error) but missing from trace
+- G3-0079 invoke: **completeness**: a7: executed (error) but missing from trace
+- G3-0079 invoke: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0079 invoke: **completeness**: a9: executed (ok) but missing from trace
+- G3-0079 invoke: **completeness**: a10: executed (running) but missing from trace
+- G3-0080 invoke: **completeness**: a1: executed (error) but missing from trace
+- G3-0080 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0081 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0081 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0081 invoke: **completeness**: a3: executed (error) but missing from trace
+- G3-0081 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0081 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0081 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0081 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0081 invoke: **completeness**: a8: executed (ok) but missing from trace
+- G3-0081 invoke: **completeness**: a9: executed (ok) but missing from trace
+- G3-0081 invoke: **completeness**: a10: executed (ok) but missing from trace
+- G3-0081 invoke: **completeness**: a11: executed (ok) but missing from trace
+- G3-0081 invoke: **completeness**: a12: executed (running) but missing from trace
+- G3-0082 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0082 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0082 invoke: **completeness**: a3: executed (error) but missing from trace
+- G3-0082 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0082 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0082 invoke: **completeness**: a6: executed (running) but missing from trace
+- G3-0083 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0083 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0083 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0083 invoke: **completeness**: a4: executed (running) but missing from trace
+- G3-0085 invoke: **completeness**: n1: executed (error) but missing from trace
+- G3-0085 invoke: **completeness**: n2: executed (error) but missing from trace
+- G3-0085 invoke: **completeness**: n3: executed (error) but missing from trace
+- G3-0085 stream: **completeness**: n1: executed (error) but missing from trace
+- G3-0085 stream: **completeness**: n2: executed (error) but missing from trace
+- G3-0085 stream: **completeness**: n3: executed (error) but missing from trace
+- G3-0087 invoke: **completeness**: n1: executed (ok) but missing from trace
+- G3-0087 stream: **completeness**: n1: executed (ok) but missing from trace
+- G3-0089 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0089 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0089 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0089 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0089 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0089 invoke: **completeness**: a6: executed (ok) but missing from trace
+- G3-0089 invoke: **completeness**: a7: executed (running) but missing from trace
+- G3-0090 invoke: **completeness**: a1: executed (error) but missing from trace
+- G3-0090 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0090 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0090 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0090 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0090 invoke: **completeness**: a6: executed (ok) but missing from trace
+- G3-0090 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0090 invoke: **completeness**: a8: executed (ok) but missing from trace
+- G3-0090 invoke: **completeness**: a9: executed (ok) but missing from trace
+- G3-0090 invoke: **completeness**: a10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0090 invoke: **completeness**: a11: executed (running) but missing from trace
+- G3-0091 invoke: **completeness**: a1: executed (error) but missing from trace
+- G3-0091 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0091 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0091 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0091 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0091 invoke: **completeness**: a6: executed (ok) but missing from trace
+- G3-0091 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0091 invoke: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0091 invoke: **completeness**: a9: executed (ok) but missing from trace
+- G3-0095 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0095 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0095 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0095 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0095 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0095 invoke: **completeness**: a6: executed (ok) but missing from trace
+- G3-0095 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0095 invoke: **completeness**: a8: executed (ok) but missing from trace
+- G3-0095 invoke: **completeness**: a9: executed (ok) but missing from trace
+- G3-0095 invoke: **completeness**: a10: executed (ok) but missing from trace
+- G3-0095 invoke: **completeness**: a11: executed (ok) but missing from trace
+- G3-0095 invoke: **completeness**: a12: executed (ok) but missing from trace
+- G3-0095 invoke: **completeness**: a13: executed (ok) but missing from trace
+- G3-0095 invoke: **completeness**: a14: executed (running) but missing from trace
+- G3-0096 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0096 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0096 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0096 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0096 invoke: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 invoke: **completeness**: a9: executed (ok) but missing from trace
+- G3-0096 invoke: **completeness**: a10: executed (running) but missing from trace
+- G3-0097 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0097 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0097 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0097 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0097 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0097 invoke: **completeness**: a6: executed (ok) but missing from trace
+- G3-0097 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0097 invoke: **completeness**: a8: executed (ok) but missing from trace
+- G3-0097 invoke: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0098 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0098 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0098 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0098 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0098 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0098 invoke: **completeness**: a6: executed (error) but missing from trace
+- G3-0098 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0098 invoke: **completeness**: a8: executed (ok) but missing from trace
+- G3-0098 invoke: **completeness**: a9: executed (ok) but missing from trace
+- G3-0098 invoke: **completeness**: a10: executed (ok) but missing from trace
+
+### langgraph/callbacks
+
+- G3-0001 invoke: **completeness**: n1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: n1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0003 invoke: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0003 stream: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0006 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0006 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0009 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0009 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0013 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0013 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0013 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0013 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0013 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0013 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0020 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0020 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0020 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0020 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0021 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0021 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0021 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0021 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0022 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0022 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0026 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0026 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0030 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0030 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0035 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0035 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0037 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0037 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0042 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0042 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0044 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0047 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0047 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0049 invoke: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0049 stream: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0052 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0052 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0056 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0056 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0057 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0057 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 invoke: **completeness**: b6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 stream: **completeness**: b6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0060 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0060 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0064 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0064 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0065 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0065 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0066 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0066 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0066 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0066 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0074 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0074 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0074 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0074 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0074 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0074 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0074 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0074 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0077 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0077 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0078 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0078 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0079 invoke: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0079 stream: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0080 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0080 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0081 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0081 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0084 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0089 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0089 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0092 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0092 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0100 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0100 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0100 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0100 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0100 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0100 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0100 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0100 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+
+### pydantic-ai/history
+
+- G3-0001 invoke: **completeness**: n1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 invoke: **completeness**: n2: executed (ok) but missing from trace
+- G3-0001 invoke: **completeness**: n3: executed (ok) but missing from trace
+- G3-0001 invoke: **completeness**: n4: executed (ok) but missing from trace
+- G3-0001 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0001 stream: **completeness**: n1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: n2: executed (ok) but missing from trace
+- G3-0001 stream: **completeness**: n3: executed (ok) but missing from trace
+- G3-0001 stream: **completeness**: n4: executed (ok) but missing from trace
+- G3-0001 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0002 invoke: fidelity: a4: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0002 invoke: fidelity: a5: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0002 invoke: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0002 stream: fidelity: a4: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0002 stream: fidelity: a5: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0002 stream: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0003 invoke: fidelity: a9: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0003 stream: fidelity: a9: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0004 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0005 invoke: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0005 stream: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0007 invoke: **completeness**: a9: actual=ok but trace status=incomplete
+- G3-0007 invoke: fidelity: a7: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0007 invoke: fidelity: a8: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0007 invoke: fidelity: a9: output missing: trace=None actual=24
+- G3-0007 stream: fidelity: a7: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0007 stream: fidelity: a8: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0008 invoke: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0008 invoke: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0008 invoke: fidelity: a2: output missing: trace=None actual='echo:日本語'
+- G3-0008 invoke: fidelity: b2: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0008 stream: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0008 stream: **completeness**: b3: actual=ok but trace status=incomplete
+- G3-0008 stream: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0008 stream: fidelity: a2: output missing: trace=None actual='echo:日本語'
+- G3-0008 stream: fidelity: b2: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0008 stream: fidelity: b3: output missing: trace=None actual='echo:🚀'
+- G3-0010 invoke: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0010 invoke: fidelity: a4: output missing: trace=None actual={'tag': 'a4', 'items': [1, 2, 3], 'ok': True}
+- G3-0010 invoke: fidelity: a5: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0010 stream: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0010 stream: fidelity: a4: output missing: trace=None actual={'tag': 'a4', 'items': [1, 2, 3], 'ok': True}
+- G3-0010 stream: fidelity: a5: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0011 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0011 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0013 invoke: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0013 invoke: fidelity: a1: output missing: trace=None actual={'tag': 'a1', 'items': [1, 2, 3], 'ok': True}
+- G3-0013 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0013 stream: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0013 stream: fidelity: a1: output missing: trace=None actual={'tag': 'a1', 'items': [1, 2, 3], 'ok': True}
+- G3-0013 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0014 invoke: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0014 invoke: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0014 invoke: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0014 invoke: fidelity: a1: output missing: trace=None actual='echo:quote "x"'
+- G3-0014 invoke: fidelity: a2: output missing: trace=None actual=15
+- G3-0014 invoke: fidelity: a3: output missing: trace=None actual=-42
+- G3-0014 invoke: fidelity: a4: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0014 stream: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0014 stream: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0014 stream: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0014 stream: fidelity: a1: output missing: trace=None actual='echo:quote "x"'
+- G3-0014 stream: fidelity: a2: output missing: trace=None actual=15
+- G3-0014 stream: fidelity: a3: output missing: trace=None actual=-42
+- G3-0014 stream: fidelity: a4: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0015 invoke: **completeness**: a13: actual=ok but trace status=incomplete
+- G3-0015 invoke: **completeness**: a14: actual=ok but trace status=incomplete
+- G3-0015 invoke: fidelity: a11: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0015 invoke: fidelity: a12: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0015 invoke: fidelity: a13: output missing: trace=None actual={'tag': 'a13', 'items': [1, 2, 3], 'ok': True}
+- G3-0015 invoke: fidelity: a14: output missing: trace=None actual=-2
+- G3-0015 stream: **completeness**: b7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 stream: **completeness**: a13: actual=ok but trace status=incomplete
+- G3-0015 stream: **completeness**: a14: actual=ok but trace status=incomplete
+- G3-0015 stream: fidelity: a11: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0015 stream: fidelity: a12: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0015 stream: fidelity: a13: output missing: trace=None actual={'tag': 'a13', 'items': [1, 2, 3], 'ok': True}
+- G3-0015 stream: fidelity: a14: output missing: trace=None actual=-2
+- G3-0017 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0019 invoke: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0019 stream: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0023 invoke: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0023 invoke: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0023 invoke: fidelity: a2: output missing: trace=None actual='echo:🚀'
+- G3-0023 stream: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0024 invoke: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0024 stream: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0027 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0027 stream: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0029 invoke: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0029 stream: **completeness**: a5: actual=ok but trace status=incomplete
+- G3-0029 stream: fidelity: a5: output missing: trace=None actual='echo:日本語'
+- G3-0029 stream: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0030 invoke: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0030 invoke: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0030 invoke: fidelity: a2: output missing: trace=None actual='echo:gamma éè'
+- G3-0030 stream: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0030 stream: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0030 stream: fidelity: a2: output missing: trace=None actual='echo:gamma éè'
+- G3-0031 invoke: **completeness**: a7: actual=ok but trace status=incomplete
+- G3-0031 invoke: **completeness**: a8: actual=ok but trace status=incomplete
+- G3-0031 invoke: fidelity: a7: output missing: trace=None actual='echo:日本語'
+- G3-0031 invoke: fidelity: a8: output missing: trace=None actual='echo:日本語'
+- G3-0031 invoke: fidelity: a9: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0031 stream: fidelity: a9: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0035 invoke: **completeness**: n1: executed (ok) but missing from trace
+- G3-0035 invoke: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0035 invoke: fidelity: a2: output missing: trace=None actual={'tag': 'a2', 'items': [1, 2, 3], 'ok': True}
+- G3-0035 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0035 stream: **completeness**: n1: executed (ok) but missing from trace
+- G3-0035 stream: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0035 stream: fidelity: a2: output missing: trace=None actual={'tag': 'a2', 'items': [1, 2, 3], 'ok': True}
+- G3-0035 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0040 invoke: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0040 invoke: fidelity: a1: output missing: trace=None actual='echo:beta'
+- G3-0040 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0040 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0041 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0041 stream: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0041 stream: fidelity: a2: output missing: trace=None actual='a2:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...(len=50002)
+- G3-0041 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0044 invoke: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0044 invoke: fidelity: a1: output missing: trace=None actual='echo:🚀'
+- G3-0044 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0044 stream: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0044 stream: fidelity: a2: output missing: trace=None actual=-26
+- G3-0044 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0045 invoke: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0045 invoke: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0045 invoke: fidelity: a3: output missing: trace=None actual='echo:line\nbreak'
+- G3-0045 stream: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0045 stream: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0045 stream: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0045 stream: fidelity: a2: output missing: trace=None actual='echo:alpha'
+- G3-0045 stream: fidelity: a3: output missing: trace=None actual='echo:line\nbreak'
+- G3-0046 invoke: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0046 invoke: fidelity: a1: output missing: trace=None actual=-14
+- G3-0046 invoke: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0046 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0046 stream: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0046 stream: fidelity: a1: output missing: trace=None actual=-14
+- G3-0046 stream: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0046 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0047 invoke: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0047 stream: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0051 invoke: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0051 invoke: fidelity: a2: output missing: trace=None actual='echo:gamma éè'
+- G3-0051 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0051 invoke: fidelity: a4: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0051 invoke: fidelity: a5: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0051 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0051 stream: fidelity: a4: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0051 stream: fidelity: a5: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0052 invoke: **completeness**: b2: actual=ok but trace status=incomplete
+- G3-0052 invoke: fidelity: b1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0052 invoke: fidelity: b2: output missing: trace=None actual='echo:quote "x"'
+- G3-0052 invoke: fidelity: b3: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0052 stream: **completeness**: b2: actual=ok but trace status=incomplete
+- G3-0052 stream: fidelity: b1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0052 stream: fidelity: b2: output missing: trace=None actual='echo:quote "x"'
+- G3-0052 stream: fidelity: b3: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0053 invoke: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0053 invoke: **completeness**: a5: actual=ok but trace status=incomplete
+- G3-0053 invoke: fidelity: a4: output missing: trace=None actual=-28
+- G3-0053 invoke: fidelity: a5: output missing: trace=None actual='echo:quote "x"'
+- G3-0053 invoke: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0053 stream: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0053 stream: fidelity: a4: output missing: trace=None actual=-28
+- G3-0053 stream: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0054 invoke: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0054 invoke: **completeness**: a5: actual=ok but trace status=incomplete
+- G3-0054 invoke: fidelity: a5: output missing: trace=None actual=40
+- G3-0054 invoke: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0054 stream: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0054 stream: **completeness**: a5: actual=ok but trace status=incomplete
+- G3-0054 stream: fidelity: a5: output missing: trace=None actual=40
+- G3-0054 stream: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0055 invoke: **completeness**: n1: executed (ok) but missing from trace
+- G3-0055 invoke: **completeness**: n2: executed (ok) but missing from trace
+- G3-0055 stream: **completeness**: n1: executed (ok) but missing from trace
+- G3-0055 stream: **completeness**: n2: executed (ok) but missing from trace
+- G3-0056 invoke: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0056 stream: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0056 stream: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0056 stream: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0056 stream: fidelity: a2: output missing: trace=None actual=-7
+- G3-0056 stream: fidelity: a3: output missing: trace=None actual='echo:line\nbreak'
+- G3-0057 invoke: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0057 stream: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0057 stream: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0057 stream: fidelity: a3: output missing: trace=None actual={'tag': 'a3', 'items': [1, 2, 3], 'ok': True}
+- G3-0058 invoke: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0058 stream: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0062 invoke: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0062 invoke: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0062 invoke: fidelity: a3: output missing: trace=None actual=-44
+- G3-0062 stream: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0063 invoke: **completeness**: a8: actual=ok but trace status=incomplete
+- G3-0063 invoke: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0063 invoke: fidelity: a7: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0063 invoke: fidelity: a8: output missing: trace=None actual={'tag': 'a8', 'items': [1, 2, 3], 'ok': True}
+- G3-0063 stream: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0063 stream: fidelity: a7: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0064 invoke: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0064 invoke: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0064 invoke: fidelity: a2: output missing: trace=None actual='echo:日本語'
+- G3-0064 stream: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0064 stream: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0064 stream: fidelity: a2: output missing: trace=None actual='echo:日本語'
+- G3-0065 invoke: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0065 invoke: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0065 invoke: fidelity: a4: output missing: trace=None actual='echo:quote "x"'
+- G3-0065 stream: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0068 invoke: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0068 stream: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0069 stream: **completeness**: a10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0069 stream: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0069 stream: **completeness**: a12: emitted but never executed, and the attempt is invisible in the trace
+- G3-0072 invoke: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0072 invoke: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0072 invoke: fidelity: a4: output missing: trace=None actual='echo:日本語'
+- G3-0072 stream: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0072 stream: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0072 stream: fidelity: a4: output missing: trace=None actual='echo:日本語'
+- G3-0073 invoke: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0073 stream: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0074 invoke: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0074 invoke: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0074 invoke: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0074 invoke: fidelity: a1: output missing: trace=None actual='echo:alpha'
+- G3-0074 invoke: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0074 invoke: fidelity: a3: output missing: trace=None actual='echo:quote "x"'
+- G3-0074 stream: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0074 stream: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0076 invoke: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0076 stream: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0077 invoke: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0077 invoke: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0077 invoke: fidelity: a3: output missing: trace=None actual=20
+- G3-0077 stream: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0078 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0079 invoke: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0079 invoke: fidelity: a7: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0079 stream: **completeness**: a9: actual=ok but trace status=incomplete
+- G3-0079 stream: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0079 stream: fidelity: a7: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0079 stream: fidelity: a9: output missing: trace=None actual=53
+- G3-0080 invoke: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0080 stream: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0081 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0081 stream: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0081 stream: fidelity: a2: output missing: trace=None actual='echo:gamma éè'
+- G3-0081 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0082 invoke: **completeness**: a5: actual=ok but trace status=incomplete
+- G3-0082 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0082 invoke: fidelity: a5: output missing: trace=None actual='echo:line\nbreak'
+- G3-0082 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0084 invoke: **completeness**: a5: actual=ok but trace status=incomplete
+- G3-0084 invoke: **completeness**: a7: actual=ok but trace status=incomplete
+- G3-0084 invoke: fidelity: a5: output missing: trace=None actual={'tag': 'a5', 'items': [1, 2, 3], 'ok': True}
+- G3-0084 invoke: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0084 invoke: fidelity: a7: output missing: trace=None actual='echo:gamma éè'
+- G3-0084 stream: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0084 stream: fidelity: a4: output missing: trace=None actual='echo:gamma éè'
+- G3-0084 stream: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0085 invoke: **completeness**: n1: executed (error) but missing from trace
+- G3-0085 invoke: **completeness**: n2: executed (error) but missing from trace
+- G3-0085 invoke: fidelity: a9: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0085 stream: **completeness**: n1: executed (error) but missing from trace
+- G3-0085 stream: **completeness**: n2: executed (error) but missing from trace
+- G3-0085 stream: fidelity: a9: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0086 invoke: fidelity: a5: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0086 stream: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0086 stream: fidelity: a3: output missing: trace=None actual='a3:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...(len=120002)
+- G3-0086 stream: fidelity: a5: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0087 invoke: **completeness**: n1: executed (ok) but missing from trace
+- G3-0087 invoke: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0087 invoke: fidelity: a1: output missing: trace=None actual='echo:🚀'
+- G3-0087 invoke: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0087 stream: **completeness**: n1: executed (ok) but missing from trace
+- G3-0087 stream: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0088 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0090 invoke: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0090 stream: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0090 stream: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0090 stream: fidelity: a2: output missing: trace=None actual=42
+- G3-0091 invoke: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0091 stream: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0091 stream: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0091 stream: fidelity: a2: output missing: trace=None actual={'tag': 'a2', 'items': [1, 2, 3], 'ok': True}
+- G3-0092 invoke: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0092 invoke: fidelity: b4: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0092 stream: **completeness**: b2: actual=ok but trace status=incomplete
+- G3-0092 stream: **completeness**: b3: actual=ok but trace status=incomplete
+- G3-0092 stream: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0092 stream: fidelity: b2: output missing: trace=None actual={'tag': 'b2', 'items': [1, 2, 3], 'ok': True}
+- G3-0092 stream: fidelity: b3: output missing: trace=None actual='echo:日本語'
+- G3-0092 stream: fidelity: b4: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0093 invoke: fidelity: a4: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0093 stream: fidelity: a4: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0094 invoke: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0094 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0094 invoke: fidelity: a4: output missing: trace=None actual='echo:gamma éè'
+- G3-0094 stream: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0094 stream: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0094 stream: fidelity: a2: output missing: trace=None actual='echo:🚀'
+- G3-0094 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0094 stream: fidelity: a4: output missing: trace=None actual='echo:gamma éè'
+- G3-0096 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0098 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0098 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0100 invoke: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0100 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0100 invoke: fidelity: a4: output missing: trace=None actual='echo:🚀'
+- G3-0100 stream: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0100 stream: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0100 stream: fidelity: a2: output missing: trace=None actual='echo:🚀'
+- G3-0100 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0100 stream: fidelity: a4: output missing: trace=None actual='echo:🚀'
+
+### autogen/otel
+
+- G3-0001 invoke: **completeness**: n1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: n1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0003 invoke: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0003 stream: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0005 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0005 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0006 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0006 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0008 invoke: **completeness**: b8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0008 stream: **completeness**: b8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 invoke: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 invoke: **completeness**: a16: executed (running) but missing from trace
+- G3-0010 stream: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 stream: **completeness**: a16: executed (running) but missing from trace
+- G3-0019 invoke: **completeness**: a15: executed (running) but missing from trace
+- G3-0019 stream: **completeness**: a15: executed (running) but missing from trace
+- G3-0023 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0023 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0027 invoke: **completeness**: a15: executed (running) but missing from trace
+- G3-0027 stream: **completeness**: a15: executed (running) but missing from trace
+- G3-0029 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0029 invoke: **completeness**: a10: executed (running) but missing from trace
+- G3-0029 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0029 stream: **completeness**: a10: executed (running) but missing from trace
+- G3-0030 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0030 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0030 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0030 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0034 invoke: **completeness**: a3: executed (running) but missing from trace
+- G3-0034 stream: **completeness**: a3: executed (running) but missing from trace
+- G3-0037 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0037 invoke: **completeness**: a4: executed (running) but missing from trace
+- G3-0037 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0037 stream: **completeness**: a4: executed (running) but missing from trace
+- G3-0039 invoke: **completeness**: a3: executed (running) but missing from trace
+- G3-0039 stream: **completeness**: a3: executed (running) but missing from trace
+- G3-0042 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0042 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0046 invoke: **completeness**: a9: executed (running) but missing from trace
+- G3-0046 stream: **completeness**: a9: executed (running) but missing from trace
+- G3-0048 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0049 invoke: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0049 stream: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0052 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0052 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0054 invoke: **completeness**: a12: emitted but never executed, and the attempt is invisible in the trace
+- G3-0054 stream: **completeness**: a12: emitted but never executed, and the attempt is invisible in the trace
+- G3-0056 invoke: **completeness**: a6: executed (running) but missing from trace
+- G3-0056 stream: **completeness**: a6: executed (running) but missing from trace
+- G3-0057 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0057 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 invoke: **completeness**: b6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 invoke: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 stream: **completeness**: b6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 stream: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0059 invoke: **completeness**: a4: executed (running) but missing from trace
+- G3-0059 stream: **completeness**: a4: executed (running) but missing from trace
+- G3-0060 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0060 invoke: **completeness**: a6: executed (running) but missing from trace
+- G3-0060 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0060 stream: **completeness**: a6: executed (running) but missing from trace
+- G3-0063 invoke: **completeness**: a14: executed (running) but missing from trace
+- G3-0063 stream: **completeness**: a14: executed (running) but missing from trace
+- G3-0064 invoke: **completeness**: a4: executed (running) but missing from trace
+- G3-0064 stream: **completeness**: a4: executed (running) but missing from trace
+- G3-0065 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0065 invoke: **completeness**: a7: executed (running) but missing from trace
+- G3-0065 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0065 stream: **completeness**: a7: executed (running) but missing from trace
+- G3-0067 invoke: **completeness**: a6: executed (running) but missing from trace
+- G3-0067 stream: **completeness**: a6: executed (running) but missing from trace
+- G3-0078 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0078 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0079 invoke: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0079 invoke: **completeness**: a10: executed (running) but missing from trace
+- G3-0079 stream: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0079 stream: **completeness**: a10: executed (running) but missing from trace
+- G3-0081 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0081 invoke: **completeness**: a12: executed (running) but missing from trace
+- G3-0081 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0081 stream: **completeness**: a12: executed (running) but missing from trace
+- G3-0082 invoke: **completeness**: a6: executed (running) but missing from trace
+- G3-0082 stream: **completeness**: a6: executed (running) but missing from trace
+- G3-0083 invoke: **completeness**: a4: executed (running) but missing from trace
+- G3-0083 stream: **completeness**: a4: executed (running) but missing from trace
+- G3-0085 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0085 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0085 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0085 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0089 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0089 invoke: **completeness**: a7: executed (running) but missing from trace
+- G3-0089 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0089 stream: **completeness**: a7: executed (running) but missing from trace
+- G3-0090 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0090 invoke: **completeness**: a11: executed (running) but missing from trace
+- G3-0090 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0090 stream: **completeness**: a11: executed (running) but missing from trace
+- G3-0092 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0092 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0095 invoke: **completeness**: a14: executed (running) but missing from trace
+- G3-0095 stream: **completeness**: a14: executed (running) but missing from trace
+- G3-0096 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 invoke: **completeness**: a10: executed (running) but missing from trace
+- G3-0096 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 stream: **completeness**: a10: executed (running) but missing from trace
+
+### openai-agents/tracing
+
+- G3-0001 invoke: **completeness**: n1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 invoke: **completeness**: n2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 invoke: fidelity: a13: error message not recorded (actual='ModelBehaviorError: Tool lookup_inventory not found in agent agent0')
+- G3-0001 stream: **completeness**: n1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: n2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: fidelity: a13: error message not recorded (actual='ModelBehaviorError: Tool lookup_inventory not found in agent agent0')
+- G3-0002 invoke: fidelity: a4: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0002 invoke: fidelity: a5: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0002 invoke: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0002 stream: fidelity: a4: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0002 stream: fidelity: a5: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0002 stream: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0003 invoke: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0003 invoke: **completeness**: a10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0003 invoke: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0003 stream: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0003 stream: **completeness**: a10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0003 stream: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0005 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0005 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0005 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0005 invoke: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0005 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0005 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0005 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0005 stream: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0006 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0006 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0007 invoke: fidelity: a7: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0007 invoke: fidelity: a8: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0007 stream: fidelity: a7: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0007 stream: fidelity: a8: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0008 invoke: **completeness**: b8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0008 invoke: **completeness**: b9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0008 invoke: **completeness**: b10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0008 invoke: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0008 invoke: fidelity: b2: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0008 invoke: fidelity: a5: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0008 invoke: fidelity: b6: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0008 invoke: fidelity: a11: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0008 invoke: fidelity: a12: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0008 invoke: fidelity: a18: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0008 stream: **completeness**: b8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0008 stream: **completeness**: b9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0008 stream: **completeness**: b10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0008 stream: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0008 stream: fidelity: b2: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0008 stream: fidelity: a5: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0008 stream: fidelity: b6: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0008 stream: fidelity: a11: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0008 stream: fidelity: a12: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0008 stream: fidelity: a18: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0010 invoke: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 invoke: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 invoke: **completeness**: a10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 invoke: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 invoke: fidelity: a5: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0010 stream: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 stream: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 stream: **completeness**: a10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 stream: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 stream: fidelity: a5: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0011 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0011 invoke: fidelity: a5: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0011 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0011 stream: fidelity: a5: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0013 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0013 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0014 invoke: fidelity: a4: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0014 invoke: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0014 stream: fidelity: a4: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0014 stream: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0015 invoke: fidelity: b13: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0015 invoke: fidelity: a11: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0015 invoke: fidelity: a12: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0015 stream: fidelity: a11: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0015 stream: fidelity: a12: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0015 stream: fidelity: b13: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0019 invoke: **completeness**: a15: actual=cancelled but trace status=ok
+- G3-0019 invoke: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0019 invoke: fidelity: a5: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0019 invoke: fidelity: a8: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0019 invoke: fidelity: a11: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0019 stream: **completeness**: a15: actual=cancelled but trace status=ok
+- G3-0019 stream: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0019 stream: fidelity: a5: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0019 stream: fidelity: a8: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0019 stream: fidelity: a11: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0023 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0023 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0023 invoke: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0023 invoke: fidelity: a5: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0023 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0023 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0023 stream: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0023 stream: fidelity: a5: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0024 invoke: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0024 stream: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0027 invoke: **completeness**: a15: actual=cancelled but trace status=ok
+- G3-0027 stream: **completeness**: a15: actual=cancelled but trace status=ok
+- G3-0029 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0029 invoke: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0029 invoke: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0029 invoke: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0029 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0029 stream: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0029 stream: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0029 stream: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0030 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0030 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0030 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0030 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0030 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0030 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0031 invoke: fidelity: a9: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0031 stream: fidelity: a9: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0034 invoke: **completeness**: a3: actual=cancelled but trace status=ok
+- G3-0034 stream: **completeness**: a3: actual=cancelled but trace status=ok
+- G3-0035 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0035 invoke: fidelity: a4: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0035 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0035 stream: fidelity: a4: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0037 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0037 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0037 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0037 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0037 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0037 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0039 invoke: **completeness**: a3: actual=cancelled but trace status=ok
+- G3-0039 stream: **completeness**: a3: actual=cancelled but trace status=ok
+- G3-0040 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0040 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0041 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0041 invoke: fidelity: a4: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0041 invoke: fidelity: a9: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0041 invoke: fidelity: a13: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0041 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0041 stream: fidelity: a4: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0041 stream: fidelity: a9: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0041 stream: fidelity: a13: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0042 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0042 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0042 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0042 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0042 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0042 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0042 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0042 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0044 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0044 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0045 invoke: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0045 invoke: fidelity: a5: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0045 stream: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0045 stream: fidelity: a5: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0046 invoke: **completeness**: a9: actual=cancelled but trace status=ok
+- G3-0046 invoke: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0046 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0046 invoke: fidelity: a8: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0046 stream: **completeness**: a9: actual=cancelled but trace status=ok
+- G3-0046 stream: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0046 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0046 stream: fidelity: a8: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0047 invoke: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0047 stream: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0048 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0049 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0049 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0049 invoke: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0049 invoke: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0049 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0049 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0049 stream: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0049 stream: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0051 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0051 invoke: fidelity: a4: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0051 invoke: fidelity: a5: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0051 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0051 stream: fidelity: a4: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0051 stream: fidelity: a5: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0052 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0052 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0052 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0052 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0052 invoke: fidelity: b1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0052 invoke: fidelity: b3: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0052 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0052 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0052 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0052 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0052 stream: fidelity: b1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0052 stream: fidelity: b3: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0053 invoke: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0053 invoke: fidelity: a10: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0053 stream: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0053 stream: fidelity: a10: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0054 invoke: **completeness**: a12: emitted but never executed, and the attempt is invisible in the trace
+- G3-0054 invoke: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0054 invoke: fidelity: a10: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0054 stream: **completeness**: a12: emitted but never executed, and the attempt is invisible in the trace
+- G3-0054 stream: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0054 stream: fidelity: a10: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0056 invoke: **completeness**: a6: actual=cancelled but trace status=ok
+- G3-0056 invoke: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0056 stream: **completeness**: a6: actual=cancelled but trace status=ok
+- G3-0056 stream: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0057 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0057 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0057 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0057 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0057 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0057 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 invoke: **completeness**: b4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 invoke: **completeness**: b5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 invoke: **completeness**: b6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 invoke: **completeness**: b7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 invoke: **completeness**: a10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 invoke: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 invoke: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0058 invoke: fidelity: a8: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0058 stream: **completeness**: b4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 stream: **completeness**: b5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 stream: **completeness**: b6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 stream: **completeness**: b7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 stream: **completeness**: a10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 stream: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 stream: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0058 stream: fidelity: a8: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0059 invoke: **completeness**: a4: actual=cancelled but trace status=ok
+- G3-0059 stream: **completeness**: a4: actual=cancelled but trace status=ok
+- G3-0060 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0060 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0060 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0060 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0060 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0060 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0062 invoke: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0062 stream: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0063 invoke: **completeness**: a14: actual=cancelled but trace status=ok
+- G3-0063 invoke: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0063 invoke: fidelity: a7: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0063 stream: **completeness**: a14: actual=cancelled but trace status=ok
+- G3-0063 stream: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0063 stream: fidelity: a7: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0064 invoke: **completeness**: a4: actual=cancelled but trace status=ok
+- G3-0064 invoke: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0064 stream: **completeness**: a4: actual=cancelled but trace status=ok
+- G3-0064 stream: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0065 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0065 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0065 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0065 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0065 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0065 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0065 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0065 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0067 invoke: **completeness**: a6: actual=cancelled but trace status=ok
+- G3-0067 stream: **completeness**: a6: actual=cancelled but trace status=ok
+- G3-0068 invoke: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0068 invoke: fidelity: a9: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0068 stream: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0068 stream: fidelity: a9: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0072 invoke: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0072 stream: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0073 invoke: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0073 stream: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0074 invoke: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0074 stream: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0076 invoke: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0076 stream: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0077 invoke: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0077 stream: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0078 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0078 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0079 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0079 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0079 invoke: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0079 invoke: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0079 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0079 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0079 stream: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0079 stream: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0080 invoke: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0080 stream: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0081 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0081 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0081 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0081 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0081 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0081 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0081 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0081 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0081 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0081 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0082 invoke: **completeness**: a6: actual=cancelled but trace status=ok
+- G3-0082 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0082 stream: **completeness**: a6: actual=cancelled but trace status=ok
+- G3-0082 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0083 invoke: **completeness**: a4: actual=cancelled but trace status=ok
+- G3-0083 stream: **completeness**: a4: actual=cancelled but trace status=ok
+- G3-0084 invoke: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0084 stream: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0085 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0085 invoke: fidelity: n1: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0085 invoke: fidelity: n2: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0085 invoke: fidelity: n3: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0085 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0085 stream: fidelity: n1: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0085 stream: fidelity: n2: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0085 stream: fidelity: n3: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0086 invoke: fidelity: a5: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0086 stream: fidelity: a5: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0087 invoke: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0087 stream: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0089 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0089 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0089 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0089 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0089 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0089 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0090 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0090 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0090 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0090 invoke: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0090 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0090 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0090 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0090 stream: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0091 invoke: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0091 stream: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0092 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0092 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0092 invoke: fidelity: b4: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0092 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0092 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0092 stream: fidelity: b4: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0093 invoke: fidelity: a4: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0093 stream: fidelity: a4: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0094 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0094 invoke: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0094 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0094 stream: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0095 invoke: **completeness**: a14: actual=cancelled but trace status=ok
+- G3-0095 stream: **completeness**: a14: actual=cancelled but trace status=ok
+- G3-0096 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0098 invoke: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0098 stream: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0100 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0100 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: denied')
+
+### semantic-kernel/filters
+
+- G3-0001 invoke: **completeness**: n1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: n1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0002 invoke: **completeness**: b2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0002 invoke: **completeness**: b4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0002 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0002 stream: **completeness**: b2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0002 stream: **completeness**: b4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0002 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0003 invoke: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0003 stream: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0005 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0005 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0006 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0006 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0008 invoke: **completeness**: a10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0008 invoke: **completeness**: b8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0008 stream: **completeness**: a10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0008 stream: **completeness**: b8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 invoke: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 invoke: **completeness**: a15: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 stream: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 stream: **completeness**: a15: emitted but never executed, and the attempt is invisible in the trace
+- G3-0011 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0011 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0014 invoke: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0014 stream: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 invoke: **completeness**: b6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 invoke: **completeness**: a10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 stream: **completeness**: b6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 stream: **completeness**: a10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0018 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0018 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0019 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0019 invoke: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0019 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0019 stream: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0020 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0020 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0023 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0023 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0024 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0024 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0027 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0027 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0027 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0027 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0029 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0029 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0030 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0030 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0030 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0030 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0032 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0032 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0037 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0037 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0038 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0038 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0040 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0040 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0042 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0042 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0049 invoke: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0049 stream: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0051 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0051 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0052 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0052 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0054 invoke: **completeness**: a12: emitted but never executed, and the attempt is invisible in the trace
+- G3-0054 stream: **completeness**: a12: emitted but never executed, and the attempt is invisible in the trace
+- G3-0057 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0057 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 invoke: **completeness**: b6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 invoke: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 stream: **completeness**: b6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 stream: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0060 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0060 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0060 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0060 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0061 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0061 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0062 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0062 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0063 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0063 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0065 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0065 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0069 invoke: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0069 stream: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0078 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0078 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0078 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0078 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0079 invoke: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0079 stream: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0081 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0081 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0085 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0085 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0085 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0085 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0088 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0088 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0088 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0088 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0089 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0089 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0090 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0090 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0091 invoke: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0091 stream: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0092 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0092 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0094 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0094 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0098 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0098 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+
+### llamaindex/openinference
+
+- G3-0001 invoke: **completeness**: n1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: n1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0003 invoke: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0003 stream: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0005 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0005 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0006 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0006 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0008 invoke: **completeness**: b8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0008 stream: **completeness**: b8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0009 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0009 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 invoke: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 invoke: **completeness**: a16: executed (running) but missing from trace
+- G3-0010 stream: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 stream: **completeness**: a16: executed (running) but missing from trace
+- G3-0011 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0011 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0011 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0011 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0011 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0011 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0011 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0011 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0013 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0013 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0013 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0013 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0013 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0013 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0019 invoke: **completeness**: a15: executed (running) but missing from trace
+- G3-0019 stream: **completeness**: a15: executed (running) but missing from trace
+- G3-0020 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0020 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0020 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0020 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0021 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0021 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0021 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0021 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0022 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0022 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0023 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0023 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0026 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0026 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0027 invoke: **completeness**: a15: executed (running) but missing from trace
+- G3-0027 stream: **completeness**: a15: executed (running) but missing from trace
+- G3-0029 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0029 invoke: **completeness**: a10: executed (running) but missing from trace
+- G3-0029 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0029 stream: **completeness**: a10: executed (running) but missing from trace
+- G3-0030 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0030 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0030 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0030 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0034 invoke: **completeness**: a3: executed (running) but missing from trace
+- G3-0034 stream: **completeness**: a3: executed (running) but missing from trace
+- G3-0037 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0037 invoke: **completeness**: a4: executed (running) but missing from trace
+- G3-0037 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0037 stream: **completeness**: a4: executed (running) but missing from trace
+- G3-0039 invoke: **completeness**: a3: executed (running) but missing from trace
+- G3-0039 stream: **completeness**: a3: executed (running) but missing from trace
+- G3-0042 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0042 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0044 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0044 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0046 invoke: **completeness**: a9: executed (running) but missing from trace
+- G3-0046 stream: **completeness**: a9: executed (running) but missing from trace
+- G3-0047 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0047 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0049 invoke: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0049 stream: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0052 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0052 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0054 invoke: **completeness**: a12: emitted but never executed, and the attempt is invisible in the trace
+- G3-0054 stream: **completeness**: a12: emitted but never executed, and the attempt is invisible in the trace
+- G3-0056 invoke: **completeness**: a6: executed (running) but missing from trace
+- G3-0056 stream: **completeness**: a6: executed (running) but missing from trace
+- G3-0057 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0057 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 invoke: **completeness**: b6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 invoke: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 stream: **completeness**: b6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 stream: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0059 invoke: **completeness**: a4: executed (running) but missing from trace
+- G3-0059 stream: **completeness**: a4: executed (running) but missing from trace
+- G3-0060 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0060 invoke: **completeness**: a6: executed (running) but missing from trace
+- G3-0060 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0060 stream: **completeness**: a6: executed (running) but missing from trace
+- G3-0063 invoke: **completeness**: a14: executed (running) but missing from trace
+- G3-0063 stream: **completeness**: a14: executed (running) but missing from trace
+- G3-0064 invoke: **completeness**: a4: executed (running) but missing from trace
+- G3-0064 stream: **completeness**: a4: executed (running) but missing from trace
+- G3-0065 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0065 invoke: **completeness**: a7: executed (running) but missing from trace
+- G3-0065 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0065 stream: **completeness**: a7: executed (running) but missing from trace
+- G3-0066 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0066 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0066 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0066 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0067 invoke: **completeness**: a6: executed (running) but missing from trace
+- G3-0067 stream: **completeness**: a6: executed (running) but missing from trace
+- G3-0074 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0074 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0074 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0074 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0074 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0074 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0074 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0074 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0078 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0078 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0079 invoke: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0079 invoke: **completeness**: a10: executed (running) but missing from trace
+- G3-0079 stream: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0079 stream: **completeness**: a10: executed (running) but missing from trace
+- G3-0081 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0081 invoke: **completeness**: a12: executed (running) but missing from trace
+- G3-0081 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0081 stream: **completeness**: a12: executed (running) but missing from trace
+- G3-0082 invoke: **completeness**: a6: executed (running) but missing from trace
+- G3-0082 stream: **completeness**: a6: executed (running) but missing from trace
+- G3-0083 invoke: **completeness**: a4: executed (running) but missing from trace
+- G3-0083 stream: **completeness**: a4: executed (running) but missing from trace
+- G3-0085 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0085 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0085 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0085 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0089 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0089 invoke: **completeness**: a7: executed (running) but missing from trace
+- G3-0089 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0089 stream: **completeness**: a7: executed (running) but missing from trace
+- G3-0090 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0090 invoke: **completeness**: a11: executed (running) but missing from trace
+- G3-0090 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0090 stream: **completeness**: a11: executed (running) but missing from trace
+- G3-0092 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0092 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0095 invoke: **completeness**: a14: executed (running) but missing from trace
+- G3-0095 stream: **completeness**: a14: executed (running) but missing from trace
+- G3-0096 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 invoke: **completeness**: a10: executed (running) but missing from trace
+- G3-0096 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 stream: **completeness**: a10: executed (running) but missing from trace
+- G3-0100 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0100 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0100 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0100 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0100 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0100 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0100 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0100 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+
+### google-adk/events
+
+- G3-0001 invoke: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0001 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0001 invoke: fidelity: a4: output missing: trace=None actual='echo:line\nbreak'
+- G3-0001 stream: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0001 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0001 stream: fidelity: a4: output missing: trace=None actual='echo:line\nbreak'
+- G3-0002 invoke: fidelity: a4: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0002 invoke: fidelity: a5: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0002 invoke: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0002 stream: fidelity: a4: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0002 stream: fidelity: a5: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0002 stream: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0003 invoke: **completeness**: a10: actual=ok but trace status=incomplete
+- G3-0003 invoke: fidelity: a9: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0003 invoke: fidelity: a10: output missing: trace=None actual=-78
+- G3-0003 stream: **completeness**: a10: actual=ok but trace status=incomplete
+- G3-0003 stream: fidelity: a9: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0003 stream: fidelity: a10: output missing: trace=None actual=-78
+- G3-0004 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0004 invoke: fidelity: a4: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0004 invoke: fidelity: a5: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0004 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0004 stream: fidelity: a4: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0004 stream: fidelity: a5: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0005 invoke: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0005 invoke: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0005 invoke: fidelity: a1: output missing: trace=None actual='echo:quote "x"'
+- G3-0005 invoke: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0005 invoke: fidelity: a3: output missing: trace=None actual='echo:line\nbreak'
+- G3-0005 stream: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0005 stream: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0005 stream: fidelity: a1: output missing: trace=None actual='echo:quote "x"'
+- G3-0005 stream: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0005 stream: fidelity: a3: output missing: trace=None actual='echo:line\nbreak'
+- G3-0006 invoke: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0006 invoke: fidelity: a1: output missing: trace=None actual=41
+- G3-0006 invoke: fidelity: a2: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0006 stream: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0006 stream: fidelity: a1: output missing: trace=None actual=41
+- G3-0006 stream: fidelity: a2: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0007 invoke: **completeness**: a9: actual=ok but trace status=incomplete
+- G3-0007 invoke: fidelity: a7: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0007 invoke: fidelity: a8: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0007 invoke: fidelity: a9: output missing: trace=None actual=24
+- G3-0007 stream: **completeness**: a9: actual=ok but trace status=incomplete
+- G3-0007 stream: fidelity: a7: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0007 stream: fidelity: a8: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0007 stream: fidelity: a9: output missing: trace=None actual=24
+- G3-0008 invoke: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0008 invoke: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0008 invoke: **completeness**: b1: actual=ok but trace status=incomplete
+- G3-0008 invoke: **completeness**: b3: actual=ok but trace status=incomplete
+- G3-0008 invoke: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0008 invoke: fidelity: a2: output missing: trace=None actual='echo:日本語'
+- G3-0008 invoke: fidelity: a3: output missing: trace=None actual={'tag': 'a3', 'items': [1, 2, 3], 'ok': True}
+- G3-0008 invoke: fidelity: a4: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0008 invoke: fidelity: b1: output missing: trace=None actual='echo:alpha'
+- G3-0008 invoke: fidelity: b2: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0008 invoke: fidelity: b3: output missing: trace=None actual='echo:🚀'
+- G3-0008 stream: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0008 stream: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0008 stream: **completeness**: b1: actual=ok but trace status=incomplete
+- G3-0008 stream: **completeness**: b3: actual=ok but trace status=incomplete
+- G3-0008 stream: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0008 stream: fidelity: a2: output missing: trace=None actual='echo:日本語'
+- G3-0008 stream: fidelity: a3: output missing: trace=None actual={'tag': 'a3', 'items': [1, 2, 3], 'ok': True}
+- G3-0008 stream: fidelity: a4: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0008 stream: fidelity: b1: output missing: trace=None actual='echo:alpha'
+- G3-0008 stream: fidelity: b2: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0008 stream: fidelity: b3: output missing: trace=None actual='echo:🚀'
+- G3-0010 invoke: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0010 invoke: **completeness**: a6: actual=ok but trace status=incomplete
+- G3-0010 invoke: **completeness**: a7: actual=ok but trace status=incomplete
+- G3-0010 invoke: fidelity: a4: output missing: trace=None actual={'tag': 'a4', 'items': [1, 2, 3], 'ok': True}
+- G3-0010 invoke: fidelity: a5: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0010 invoke: fidelity: a6: output missing: trace=None actual=60
+- G3-0010 invoke: fidelity: a7: output missing: trace=None actual={'tag': 'a7', 'items': [1, 2, 3], 'ok': True}
+- G3-0010 stream: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0010 stream: **completeness**: a6: actual=ok but trace status=incomplete
+- G3-0010 stream: **completeness**: a7: actual=ok but trace status=incomplete
+- G3-0010 stream: fidelity: a4: output missing: trace=None actual={'tag': 'a4', 'items': [1, 2, 3], 'ok': True}
+- G3-0010 stream: fidelity: a5: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0010 stream: fidelity: a6: output missing: trace=None actual=60
+- G3-0010 stream: fidelity: a7: output missing: trace=None actual={'tag': 'a7', 'items': [1, 2, 3], 'ok': True}
+- G3-0011 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0011 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0013 invoke: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0013 invoke: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0013 invoke: fidelity: a1: output missing: trace=None actual={'tag': 'a1', 'items': [1, 2, 3], 'ok': True}
+- G3-0013 invoke: fidelity: a2: output missing: trace=None actual='echo:🚀'
+- G3-0013 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0013 stream: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0013 stream: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0013 stream: fidelity: a1: output missing: trace=None actual={'tag': 'a1', 'items': [1, 2, 3], 'ok': True}
+- G3-0013 stream: fidelity: a2: output missing: trace=None actual='echo:🚀'
+- G3-0013 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0014 invoke: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0014 invoke: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0014 invoke: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0014 invoke: fidelity: a1: output missing: trace=None actual='echo:quote "x"'
+- G3-0014 invoke: fidelity: a2: output missing: trace=None actual=15
+- G3-0014 invoke: fidelity: a3: output missing: trace=None actual=-42
+- G3-0014 invoke: fidelity: a4: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0014 stream: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0014 stream: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0014 stream: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0014 stream: fidelity: a1: output missing: trace=None actual='echo:quote "x"'
+- G3-0014 stream: fidelity: a2: output missing: trace=None actual=15
+- G3-0014 stream: fidelity: a3: output missing: trace=None actual=-42
+- G3-0014 stream: fidelity: a4: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0015 invoke: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0015 invoke: **completeness**: b1: actual=ok but trace status=incomplete
+- G3-0015 invoke: **completeness**: b3: actual=ok but trace status=incomplete
+- G3-0015 invoke: **completeness**: b4: actual=ok but trace status=incomplete
+- G3-0015 invoke: fidelity: a1: output missing: trace=None actual='echo:🚀'
+- G3-0015 invoke: fidelity: a3: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0015 invoke: fidelity: b1: output missing: trace=None actual='echo:beta'
+- G3-0015 invoke: fidelity: b2: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0015 invoke: fidelity: b3: output missing: trace=None actual='echo:🚀'
+- G3-0015 invoke: fidelity: b4: output missing: trace=None actual='echo:beta'
+- G3-0015 stream: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0015 stream: **completeness**: b1: actual=ok but trace status=incomplete
+- G3-0015 stream: **completeness**: b3: actual=ok but trace status=incomplete
+- G3-0015 stream: **completeness**: b4: actual=ok but trace status=incomplete
+- G3-0015 stream: fidelity: a1: output missing: trace=None actual='echo:🚀'
+- G3-0015 stream: fidelity: a3: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0015 stream: fidelity: b1: output missing: trace=None actual='echo:beta'
+- G3-0015 stream: fidelity: b2: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0015 stream: fidelity: b3: output missing: trace=None actual='echo:🚀'
+- G3-0015 stream: fidelity: b4: output missing: trace=None actual='echo:beta'
+- G3-0017 invoke: fidelity: a2: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0017 stream: fidelity: a2: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0019 invoke: fidelity: a1: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0019 invoke: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0019 stream: fidelity: a1: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0019 stream: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0023 invoke: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0023 invoke: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0023 invoke: fidelity: a2: output missing: trace=None actual='echo:🚀'
+- G3-0023 stream: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0023 stream: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0023 stream: fidelity: a2: output missing: trace=None actual='echo:🚀'
+- G3-0024 invoke: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0024 invoke: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0024 invoke: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0024 invoke: fidelity: a2: output missing: trace=None actual=32
+- G3-0024 invoke: fidelity: a4: output missing: trace=None actual={'tag': 'a4', 'items': [1, 2, 3], 'ok': True}
+- G3-0024 stream: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0024 stream: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0024 stream: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0024 stream: fidelity: a2: output missing: trace=None actual=32
+- G3-0024 stream: fidelity: a4: output missing: trace=None actual={'tag': 'a4', 'items': [1, 2, 3], 'ok': True}
+- G3-0029 invoke: **completeness**: a5: actual=ok but trace status=incomplete
+- G3-0029 invoke: fidelity: a5: output missing: trace=None actual='echo:日本語'
+- G3-0029 invoke: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0029 stream: **completeness**: a5: actual=ok but trace status=incomplete
+- G3-0029 stream: fidelity: a5: output missing: trace=None actual='echo:日本語'
+- G3-0029 stream: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0030 invoke: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0030 invoke: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0030 invoke: fidelity: a2: output missing: trace=None actual='echo:gamma éè'
+- G3-0030 stream: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0030 stream: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0030 stream: fidelity: a2: output missing: trace=None actual='echo:gamma éè'
+- G3-0031 invoke: **completeness**: a7: actual=ok but trace status=incomplete
+- G3-0031 invoke: **completeness**: a8: actual=ok but trace status=incomplete
+- G3-0031 invoke: fidelity: a7: output missing: trace=None actual='echo:日本語'
+- G3-0031 invoke: fidelity: a8: output missing: trace=None actual='echo:日本語'
+- G3-0031 invoke: fidelity: a9: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0031 stream: **completeness**: a7: actual=ok but trace status=incomplete
+- G3-0031 stream: **completeness**: a8: actual=ok but trace status=incomplete
+- G3-0031 stream: fidelity: a7: output missing: trace=None actual='echo:日本語'
+- G3-0031 stream: fidelity: a8: output missing: trace=None actual='echo:日本語'
+- G3-0031 stream: fidelity: a9: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0035 invoke: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0035 invoke: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0035 invoke: fidelity: a1: output missing: trace=None actual='echo:beta'
+- G3-0035 invoke: fidelity: a2: output missing: trace=None actual={'tag': 'a2', 'items': [1, 2, 3], 'ok': True}
+- G3-0035 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0035 stream: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0035 stream: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0035 stream: fidelity: a1: output missing: trace=None actual='echo:beta'
+- G3-0035 stream: fidelity: a2: output missing: trace=None actual={'tag': 'a2', 'items': [1, 2, 3], 'ok': True}
+- G3-0035 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0040 invoke: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0040 invoke: fidelity: a1: output missing: trace=None actual='echo:beta'
+- G3-0040 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0040 stream: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0040 stream: fidelity: a1: output missing: trace=None actual='echo:beta'
+- G3-0040 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0041 invoke: fidelity: a1: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0041 stream: fidelity: a1: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0044 invoke: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0044 invoke: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0044 invoke: fidelity: a1: output missing: trace=None actual='echo:🚀'
+- G3-0044 invoke: fidelity: a2: output missing: trace=None actual=-26
+- G3-0044 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0044 stream: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0044 stream: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0044 stream: fidelity: a1: output missing: trace=None actual='echo:🚀'
+- G3-0044 stream: fidelity: a2: output missing: trace=None actual=-26
+- G3-0044 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0045 invoke: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0045 invoke: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0045 invoke: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0045 invoke: fidelity: a2: output missing: trace=None actual='echo:alpha'
+- G3-0045 invoke: fidelity: a3: output missing: trace=None actual='echo:line\nbreak'
+- G3-0045 stream: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0045 stream: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0045 stream: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0045 stream: fidelity: a2: output missing: trace=None actual='echo:alpha'
+- G3-0045 stream: fidelity: a3: output missing: trace=None actual='echo:line\nbreak'
+- G3-0046 invoke: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0046 invoke: fidelity: a1: output missing: trace=None actual=-14
+- G3-0046 invoke: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0046 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0046 stream: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0046 stream: fidelity: a1: output missing: trace=None actual=-14
+- G3-0046 stream: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0046 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0047 invoke: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0047 stream: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0048 invoke: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0048 invoke: **completeness**: a5: actual=ok but trace status=incomplete
+- G3-0048 invoke: fidelity: a4: output missing: trace=None actual='echo:beta'
+- G3-0048 invoke: fidelity: a5: output missing: trace=None actual='a5:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...(len=120002)
+- G3-0048 invoke: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0048 stream: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0048 stream: **completeness**: a5: actual=ok but trace status=incomplete
+- G3-0048 stream: fidelity: a4: output missing: trace=None actual='echo:beta'
+- G3-0048 stream: fidelity: a5: output missing: trace=None actual='a5:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...(len=120002)
+- G3-0048 stream: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0049 invoke: **completeness**: a7: actual=ok but trace status=incomplete
+- G3-0049 invoke: **completeness**: a9: actual=ok but trace status=incomplete
+- G3-0049 invoke: fidelity: a6: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0049 invoke: fidelity: a7: output missing: trace=None actual=20
+- G3-0049 invoke: fidelity: a9: output missing: trace=None actual='echo:🚀'
+- G3-0049 stream: **completeness**: a7: actual=ok but trace status=incomplete
+- G3-0049 stream: **completeness**: a9: actual=ok but trace status=incomplete
+- G3-0049 stream: fidelity: a6: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0049 stream: fidelity: a7: output missing: trace=None actual=20
+- G3-0049 stream: fidelity: a9: output missing: trace=None actual='echo:🚀'
+- G3-0051 invoke: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0051 invoke: fidelity: a2: output missing: trace=None actual='echo:gamma éè'
+- G3-0051 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0051 invoke: fidelity: a4: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0051 invoke: fidelity: a5: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0051 stream: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0051 stream: fidelity: a2: output missing: trace=None actual='echo:gamma éè'
+- G3-0051 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0051 stream: fidelity: a4: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0051 stream: fidelity: a5: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0052 invoke: **completeness**: b2: actual=ok but trace status=incomplete
+- G3-0052 invoke: fidelity: b1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0052 invoke: fidelity: b2: output missing: trace=None actual='echo:quote "x"'
+- G3-0052 invoke: fidelity: b3: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0052 stream: **completeness**: b2: actual=ok but trace status=incomplete
+- G3-0052 stream: fidelity: b1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0052 stream: fidelity: b2: output missing: trace=None actual='echo:quote "x"'
+- G3-0052 stream: fidelity: b3: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0053 invoke: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0053 invoke: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0053 invoke: fidelity: a1: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0053 invoke: fidelity: a2: output missing: trace=None actual=74
+- G3-0053 invoke: fidelity: a3: output missing: trace=None actual='echo:gamma éè'
+- G3-0053 stream: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0053 stream: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0053 stream: fidelity: a1: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0053 stream: fidelity: a2: output missing: trace=None actual=74
+- G3-0053 stream: fidelity: a3: output missing: trace=None actual='echo:gamma éè'
+- G3-0054 invoke: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0054 invoke: **completeness**: a5: actual=ok but trace status=incomplete
+- G3-0054 invoke: **completeness**: a7: actual=ok but trace status=incomplete
+- G3-0054 invoke: fidelity: a5: output missing: trace=None actual=40
+- G3-0054 invoke: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0054 invoke: fidelity: a7: output missing: trace=None actual=11
+- G3-0054 stream: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0054 stream: **completeness**: a5: actual=ok but trace status=incomplete
+- G3-0054 stream: **completeness**: a7: actual=ok but trace status=incomplete
+- G3-0054 stream: fidelity: a5: output missing: trace=None actual=40
+- G3-0054 stream: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0054 stream: fidelity: a7: output missing: trace=None actual=11
+- G3-0056 invoke: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0056 invoke: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0056 invoke: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0056 invoke: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0056 invoke: fidelity: a2: output missing: trace=None actual=-7
+- G3-0056 invoke: fidelity: a3: output missing: trace=None actual='echo:line\nbreak'
+- G3-0056 stream: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0056 stream: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0056 stream: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0056 stream: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0056 stream: fidelity: a2: output missing: trace=None actual=-7
+- G3-0056 stream: fidelity: a3: output missing: trace=None actual='echo:line\nbreak'
+- G3-0057 invoke: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0057 invoke: **completeness**: b2: actual=ok but trace status=incomplete
+- G3-0057 invoke: **completeness**: b3: actual=ok but trace status=incomplete
+- G3-0057 invoke: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0057 invoke: fidelity: a3: output missing: trace=None actual={'tag': 'a3', 'items': [1, 2, 3], 'ok': True}
+- G3-0057 invoke: fidelity: b1: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0057 invoke: fidelity: b2: output missing: trace=None actual='echo:gamma éè'
+- G3-0057 invoke: fidelity: b3: output missing: trace=None actual='echo:日本語'
+- G3-0057 stream: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0057 stream: **completeness**: b2: actual=ok but trace status=incomplete
+- G3-0057 stream: **completeness**: b3: actual=ok but trace status=incomplete
+- G3-0057 stream: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0057 stream: fidelity: a3: output missing: trace=None actual={'tag': 'a3', 'items': [1, 2, 3], 'ok': True}
+- G3-0057 stream: fidelity: b1: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0057 stream: fidelity: b2: output missing: trace=None actual='echo:gamma éè'
+- G3-0057 stream: fidelity: b3: output missing: trace=None actual='echo:日本語'
+- G3-0058 invoke: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0058 invoke: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0058 invoke: fidelity: a3: output missing: trace=None actual='echo:🚀'
+- G3-0058 stream: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0058 stream: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0058 stream: fidelity: a3: output missing: trace=None actual='echo:🚀'
+- G3-0062 invoke: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0062 invoke: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0062 invoke: fidelity: a3: output missing: trace=None actual=-44
+- G3-0062 stream: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0062 stream: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0062 stream: fidelity: a3: output missing: trace=None actual=-44
+- G3-0063 invoke: **completeness**: a8: actual=ok but trace status=incomplete
+- G3-0063 invoke: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0063 invoke: fidelity: a7: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0063 invoke: fidelity: a8: output missing: trace=None actual={'tag': 'a8', 'items': [1, 2, 3], 'ok': True}
+- G3-0063 stream: **completeness**: a8: actual=ok but trace status=incomplete
+- G3-0063 stream: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0063 stream: fidelity: a7: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0063 stream: fidelity: a8: output missing: trace=None actual={'tag': 'a8', 'items': [1, 2, 3], 'ok': True}
+- G3-0064 invoke: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0064 invoke: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0064 invoke: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0064 invoke: fidelity: a2: output missing: trace=None actual='echo:日本語'
+- G3-0064 invoke: fidelity: a3: output missing: trace=None actual='echo:日本語'
+- G3-0064 stream: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0064 stream: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0064 stream: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0064 stream: fidelity: a2: output missing: trace=None actual='echo:日本語'
+- G3-0064 stream: fidelity: a3: output missing: trace=None actual='echo:日本語'
+- G3-0065 invoke: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0065 invoke: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0065 invoke: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0065 invoke: fidelity: a2: output missing: trace=None actual='echo:alpha'
+- G3-0065 invoke: fidelity: a4: output missing: trace=None actual='echo:quote "x"'
+- G3-0065 stream: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0065 stream: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0065 stream: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0065 stream: fidelity: a2: output missing: trace=None actual='echo:alpha'
+- G3-0065 stream: fidelity: a4: output missing: trace=None actual='echo:quote "x"'
+- G3-0068 invoke: **completeness**: a7: actual=ok but trace status=incomplete
+- G3-0068 invoke: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0068 invoke: fidelity: a7: output missing: trace=None actual={'tag': 'a7', 'items': [1, 2, 3], 'ok': True}
+- G3-0068 stream: **completeness**: a7: actual=ok but trace status=incomplete
+- G3-0068 stream: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0068 stream: fidelity: a7: output missing: trace=None actual={'tag': 'a7', 'items': [1, 2, 3], 'ok': True}
+- G3-0069 invoke: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0069 invoke: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0069 invoke: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0069 invoke: fidelity: a1: output missing: trace=None actual='a1:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...(len=5002)
+- G3-0069 invoke: fidelity: a2: output missing: trace=None actual='echo:gamma éè'
+- G3-0069 invoke: fidelity: a3: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0069 invoke: fidelity: a4: output missing: trace=None actual='a4:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...(len=50002)
+- G3-0069 stream: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0069 stream: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0069 stream: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0069 stream: fidelity: a1: output missing: trace=None actual='a1:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...(len=5002)
+- G3-0069 stream: fidelity: a2: output missing: trace=None actual='echo:gamma éè'
+- G3-0069 stream: fidelity: a3: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0069 stream: fidelity: a4: output missing: trace=None actual='a4:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...(len=50002)
+- G3-0072 invoke: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0072 invoke: fidelity: a1: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0072 invoke: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0072 invoke: fidelity: a3: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0072 invoke: fidelity: a4: output missing: trace=None actual='echo:日本語'
+- G3-0072 stream: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0072 stream: fidelity: a1: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0072 stream: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0072 stream: fidelity: a3: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0072 stream: fidelity: a4: output missing: trace=None actual='echo:日本語'
+- G3-0073 invoke: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0073 stream: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0074 invoke: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0074 invoke: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0074 invoke: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0074 invoke: fidelity: a1: output missing: trace=None actual='echo:alpha'
+- G3-0074 invoke: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0074 invoke: fidelity: a3: output missing: trace=None actual='echo:quote "x"'
+- G3-0074 stream: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0074 stream: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0074 stream: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0074 stream: fidelity: a1: output missing: trace=None actual='echo:alpha'
+- G3-0074 stream: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0074 stream: fidelity: a3: output missing: trace=None actual='echo:quote "x"'
+- G3-0076 invoke: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0076 stream: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0077 invoke: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0077 invoke: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0077 invoke: fidelity: a1: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0077 invoke: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0077 invoke: fidelity: a3: output missing: trace=None actual=20
+- G3-0077 invoke: fidelity: a4: output missing: trace=None actual='echo:gamma éè'
+- G3-0077 stream: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0077 stream: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0077 stream: fidelity: a1: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0077 stream: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0077 stream: fidelity: a3: output missing: trace=None actual=20
+- G3-0077 stream: fidelity: a4: output missing: trace=None actual='echo:gamma éè'
+- G3-0078 invoke: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0078 invoke: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0078 invoke: fidelity: a1: output missing: trace=None actual='echo:alpha'
+- G3-0078 invoke: fidelity: a2: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0078 invoke: fidelity: a3: output missing: trace=None actual='echo:日本語'
+- G3-0078 stream: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0078 stream: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0078 stream: fidelity: a1: output missing: trace=None actual='echo:alpha'
+- G3-0078 stream: fidelity: a2: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0078 stream: fidelity: a3: output missing: trace=None actual='echo:日本語'
+- G3-0079 invoke: fidelity: a5: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0079 stream: fidelity: a5: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0080 invoke: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0080 invoke: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0080 invoke: fidelity: a2: output missing: trace=None actual='echo:beta'
+- G3-0080 stream: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0080 stream: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0080 stream: fidelity: a2: output missing: trace=None actual='echo:beta'
+- G3-0081 invoke: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0081 invoke: fidelity: a2: output missing: trace=None actual='echo:gamma éè'
+- G3-0081 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0081 stream: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0081 stream: fidelity: a2: output missing: trace=None actual='echo:gamma éè'
+- G3-0081 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0082 invoke: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0082 invoke: **completeness**: a5: actual=ok but trace status=incomplete
+- G3-0082 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0082 invoke: fidelity: a4: output missing: trace=None actual={'tag': 'a4', 'items': [1, 2, 3], 'ok': True}
+- G3-0082 invoke: fidelity: a5: output missing: trace=None actual='echo:line\nbreak'
+- G3-0082 stream: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0082 stream: **completeness**: a5: actual=ok but trace status=incomplete
+- G3-0082 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: quota')
+- G3-0082 stream: fidelity: a4: output missing: trace=None actual={'tag': 'a4', 'items': [1, 2, 3], 'ok': True}
+- G3-0082 stream: fidelity: a5: output missing: trace=None actual='echo:line\nbreak'
+- G3-0084 invoke: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0084 invoke: **completeness**: a5: actual=ok but trace status=incomplete
+- G3-0084 invoke: **completeness**: a7: actual=ok but trace status=incomplete
+- G3-0084 invoke: fidelity: a4: output missing: trace=None actual='echo:gamma éè'
+- G3-0084 invoke: fidelity: a5: output missing: trace=None actual={'tag': 'a5', 'items': [1, 2, 3], 'ok': True}
+- G3-0084 invoke: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0084 invoke: fidelity: a7: output missing: trace=None actual='echo:gamma éè'
+- G3-0084 stream: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0084 stream: **completeness**: a5: actual=ok but trace status=incomplete
+- G3-0084 stream: **completeness**: a7: actual=ok but trace status=incomplete
+- G3-0084 stream: fidelity: a4: output missing: trace=None actual='echo:gamma éè'
+- G3-0084 stream: fidelity: a5: output missing: trace=None actual={'tag': 'a5', 'items': [1, 2, 3], 'ok': True}
+- G3-0084 stream: fidelity: a6: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0084 stream: fidelity: a7: output missing: trace=None actual='echo:gamma éè'
+- G3-0085 invoke: fidelity: a9: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0085 invoke: fidelity: n1: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0085 invoke: fidelity: n2: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0085 stream: fidelity: a9: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0085 stream: fidelity: n1: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0085 stream: fidelity: n2: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0086 invoke: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0086 invoke: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0086 invoke: fidelity: a3: output missing: trace=None actual='a3:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...(len=120002)
+- G3-0086 invoke: fidelity: a4: output missing: trace=None actual=35
+- G3-0086 invoke: fidelity: a5: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0086 stream: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0086 stream: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0086 stream: fidelity: a3: output missing: trace=None actual='a3:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...(len=120002)
+- G3-0086 stream: fidelity: a4: output missing: trace=None actual=35
+- G3-0086 stream: fidelity: a5: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0087 invoke: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0087 invoke: fidelity: a1: output missing: trace=None actual='echo:🚀'
+- G3-0087 invoke: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0087 stream: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0087 stream: fidelity: a1: output missing: trace=None actual='echo:🚀'
+- G3-0087 stream: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0089 invoke: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0089 invoke: fidelity: a1: output missing: trace=None actual=18
+- G3-0089 invoke: fidelity: a2: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0089 stream: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0089 stream: fidelity: a1: output missing: trace=None actual=18
+- G3-0089 stream: fidelity: a2: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0090 invoke: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0090 invoke: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0090 invoke: fidelity: a2: output missing: trace=None actual=42
+- G3-0090 stream: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0090 stream: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0090 stream: fidelity: a2: output missing: trace=None actual=42
+- G3-0091 invoke: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0091 invoke: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0091 invoke: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0091 invoke: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0091 invoke: fidelity: a2: output missing: trace=None actual={'tag': 'a2', 'items': [1, 2, 3], 'ok': True}
+- G3-0091 invoke: fidelity: a3: output missing: trace=None actual='a3:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...(len=50002)
+- G3-0091 invoke: fidelity: a4: output missing: trace=None actual='echo:line\nbreak'
+- G3-0091 stream: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0091 stream: **completeness**: a3: actual=ok but trace status=incomplete
+- G3-0091 stream: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0091 stream: fidelity: a1: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0091 stream: fidelity: a2: output missing: trace=None actual={'tag': 'a2', 'items': [1, 2, 3], 'ok': True}
+- G3-0091 stream: fidelity: a3: output missing: trace=None actual='a3:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...(len=50002)
+- G3-0091 stream: fidelity: a4: output missing: trace=None actual='echo:line\nbreak'
+- G3-0092 invoke: **completeness**: b2: actual=ok but trace status=incomplete
+- G3-0092 invoke: **completeness**: b3: actual=ok but trace status=incomplete
+- G3-0092 invoke: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0092 invoke: fidelity: b2: output missing: trace=None actual={'tag': 'b2', 'items': [1, 2, 3], 'ok': True}
+- G3-0092 invoke: fidelity: b3: output missing: trace=None actual='echo:日本語'
+- G3-0092 invoke: fidelity: b4: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0092 stream: **completeness**: b2: actual=ok but trace status=incomplete
+- G3-0092 stream: **completeness**: b3: actual=ok but trace status=incomplete
+- G3-0092 stream: fidelity: a2: error message not recorded (actual='ToolFailure: tool failed: timeout')
+- G3-0092 stream: fidelity: b2: output missing: trace=None actual={'tag': 'b2', 'items': [1, 2, 3], 'ok': True}
+- G3-0092 stream: fidelity: b3: output missing: trace=None actual='echo:日本語'
+- G3-0092 stream: fidelity: b4: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0093 invoke: fidelity: a4: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0093 stream: fidelity: a4: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0094 invoke: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0094 invoke: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0094 invoke: fidelity: a2: output missing: trace=None actual='echo:🚀'
+- G3-0094 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0094 invoke: fidelity: a4: output missing: trace=None actual='echo:gamma éè'
+- G3-0094 stream: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0094 stream: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0094 stream: fidelity: a2: output missing: trace=None actual='echo:🚀'
+- G3-0094 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: not found')
+- G3-0094 stream: fidelity: a4: output missing: trace=None actual='echo:gamma éè'
+- G3-0096 invoke: **completeness**: a9: actual=ok but trace status=incomplete
+- G3-0096 invoke: fidelity: a8: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0096 invoke: fidelity: a9: output missing: trace=None actual='echo:beta'
+- G3-0096 stream: **completeness**: a9: actual=ok but trace status=incomplete
+- G3-0096 stream: fidelity: a8: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0096 stream: fidelity: a9: output missing: trace=None actual='echo:beta'
+- G3-0097 invoke: **completeness**: a7: actual=ok but trace status=incomplete
+- G3-0097 invoke: **completeness**: a8: actual=ok but trace status=incomplete
+- G3-0097 invoke: fidelity: a7: output missing: trace=None actual={'tag': 'a7', 'items': [1, 2, 3], 'ok': True}
+- G3-0097 invoke: fidelity: a8: output missing: trace=None actual=27
+- G3-0097 invoke: fidelity: a9: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0097 stream: **completeness**: a7: actual=ok but trace status=incomplete
+- G3-0097 stream: **completeness**: a8: actual=ok but trace status=incomplete
+- G3-0097 stream: fidelity: a7: output missing: trace=None actual={'tag': 'a7', 'items': [1, 2, 3], 'ok': True}
+- G3-0097 stream: fidelity: a8: output missing: trace=None actual=27
+- G3-0097 stream: fidelity: a9: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0098 invoke: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0098 invoke: fidelity: a1: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0098 invoke: fidelity: a2: output missing: trace=None actual='echo:gamma éè'
+- G3-0098 stream: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0098 stream: fidelity: a1: error message not recorded (actual='TypeError: can only concatenate str (not "int") to str')
+- G3-0098 stream: fidelity: a2: output missing: trace=None actual='echo:gamma éè'
+- G3-0100 invoke: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0100 invoke: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0100 invoke: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0100 invoke: fidelity: a1: output missing: trace=None actual='echo:beta'
+- G3-0100 invoke: fidelity: a2: output missing: trace=None actual='echo:🚀'
+- G3-0100 invoke: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0100 invoke: fidelity: a4: output missing: trace=None actual='echo:🚀'
+- G3-0100 stream: **completeness**: a1: actual=ok but trace status=incomplete
+- G3-0100 stream: **completeness**: a2: actual=ok but trace status=incomplete
+- G3-0100 stream: **completeness**: a4: actual=ok but trace status=incomplete
+- G3-0100 stream: fidelity: a1: output missing: trace=None actual='echo:beta'
+- G3-0100 stream: fidelity: a2: output missing: trace=None actual='echo:🚀'
+- G3-0100 stream: fidelity: a3: error message not recorded (actual='ToolFailure: tool failed: denied')
+- G3-0100 stream: fidelity: a4: output missing: trace=None actual='echo:🚀'
+
+### semantic-kernel/otel
+
+- G3-0001 invoke: **completeness**: n1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: n1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0002 invoke: **completeness**: b2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0002 invoke: **completeness**: b4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0002 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0002 stream: **completeness**: b2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0002 stream: **completeness**: b4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0002 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0003 invoke: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0003 stream: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0005 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0005 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0006 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0006 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0008 invoke: **completeness**: a10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0008 invoke: **completeness**: b8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0008 stream: **completeness**: a10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0008 stream: **completeness**: b8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 invoke: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 invoke: **completeness**: a15: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 invoke: **completeness**: a16: actual=cancelled but trace status=ok
+- G3-0010 stream: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 stream: **completeness**: a15: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 stream: **completeness**: a16: actual=cancelled but trace status=ok
+- G3-0011 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0011 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0014 invoke: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0014 stream: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 invoke: **completeness**: b6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 invoke: **completeness**: a10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 stream: **completeness**: b6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 stream: **completeness**: a10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0018 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0018 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0019 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0019 invoke: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0019 invoke: **completeness**: a15: actual=cancelled but trace status=ok
+- G3-0019 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0019 stream: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0019 stream: **completeness**: a15: actual=cancelled but trace status=ok
+- G3-0020 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0020 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0023 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0023 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0024 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0024 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0027 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0027 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0027 invoke: **completeness**: a15: actual=cancelled but trace status=ok
+- G3-0027 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0027 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0027 stream: **completeness**: a15: actual=cancelled but trace status=ok
+- G3-0029 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0029 invoke: **completeness**: a10: actual=cancelled but trace status=ok
+- G3-0029 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0029 stream: **completeness**: a10: actual=cancelled but trace status=ok
+- G3-0030 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0030 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0030 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0030 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0032 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0032 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0034 invoke: **completeness**: a3: actual=cancelled but trace status=ok
+- G3-0034 stream: **completeness**: a3: actual=cancelled but trace status=ok
+- G3-0037 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0037 invoke: **completeness**: a4: actual=cancelled but trace status=ok
+- G3-0037 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0037 stream: **completeness**: a4: actual=cancelled but trace status=ok
+- G3-0038 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0038 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0039 invoke: **completeness**: a3: actual=cancelled but trace status=ok
+- G3-0039 stream: **completeness**: a3: actual=cancelled but trace status=ok
+- G3-0040 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0040 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0042 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0042 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0046 invoke: **completeness**: a9: actual=cancelled but trace status=ok
+- G3-0046 stream: **completeness**: a9: actual=cancelled but trace status=ok
+- G3-0048 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0049 invoke: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0049 stream: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0051 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0051 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0052 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0052 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0054 invoke: **completeness**: a12: emitted but never executed, and the attempt is invisible in the trace
+- G3-0054 stream: **completeness**: a12: emitted but never executed, and the attempt is invisible in the trace
+- G3-0056 invoke: **completeness**: a6: actual=cancelled but trace status=ok
+- G3-0056 stream: **completeness**: a6: actual=cancelled but trace status=ok
+- G3-0057 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0057 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 invoke: **completeness**: b6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 invoke: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 stream: **completeness**: b6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 stream: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0059 invoke: **completeness**: a4: actual=cancelled but trace status=ok
+- G3-0059 stream: **completeness**: a4: actual=cancelled but trace status=ok
+- G3-0060 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0060 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0060 invoke: **completeness**: a6: actual=cancelled but trace status=ok
+- G3-0060 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0060 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0060 stream: **completeness**: a6: actual=cancelled but trace status=ok
+- G3-0061 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0061 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0062 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0062 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0063 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0063 invoke: **completeness**: a14: actual=cancelled but trace status=ok
+- G3-0063 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0063 stream: **completeness**: a14: actual=cancelled but trace status=ok
+- G3-0064 invoke: **completeness**: a4: actual=cancelled but trace status=ok
+- G3-0064 stream: **completeness**: a4: actual=cancelled but trace status=ok
+- G3-0065 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0065 invoke: **completeness**: a7: actual=cancelled but trace status=ok
+- G3-0065 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0065 stream: **completeness**: a7: actual=cancelled but trace status=ok
+- G3-0067 invoke: **completeness**: a6: actual=cancelled but trace status=ok
+- G3-0067 stream: **completeness**: a6: actual=cancelled but trace status=ok
+- G3-0069 invoke: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0069 stream: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0078 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0078 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0078 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0078 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0079 invoke: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0079 invoke: **completeness**: a10: actual=cancelled but trace status=ok
+- G3-0079 stream: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0079 stream: **completeness**: a10: actual=cancelled but trace status=ok
+- G3-0081 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0081 invoke: **completeness**: a12: actual=cancelled but trace status=ok
+- G3-0081 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0081 stream: **completeness**: a12: actual=cancelled but trace status=ok
+- G3-0082 invoke: **completeness**: a6: actual=cancelled but trace status=ok
+- G3-0082 stream: **completeness**: a6: actual=cancelled but trace status=ok
+- G3-0083 invoke: **completeness**: a4: actual=cancelled but trace status=ok
+- G3-0083 stream: **completeness**: a4: actual=cancelled but trace status=ok
+- G3-0085 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0085 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0085 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0085 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0088 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0088 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0088 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0088 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0089 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0089 invoke: **completeness**: a7: actual=cancelled but trace status=ok
+- G3-0089 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0089 stream: **completeness**: a7: actual=cancelled but trace status=ok
+- G3-0090 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0090 invoke: **completeness**: a11: actual=cancelled but trace status=ok
+- G3-0090 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0090 stream: **completeness**: a11: actual=cancelled but trace status=ok
+- G3-0091 invoke: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0091 stream: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0092 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0092 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0094 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0094 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0095 invoke: **completeness**: a14: actual=cancelled but trace status=ok
+- G3-0095 stream: **completeness**: a14: actual=cancelled but trace status=ok
+- G3-0096 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 invoke: **completeness**: a10: actual=cancelled but trace status=ok
+- G3-0096 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 stream: **completeness**: a10: actual=cancelled but trace status=ok
+- G3-0098 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0098 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+
+### smolagents/openinference
+
+- G3-0001 invoke: **completeness**: n1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 invoke: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: n1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0002 invoke: **completeness**: b2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0002 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0002 invoke: **completeness**: b4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0002 stream: **completeness**: b2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0002 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0002 stream: **completeness**: b4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0003 invoke: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0003 stream: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0005 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0005 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0006 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0006 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0006 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0006 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0008 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0008 invoke: **completeness**: a10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0008 invoke: **completeness**: b8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0008 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0008 stream: **completeness**: a10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0008 stream: **completeness**: b8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 invoke: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 invoke: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 invoke: **completeness**: a15: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 invoke: **completeness**: a16: executed (running) but missing from trace
+- G3-0010 stream: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 stream: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 stream: **completeness**: a15: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 stream: **completeness**: a16: executed (running) but missing from trace
+- G3-0011 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0011 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0011 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0011 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0014 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0014 invoke: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0014 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0014 stream: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 invoke: **completeness**: b2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 invoke: **completeness**: b6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 invoke: **completeness**: a10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 stream: **completeness**: b2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 stream: **completeness**: b6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 stream: **completeness**: a10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0017 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0017 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0017 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0017 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0018 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0018 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0019 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0019 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0019 invoke: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0019 invoke: **completeness**: a14: emitted but never executed, and the attempt is invisible in the trace
+- G3-0019 invoke: **completeness**: a15: executed (running) but missing from trace
+- G3-0019 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0019 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0019 stream: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0019 stream: **completeness**: a14: emitted but never executed, and the attempt is invisible in the trace
+- G3-0019 stream: **completeness**: a15: executed (running) but missing from trace
+- G3-0020 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0020 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0023 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0023 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0024 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0024 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0027 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0027 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0027 invoke: **completeness**: a15: executed (running) but missing from trace
+- G3-0027 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0027 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0027 stream: **completeness**: a15: executed (running) but missing from trace
+- G3-0029 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0029 invoke: **completeness**: a10: executed (running) but missing from trace
+- G3-0029 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0029 stream: **completeness**: a10: executed (running) but missing from trace
+- G3-0030 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0030 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0030 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0030 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0030 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0030 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0032 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0032 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0034 invoke: **completeness**: a3: executed (running) but missing from trace
+- G3-0034 stream: **completeness**: a3: executed (running) but missing from trace
+- G3-0037 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0037 invoke: **completeness**: a4: executed (running) but missing from trace
+- G3-0037 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0037 stream: **completeness**: a4: executed (running) but missing from trace
+- G3-0038 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0038 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0039 invoke: **completeness**: a3: executed (running) but missing from trace
+- G3-0039 stream: **completeness**: a3: executed (running) but missing from trace
+- G3-0040 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0040 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0041 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0041 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0042 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0042 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0046 invoke: **completeness**: a9: executed (running) but missing from trace
+- G3-0046 stream: **completeness**: a9: executed (running) but missing from trace
+- G3-0048 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0049 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0049 invoke: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0049 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0049 stream: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0051 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0051 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0052 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0052 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0053 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0053 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0054 invoke: **completeness**: a12: emitted but never executed, and the attempt is invisible in the trace
+- G3-0054 stream: **completeness**: a12: emitted but never executed, and the attempt is invisible in the trace
+- G3-0056 invoke: **completeness**: a6: executed (running) but missing from trace
+- G3-0056 stream: **completeness**: a6: executed (running) but missing from trace
+- G3-0057 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0057 invoke: **completeness**: b1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0057 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0057 stream: **completeness**: b1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 invoke: **completeness**: b6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 invoke: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 stream: **completeness**: b6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 stream: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0059 invoke: **completeness**: a4: executed (running) but missing from trace
+- G3-0059 stream: **completeness**: a4: executed (running) but missing from trace
+- G3-0060 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0060 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0060 invoke: **completeness**: a6: executed (running) but missing from trace
+- G3-0060 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0060 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0060 stream: **completeness**: a6: executed (running) but missing from trace
+- G3-0061 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0061 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0062 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0062 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0063 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0063 invoke: **completeness**: a10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0063 invoke: **completeness**: a14: executed (running) but missing from trace
+- G3-0063 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0063 stream: **completeness**: a10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0063 stream: **completeness**: a14: executed (running) but missing from trace
+- G3-0064 invoke: **completeness**: a4: executed (running) but missing from trace
+- G3-0064 stream: **completeness**: a4: executed (running) but missing from trace
+- G3-0065 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0065 invoke: **completeness**: a7: executed (running) but missing from trace
+- G3-0065 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0065 stream: **completeness**: a7: executed (running) but missing from trace
+- G3-0067 invoke: **completeness**: a6: executed (running) but missing from trace
+- G3-0067 stream: **completeness**: a6: executed (running) but missing from trace
+- G3-0069 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0069 invoke: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0069 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0069 stream: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0072 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0072 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0072 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0072 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0077 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0077 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0078 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0078 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0078 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0078 invoke: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0078 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0078 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0078 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0078 stream: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0079 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0079 invoke: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0079 invoke: **completeness**: a10: executed (running) but missing from trace
+- G3-0079 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0079 stream: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0079 stream: **completeness**: a10: executed (running) but missing from trace
+- G3-0081 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0081 invoke: **completeness**: a12: executed (running) but missing from trace
+- G3-0081 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0081 stream: **completeness**: a12: executed (running) but missing from trace
+- G3-0082 invoke: **completeness**: a6: executed (running) but missing from trace
+- G3-0082 stream: **completeness**: a6: executed (running) but missing from trace
+- G3-0083 invoke: **completeness**: a4: executed (running) but missing from trace
+- G3-0083 stream: **completeness**: a4: executed (running) but missing from trace
+- G3-0085 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0085 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0085 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0085 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0087 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0087 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0088 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0088 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0088 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0088 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0089 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0089 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0089 invoke: **completeness**: a7: executed (running) but missing from trace
+- G3-0089 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0089 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0089 stream: **completeness**: a7: executed (running) but missing from trace
+- G3-0090 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0090 invoke: **completeness**: a10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0090 invoke: **completeness**: a11: executed (running) but missing from trace
+- G3-0090 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0090 stream: **completeness**: a10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0090 stream: **completeness**: a11: executed (running) but missing from trace
+- G3-0091 invoke: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0091 stream: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0092 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0092 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0092 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0092 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0094 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0094 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0095 invoke: **completeness**: a14: executed (running) but missing from trace
+- G3-0095 stream: **completeness**: a14: executed (running) but missing from trace
+- G3-0096 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 invoke: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 invoke: **completeness**: a10: executed (running) but missing from trace
+- G3-0096 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 stream: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 stream: **completeness**: a10: executed (running) but missing from trace
+- G3-0097 invoke: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0097 stream: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0098 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0098 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0098 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0098 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0098 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0098 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+
+### smolagents/memory
+
+- G3-0001 invoke: **completeness**: n1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 invoke: **completeness**: n2: executed (ok) but missing from trace
+- G3-0001 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 invoke: **completeness**: a3: executed (error) but missing from trace
+- G3-0001 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0001 invoke: **completeness**: a5: executed (error) but missing from trace
+- G3-0001 invoke: **completeness**: a6: executed (ok) but missing from trace
+- G3-0001 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 invoke: **completeness**: a8: executed (ok) but missing from trace
+- G3-0001 invoke: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: n1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: n2: executed (ok) but missing from trace
+- G3-0001 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: a3: executed (error) but missing from trace
+- G3-0001 stream: **completeness**: a4: executed (ok) but missing from trace
+- G3-0001 stream: **completeness**: a5: executed (error) but missing from trace
+- G3-0001 stream: **completeness**: a6: executed (ok) but missing from trace
+- G3-0001 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0001 stream: **completeness**: a8: executed (ok) but missing from trace
+- G3-0001 stream: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0002 invoke: **completeness**: b1: executed (ok) but missing from trace
+- G3-0002 invoke: **completeness**: b2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0002 invoke: **completeness**: b3: executed (ok) but missing from trace
+- G3-0002 invoke: **completeness**: a4: executed (error) but missing from trace
+- G3-0002 invoke: **completeness**: a5: executed (error) but missing from trace
+- G3-0002 invoke: **completeness**: a6: executed (error) but missing from trace
+- G3-0002 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0002 invoke: **completeness**: b4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0002 stream: **completeness**: b1: executed (ok) but missing from trace
+- G3-0002 stream: **completeness**: b2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0002 stream: **completeness**: b3: executed (ok) but missing from trace
+- G3-0002 stream: **completeness**: a4: executed (error) but missing from trace
+- G3-0002 stream: **completeness**: a5: executed (error) but missing from trace
+- G3-0002 stream: **completeness**: a6: executed (error) but missing from trace
+- G3-0002 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0002 stream: **completeness**: b4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0003 invoke: **completeness**: a9: executed (error) but missing from trace
+- G3-0003 invoke: **completeness**: a10: executed (ok) but missing from trace
+- G3-0003 invoke: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0003 stream: **completeness**: a9: executed (error) but missing from trace
+- G3-0003 stream: **completeness**: a10: executed (ok) but missing from trace
+- G3-0003 stream: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0004 invoke: **completeness**: a3: executed (error) but missing from trace
+- G3-0004 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 stream: **completeness**: a2: executed (ok) but missing from trace
+- G3-0004 stream: **completeness**: a3: executed (error) but missing from trace
+- G3-0004 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0004 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0005 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0005 invoke: **completeness**: a2: executed (error) but missing from trace
+- G3-0005 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0005 invoke: **completeness**: a4: executed (error) but missing from trace
+- G3-0005 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0005 invoke: **completeness**: a6: executed (ok) but missing from trace
+- G3-0005 stream: **completeness**: a1: executed (ok) but missing from trace
+- G3-0005 stream: **completeness**: a2: executed (error) but missing from trace
+- G3-0005 stream: **completeness**: a3: executed (ok) but missing from trace
+- G3-0005 stream: **completeness**: a4: executed (error) but missing from trace
+- G3-0005 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0005 stream: **completeness**: a6: executed (ok) but missing from trace
+- G3-0006 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0006 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0006 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0006 stream: **completeness**: a1: executed (ok) but missing from trace
+- G3-0006 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0006 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0007 invoke: **completeness**: a7: executed (error) but missing from trace
+- G3-0007 invoke: **completeness**: a8: executed (error) but missing from trace
+- G3-0007 invoke: **completeness**: a9: executed (ok) but missing from trace
+- G3-0007 stream: **completeness**: a7: executed (error) but missing from trace
+- G3-0007 stream: **completeness**: a8: executed (error) but missing from trace
+- G3-0007 stream: **completeness**: a9: executed (ok) but missing from trace
+- G3-0008 invoke: **completeness**: a1: executed (error) but missing from trace
+- G3-0008 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0008 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0008 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0008 invoke: **completeness**: b1: executed (ok) but missing from trace
+- G3-0008 invoke: **completeness**: b2: executed (error) but missing from trace
+- G3-0008 invoke: **completeness**: b3: executed (ok) but missing from trace
+- G3-0008 invoke: **completeness**: a5: executed (error) but missing from trace
+- G3-0008 invoke: **completeness**: a6: executed (ok) but missing from trace
+- G3-0008 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0008 invoke: **completeness**: b4: executed (ok) but missing from trace
+- G3-0008 invoke: **completeness**: b5: executed (ok) but missing from trace
+- G3-0008 invoke: **completeness**: b6: executed (error) but missing from trace
+- G3-0008 invoke: **completeness**: a8: executed (ok) but missing from trace
+- G3-0008 invoke: **completeness**: a9: executed (ok) but missing from trace
+- G3-0008 invoke: **completeness**: a10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0008 invoke: **completeness**: a11: executed (error) but missing from trace
+- G3-0008 invoke: **completeness**: a12: executed (error) but missing from trace
+- G3-0008 invoke: **completeness**: a13: executed (ok) but missing from trace
+- G3-0008 invoke: **completeness**: a14: executed (ok) but missing from trace
+- G3-0008 invoke: **completeness**: a15: executed (ok) but missing from trace
+- G3-0008 invoke: **completeness**: a16: executed (ok) but missing from trace
+- G3-0008 invoke: **completeness**: a17: executed (ok) but missing from trace
+- G3-0008 invoke: **completeness**: a18: executed (error) but missing from trace
+- G3-0008 invoke: **completeness**: b8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0008 invoke: **completeness**: b9: executed (ok) but missing from trace
+- G3-0008 invoke: **completeness**: b10: executed (ok) but missing from trace
+- G3-0008 stream: **completeness**: a1: executed (error) but missing from trace
+- G3-0008 stream: **completeness**: a2: executed (ok) but missing from trace
+- G3-0008 stream: **completeness**: a3: executed (ok) but missing from trace
+- G3-0008 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0008 stream: **completeness**: b1: executed (ok) but missing from trace
+- G3-0008 stream: **completeness**: b2: executed (error) but missing from trace
+- G3-0008 stream: **completeness**: b3: executed (ok) but missing from trace
+- G3-0008 stream: **completeness**: a5: executed (error) but missing from trace
+- G3-0008 stream: **completeness**: a6: executed (ok) but missing from trace
+- G3-0008 stream: **completeness**: a7: executed (ok) but missing from trace
+- G3-0008 stream: **completeness**: b4: executed (ok) but missing from trace
+- G3-0008 stream: **completeness**: b5: executed (ok) but missing from trace
+- G3-0008 stream: **completeness**: b6: executed (error) but missing from trace
+- G3-0008 stream: **completeness**: a8: executed (ok) but missing from trace
+- G3-0008 stream: **completeness**: a9: executed (ok) but missing from trace
+- G3-0008 stream: **completeness**: a10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0008 stream: **completeness**: a11: executed (error) but missing from trace
+- G3-0008 stream: **completeness**: a12: executed (error) but missing from trace
+- G3-0008 stream: **completeness**: a13: executed (ok) but missing from trace
+- G3-0008 stream: **completeness**: a14: executed (ok) but missing from trace
+- G3-0008 stream: **completeness**: a15: executed (ok) but missing from trace
+- G3-0008 stream: **completeness**: a16: executed (ok) but missing from trace
+- G3-0008 stream: **completeness**: a17: executed (ok) but missing from trace
+- G3-0008 stream: **completeness**: a18: executed (error) but missing from trace
+- G3-0008 stream: **completeness**: b8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0008 stream: **completeness**: b9: executed (ok) but missing from trace
+- G3-0008 stream: **completeness**: b10: executed (ok) but missing from trace
+- G3-0010 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0010 invoke: **completeness**: a5: executed (error) but missing from trace
+- G3-0010 invoke: **completeness**: a6: executed (ok) but missing from trace
+- G3-0010 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0010 invoke: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 invoke: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 invoke: **completeness**: a10: executed (ok) but missing from trace
+- G3-0010 invoke: **completeness**: a11: executed (error) but missing from trace
+- G3-0010 invoke: **completeness**: a12: executed (ok) but missing from trace
+- G3-0010 invoke: **completeness**: a13: executed (error) but missing from trace
+- G3-0010 invoke: **completeness**: a14: executed (ok) but missing from trace
+- G3-0010 invoke: **completeness**: a15: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 invoke: **completeness**: a16: executed (running) but missing from trace
+- G3-0010 stream: **completeness**: a4: executed (ok) but missing from trace
+- G3-0010 stream: **completeness**: a5: executed (error) but missing from trace
+- G3-0010 stream: **completeness**: a6: executed (ok) but missing from trace
+- G3-0010 stream: **completeness**: a7: executed (ok) but missing from trace
+- G3-0010 stream: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 stream: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 stream: **completeness**: a10: executed (ok) but missing from trace
+- G3-0010 stream: **completeness**: a11: executed (error) but missing from trace
+- G3-0010 stream: **completeness**: a12: executed (ok) but missing from trace
+- G3-0010 stream: **completeness**: a13: executed (error) but missing from trace
+- G3-0010 stream: **completeness**: a14: executed (ok) but missing from trace
+- G3-0010 stream: **completeness**: a15: emitted but never executed, and the attempt is invisible in the trace
+- G3-0010 stream: **completeness**: a16: executed (running) but missing from trace
+- G3-0011 invoke: **completeness**: a3: executed (error) but missing from trace
+- G3-0011 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0011 invoke: **completeness**: a5: executed (error) but missing from trace
+- G3-0011 invoke: **completeness**: a6: executed (ok) but missing from trace
+- G3-0011 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0011 stream: **completeness**: a3: executed (error) but missing from trace
+- G3-0011 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0011 stream: **completeness**: a5: executed (error) but missing from trace
+- G3-0011 stream: **completeness**: a6: executed (ok) but missing from trace
+- G3-0011 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0013 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0013 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0013 invoke: **completeness**: a3: executed (error) but missing from trace
+- G3-0013 stream: **completeness**: a1: executed (ok) but missing from trace
+- G3-0013 stream: **completeness**: a2: executed (ok) but missing from trace
+- G3-0013 stream: **completeness**: a3: executed (error) but missing from trace
+- G3-0014 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0014 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0014 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0014 invoke: **completeness**: a4: executed (error) but missing from trace
+- G3-0014 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0014 invoke: **completeness**: a6: executed (error) but missing from trace
+- G3-0014 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0014 invoke: **completeness**: a8: executed (ok) but missing from trace
+- G3-0014 invoke: **completeness**: a9: executed (ok) but missing from trace
+- G3-0014 invoke: **completeness**: a10: executed (ok) but missing from trace
+- G3-0014 invoke: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0014 invoke: **completeness**: a12: executed (ok) but missing from trace
+- G3-0014 stream: **completeness**: a1: executed (ok) but missing from trace
+- G3-0014 stream: **completeness**: a2: executed (ok) but missing from trace
+- G3-0014 stream: **completeness**: a3: executed (ok) but missing from trace
+- G3-0014 stream: **completeness**: a4: executed (error) but missing from trace
+- G3-0014 stream: **completeness**: a5: executed (ok) but missing from trace
+- G3-0014 stream: **completeness**: a6: executed (error) but missing from trace
+- G3-0014 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0014 stream: **completeness**: a8: executed (ok) but missing from trace
+- G3-0014 stream: **completeness**: a9: executed (ok) but missing from trace
+- G3-0014 stream: **completeness**: a10: executed (ok) but missing from trace
+- G3-0014 stream: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0014 stream: **completeness**: a12: executed (ok) but missing from trace
+- G3-0015 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0015 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 invoke: **completeness**: b1: executed (ok) but missing from trace
+- G3-0015 invoke: **completeness**: b2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 invoke: **completeness**: b3: executed (ok) but missing from trace
+- G3-0015 invoke: **completeness**: b4: executed (ok) but missing from trace
+- G3-0015 invoke: **completeness**: b5: executed (ok) but missing from trace
+- G3-0015 invoke: **completeness**: b6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 invoke: **completeness**: b7: executed (ok) but missing from trace
+- G3-0015 invoke: **completeness**: a9: executed (ok) but missing from trace
+- G3-0015 invoke: **completeness**: a10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 invoke: **completeness**: a11: executed (error) but missing from trace
+- G3-0015 invoke: **completeness**: a12: executed (error) but missing from trace
+- G3-0015 invoke: **completeness**: a13: executed (ok) but missing from trace
+- G3-0015 invoke: **completeness**: a14: executed (ok) but missing from trace
+- G3-0015 invoke: **completeness**: b12: executed (ok) but missing from trace
+- G3-0015 invoke: **completeness**: b13: executed (error) but missing from trace
+- G3-0015 invoke: **completeness**: b14: executed (ok) but missing from trace
+- G3-0015 stream: **completeness**: a1: executed (ok) but missing from trace
+- G3-0015 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 stream: **completeness**: b1: executed (ok) but missing from trace
+- G3-0015 stream: **completeness**: b2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 stream: **completeness**: b3: executed (ok) but missing from trace
+- G3-0015 stream: **completeness**: b4: executed (ok) but missing from trace
+- G3-0015 stream: **completeness**: b5: executed (ok) but missing from trace
+- G3-0015 stream: **completeness**: b6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 stream: **completeness**: b7: executed (ok) but missing from trace
+- G3-0015 stream: **completeness**: a9: executed (ok) but missing from trace
+- G3-0015 stream: **completeness**: a10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0015 stream: **completeness**: b12: executed (ok) but missing from trace
+- G3-0015 stream: **completeness**: b13: executed (error) but missing from trace
+- G3-0015 stream: **completeness**: b14: executed (ok) but missing from trace
+- G3-0015 stream: **completeness**: a11: executed (error) but missing from trace
+- G3-0015 stream: **completeness**: a12: executed (error) but missing from trace
+- G3-0015 stream: **completeness**: a13: executed (ok) but missing from trace
+- G3-0015 stream: **completeness**: a14: executed (ok) but missing from trace
+- G3-0017 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0017 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0017 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0017 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0017 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0017 stream: **completeness**: a3: executed (ok) but missing from trace
+- G3-0017 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0017 stream: **completeness**: a5: executed (ok) but missing from trace
+- G3-0018 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0018 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0018 stream: **completeness**: a3: executed (ok) but missing from trace
+- G3-0018 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0019 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0019 invoke: **completeness**: a2: executed (error) but missing from trace
+- G3-0019 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0019 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0019 invoke: **completeness**: a5: executed (error) but missing from trace
+- G3-0019 invoke: **completeness**: a6: executed (ok) but missing from trace
+- G3-0019 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0019 invoke: **completeness**: a8: executed (error) but missing from trace
+- G3-0019 invoke: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0019 invoke: **completeness**: a10: executed (ok) but missing from trace
+- G3-0019 invoke: **completeness**: a11: executed (error) but missing from trace
+- G3-0019 invoke: **completeness**: a12: executed (ok) but missing from trace
+- G3-0019 invoke: **completeness**: a13: executed (ok) but missing from trace
+- G3-0019 invoke: **completeness**: a14: emitted but never executed, and the attempt is invisible in the trace
+- G3-0019 invoke: **completeness**: a15: executed (running) but missing from trace
+- G3-0019 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0019 stream: **completeness**: a2: executed (error) but missing from trace
+- G3-0019 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0019 stream: **completeness**: a4: executed (ok) but missing from trace
+- G3-0019 stream: **completeness**: a5: executed (error) but missing from trace
+- G3-0019 stream: **completeness**: a6: executed (ok) but missing from trace
+- G3-0019 stream: **completeness**: a7: executed (ok) but missing from trace
+- G3-0019 stream: **completeness**: a8: executed (error) but missing from trace
+- G3-0019 stream: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0019 stream: **completeness**: a10: executed (ok) but missing from trace
+- G3-0019 stream: **completeness**: a11: executed (error) but missing from trace
+- G3-0019 stream: **completeness**: a12: executed (ok) but missing from trace
+- G3-0019 stream: **completeness**: a13: executed (ok) but missing from trace
+- G3-0019 stream: **completeness**: a14: emitted but never executed, and the attempt is invisible in the trace
+- G3-0019 stream: **completeness**: a15: executed (running) but missing from trace
+- G3-0020 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0020 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0020 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0020 stream: **completeness**: a2: executed (ok) but missing from trace
+- G3-0023 invoke: **completeness**: a1: executed (error) but missing from trace
+- G3-0023 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0023 invoke: **completeness**: a5: executed (error) but missing from trace
+- G3-0023 invoke: **completeness**: a6: executed (error) but missing from trace
+- G3-0023 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0023 stream: **completeness**: a1: executed (error) but missing from trace
+- G3-0023 stream: **completeness**: a2: executed (ok) but missing from trace
+- G3-0023 stream: **completeness**: a5: executed (error) but missing from trace
+- G3-0023 stream: **completeness**: a6: executed (error) but missing from trace
+- G3-0023 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0024 invoke: **completeness**: a1: executed (error) but missing from trace
+- G3-0024 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0024 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0024 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0024 stream: **completeness**: a1: executed (error) but missing from trace
+- G3-0024 stream: **completeness**: a2: executed (ok) but missing from trace
+- G3-0024 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0024 stream: **completeness**: a4: executed (ok) but missing from trace
+- G3-0027 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0027 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0027 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0027 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0027 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0027 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0027 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0027 invoke: **completeness**: a8: executed (ok) but missing from trace
+- G3-0027 invoke: **completeness**: a15: executed (running) but missing from trace
+- G3-0027 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0027 stream: **completeness**: a2: executed (ok) but missing from trace
+- G3-0027 stream: **completeness**: a3: executed (ok) but missing from trace
+- G3-0027 stream: **completeness**: a4: executed (ok) but missing from trace
+- G3-0027 stream: **completeness**: a5: executed (ok) but missing from trace
+- G3-0027 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0027 stream: **completeness**: a7: executed (ok) but missing from trace
+- G3-0027 stream: **completeness**: a8: executed (ok) but missing from trace
+- G3-0027 stream: **completeness**: a15: executed (running) but missing from trace
+- G3-0029 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0029 invoke: **completeness**: a6: executed (error) but missing from trace
+- G3-0029 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0029 invoke: **completeness**: a8: executed (ok) but missing from trace
+- G3-0029 invoke: **completeness**: a9: executed (ok) but missing from trace
+- G3-0029 invoke: **completeness**: a10: executed (running) but missing from trace
+- G3-0029 stream: **completeness**: a5: executed (ok) but missing from trace
+- G3-0029 stream: **completeness**: a6: executed (error) but missing from trace
+- G3-0029 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0029 stream: **completeness**: a8: executed (ok) but missing from trace
+- G3-0029 stream: **completeness**: a9: executed (ok) but missing from trace
+- G3-0029 stream: **completeness**: a10: executed (running) but missing from trace
+- G3-0030 invoke: **completeness**: a1: executed (error) but missing from trace
+- G3-0030 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0030 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0030 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0030 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0030 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0030 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0030 invoke: **completeness**: a8: executed (error) but missing from trace
+- G3-0030 invoke: **completeness**: a9: executed (ok) but missing from trace
+- G3-0030 stream: **completeness**: a1: executed (error) but missing from trace
+- G3-0030 stream: **completeness**: a2: executed (ok) but missing from trace
+- G3-0030 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0030 stream: **completeness**: a4: executed (ok) but missing from trace
+- G3-0030 stream: **completeness**: a5: executed (ok) but missing from trace
+- G3-0030 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0030 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0030 stream: **completeness**: a8: executed (error) but missing from trace
+- G3-0030 stream: **completeness**: a9: executed (ok) but missing from trace
+- G3-0031 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0031 invoke: **completeness**: a8: executed (ok) but missing from trace
+- G3-0031 invoke: **completeness**: a9: executed (error) but missing from trace
+- G3-0031 stream: **completeness**: a7: executed (ok) but missing from trace
+- G3-0031 stream: **completeness**: a8: executed (ok) but missing from trace
+- G3-0031 stream: **completeness**: a9: executed (error) but missing from trace
+- G3-0032 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0032 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0032 invoke: **completeness**: a6: executed (ok) but missing from trace
+- G3-0032 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0032 stream: **completeness**: a4: executed (ok) but missing from trace
+- G3-0032 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0032 stream: **completeness**: a6: executed (ok) but missing from trace
+- G3-0032 stream: **completeness**: a7: executed (ok) but missing from trace
+- G3-0034 invoke: **completeness**: a3: executed (running) but missing from trace
+- G3-0034 stream: **completeness**: a3: executed (running) but missing from trace
+- G3-0035 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0035 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0035 invoke: **completeness**: a3: executed (error) but missing from trace
+- G3-0035 invoke: **completeness**: a4: executed (error) but missing from trace
+- G3-0035 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0035 stream: **completeness**: a1: executed (ok) but missing from trace
+- G3-0035 stream: **completeness**: a2: executed (ok) but missing from trace
+- G3-0035 stream: **completeness**: a3: executed (error) but missing from trace
+- G3-0035 stream: **completeness**: a4: executed (error) but missing from trace
+- G3-0035 stream: **completeness**: a5: executed (ok) but missing from trace
+- G3-0037 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0037 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0037 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0037 invoke: **completeness**: a4: executed (running) but missing from trace
+- G3-0037 stream: **completeness**: a1: executed (ok) but missing from trace
+- G3-0037 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0037 stream: **completeness**: a3: executed (ok) but missing from trace
+- G3-0037 stream: **completeness**: a4: executed (running) but missing from trace
+- G3-0038 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0038 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0038 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0038 stream: **completeness**: a1: executed (ok) but missing from trace
+- G3-0038 stream: **completeness**: a2: executed (ok) but missing from trace
+- G3-0038 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0039 invoke: **completeness**: a3: executed (running) but missing from trace
+- G3-0039 stream: **completeness**: a3: executed (running) but missing from trace
+- G3-0040 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0040 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0040 invoke: **completeness**: a3: executed (error) but missing from trace
+- G3-0040 stream: **completeness**: a1: executed (ok) but missing from trace
+- G3-0040 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0040 stream: **completeness**: a3: executed (error) but missing from trace
+- G3-0041 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0041 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0041 invoke: **completeness**: a3: executed (error) but missing from trace
+- G3-0041 invoke: **completeness**: a4: executed (error) but missing from trace
+- G3-0041 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0041 invoke: **completeness**: a6: executed (ok) but missing from trace
+- G3-0041 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0041 invoke: **completeness**: a8: executed (ok) but missing from trace
+- G3-0041 invoke: **completeness**: a9: executed (error) but missing from trace
+- G3-0041 invoke: **completeness**: a10: executed (ok) but missing from trace
+- G3-0041 invoke: **completeness**: a11: executed (ok) but missing from trace
+- G3-0041 invoke: **completeness**: a12: executed (ok) but missing from trace
+- G3-0041 invoke: **completeness**: a13: executed (error) but missing from trace
+- G3-0041 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0041 stream: **completeness**: a2: executed (ok) but missing from trace
+- G3-0041 stream: **completeness**: a3: executed (error) but missing from trace
+- G3-0041 stream: **completeness**: a4: executed (error) but missing from trace
+- G3-0041 stream: **completeness**: a5: executed (ok) but missing from trace
+- G3-0041 stream: **completeness**: a6: executed (ok) but missing from trace
+- G3-0041 stream: **completeness**: a7: executed (ok) but missing from trace
+- G3-0041 stream: **completeness**: a8: executed (ok) but missing from trace
+- G3-0041 stream: **completeness**: a9: executed (error) but missing from trace
+- G3-0041 stream: **completeness**: a10: executed (ok) but missing from trace
+- G3-0041 stream: **completeness**: a11: executed (ok) but missing from trace
+- G3-0041 stream: **completeness**: a12: executed (ok) but missing from trace
+- G3-0041 stream: **completeness**: a13: executed (error) but missing from trace
+- G3-0042 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0042 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0042 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0042 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0042 stream: **completeness**: a1: executed (ok) but missing from trace
+- G3-0042 stream: **completeness**: a2: executed (ok) but missing from trace
+- G3-0042 stream: **completeness**: a3: executed (ok) but missing from trace
+- G3-0042 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0044 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0044 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0044 invoke: **completeness**: a3: executed (error) but missing from trace
+- G3-0044 stream: **completeness**: a1: executed (ok) but missing from trace
+- G3-0044 stream: **completeness**: a2: executed (ok) but missing from trace
+- G3-0044 stream: **completeness**: a3: executed (error) but missing from trace
+- G3-0045 invoke: **completeness**: a1: executed (error) but missing from trace
+- G3-0045 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0045 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0045 invoke: **completeness**: a5: executed (error) but missing from trace
+- G3-0045 invoke: **completeness**: a6: executed (ok) but missing from trace
+- G3-0045 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0045 invoke: **completeness**: a8: executed (ok) but missing from trace
+- G3-0045 stream: **completeness**: a1: executed (error) but missing from trace
+- G3-0045 stream: **completeness**: a2: executed (ok) but missing from trace
+- G3-0045 stream: **completeness**: a3: executed (ok) but missing from trace
+- G3-0045 stream: **completeness**: a5: executed (error) but missing from trace
+- G3-0045 stream: **completeness**: a6: executed (ok) but missing from trace
+- G3-0045 stream: **completeness**: a7: executed (ok) but missing from trace
+- G3-0045 stream: **completeness**: a8: executed (ok) but missing from trace
+- G3-0046 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0046 invoke: **completeness**: a2: executed (error) but missing from trace
+- G3-0046 invoke: **completeness**: a3: executed (error) but missing from trace
+- G3-0046 invoke: **completeness**: a8: executed (error) but missing from trace
+- G3-0046 invoke: **completeness**: a9: executed (running) but missing from trace
+- G3-0046 stream: **completeness**: a1: executed (ok) but missing from trace
+- G3-0046 stream: **completeness**: a2: executed (error) but missing from trace
+- G3-0046 stream: **completeness**: a3: executed (error) but missing from trace
+- G3-0046 stream: **completeness**: a8: executed (error) but missing from trace
+- G3-0046 stream: **completeness**: a9: executed (running) but missing from trace
+- G3-0047 invoke: **completeness**: a2: executed (error) but missing from trace
+- G3-0047 stream: **completeness**: a2: executed (error) but missing from trace
+- G3-0048 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0048 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0048 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0048 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0048 invoke: **completeness**: a6: executed (error) but missing from trace
+- G3-0048 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0048 stream: **completeness**: a2: executed (ok) but missing from trace
+- G3-0048 stream: **completeness**: a3: executed (ok) but missing from trace
+- G3-0048 stream: **completeness**: a4: executed (ok) but missing from trace
+- G3-0048 stream: **completeness**: a5: executed (ok) but missing from trace
+- G3-0048 stream: **completeness**: a6: executed (error) but missing from trace
+- G3-0048 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0049 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0049 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0049 invoke: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0049 invoke: **completeness**: a9: executed (ok) but missing from trace
+- G3-0049 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0049 stream: **completeness**: a7: executed (ok) but missing from trace
+- G3-0049 stream: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0049 stream: **completeness**: a9: executed (ok) but missing from trace
+- G3-0051 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0051 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0051 invoke: **completeness**: a3: executed (error) but missing from trace
+- G3-0051 invoke: **completeness**: a4: executed (error) but missing from trace
+- G3-0051 invoke: **completeness**: a5: executed (error) but missing from trace
+- G3-0051 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0051 stream: **completeness**: a2: executed (ok) but missing from trace
+- G3-0051 stream: **completeness**: a3: executed (error) but missing from trace
+- G3-0051 stream: **completeness**: a4: executed (error) but missing from trace
+- G3-0051 stream: **completeness**: a5: executed (error) but missing from trace
+- G3-0052 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0052 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0052 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0052 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0052 invoke: **completeness**: b1: executed (error) but missing from trace
+- G3-0052 invoke: **completeness**: b2: executed (ok) but missing from trace
+- G3-0052 invoke: **completeness**: b3: executed (error) but missing from trace
+- G3-0052 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0052 stream: **completeness**: a2: executed (ok) but missing from trace
+- G3-0052 stream: **completeness**: a3: executed (ok) but missing from trace
+- G3-0052 stream: **completeness**: a4: executed (ok) but missing from trace
+- G3-0052 stream: **completeness**: b1: executed (error) but missing from trace
+- G3-0052 stream: **completeness**: b2: executed (ok) but missing from trace
+- G3-0052 stream: **completeness**: b3: executed (error) but missing from trace
+- G3-0053 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0053 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0053 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0053 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0053 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0053 invoke: **completeness**: a6: executed (error) but missing from trace
+- G3-0053 invoke: **completeness**: a9: executed (ok) but missing from trace
+- G3-0053 invoke: **completeness**: a10: executed (error) but missing from trace
+- G3-0053 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0053 stream: **completeness**: a2: executed (ok) but missing from trace
+- G3-0053 stream: **completeness**: a3: executed (ok) but missing from trace
+- G3-0053 stream: **completeness**: a4: executed (ok) but missing from trace
+- G3-0053 stream: **completeness**: a5: executed (ok) but missing from trace
+- G3-0053 stream: **completeness**: a6: executed (error) but missing from trace
+- G3-0053 stream: **completeness**: a9: executed (ok) but missing from trace
+- G3-0053 stream: **completeness**: a10: executed (error) but missing from trace
+- G3-0054 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0054 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0054 invoke: **completeness**: a6: executed (error) but missing from trace
+- G3-0054 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0054 invoke: **completeness**: a8: executed (ok) but missing from trace
+- G3-0054 invoke: **completeness**: a9: executed (ok) but missing from trace
+- G3-0054 invoke: **completeness**: a10: executed (error) but missing from trace
+- G3-0054 invoke: **completeness**: a11: executed (ok) but missing from trace
+- G3-0054 invoke: **completeness**: a12: emitted but never executed, and the attempt is invisible in the trace
+- G3-0054 stream: **completeness**: a4: executed (ok) but missing from trace
+- G3-0054 stream: **completeness**: a5: executed (ok) but missing from trace
+- G3-0054 stream: **completeness**: a6: executed (error) but missing from trace
+- G3-0054 stream: **completeness**: a7: executed (ok) but missing from trace
+- G3-0054 stream: **completeness**: a8: executed (ok) but missing from trace
+- G3-0054 stream: **completeness**: a9: executed (ok) but missing from trace
+- G3-0054 stream: **completeness**: a10: executed (error) but missing from trace
+- G3-0054 stream: **completeness**: a11: executed (ok) but missing from trace
+- G3-0054 stream: **completeness**: a12: emitted but never executed, and the attempt is invisible in the trace
+- G3-0056 invoke: **completeness**: a1: executed (error) but missing from trace
+- G3-0056 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0056 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0056 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0056 invoke: **completeness**: a6: executed (running) but missing from trace
+- G3-0056 stream: **completeness**: a1: executed (error) but missing from trace
+- G3-0056 stream: **completeness**: a2: executed (ok) but missing from trace
+- G3-0056 stream: **completeness**: a3: executed (ok) but missing from trace
+- G3-0056 stream: **completeness**: a4: executed (ok) but missing from trace
+- G3-0056 stream: **completeness**: a6: executed (running) but missing from trace
+- G3-0057 invoke: **completeness**: a1: executed (error) but missing from trace
+- G3-0057 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0057 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0057 invoke: **completeness**: b1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0057 invoke: **completeness**: b2: executed (ok) but missing from trace
+- G3-0057 invoke: **completeness**: b3: executed (ok) but missing from trace
+- G3-0057 stream: **completeness**: a1: executed (error) but missing from trace
+- G3-0057 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0057 stream: **completeness**: a3: executed (ok) but missing from trace
+- G3-0057 stream: **completeness**: b1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0057 stream: **completeness**: b2: executed (ok) but missing from trace
+- G3-0057 stream: **completeness**: b3: executed (ok) but missing from trace
+- G3-0058 invoke: **completeness**: a2: executed (error) but missing from trace
+- G3-0058 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0058 invoke: **completeness**: b4: executed (ok) but missing from trace
+- G3-0058 invoke: **completeness**: b5: executed (ok) but missing from trace
+- G3-0058 invoke: **completeness**: b6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 invoke: **completeness**: b7: executed (ok) but missing from trace
+- G3-0058 invoke: **completeness**: a8: executed (error) but missing from trace
+- G3-0058 invoke: **completeness**: a9: executed (ok) but missing from trace
+- G3-0058 invoke: **completeness**: a10: executed (error) but missing from trace
+- G3-0058 invoke: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 stream: **completeness**: a2: executed (error) but missing from trace
+- G3-0058 stream: **completeness**: a3: executed (ok) but missing from trace
+- G3-0058 stream: **completeness**: b4: executed (ok) but missing from trace
+- G3-0058 stream: **completeness**: b5: executed (ok) but missing from trace
+- G3-0058 stream: **completeness**: b6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0058 stream: **completeness**: b7: executed (ok) but missing from trace
+- G3-0058 stream: **completeness**: a8: executed (error) but missing from trace
+- G3-0058 stream: **completeness**: a9: executed (ok) but missing from trace
+- G3-0058 stream: **completeness**: a10: executed (error) but missing from trace
+- G3-0058 stream: **completeness**: a11: emitted but never executed, and the attempt is invisible in the trace
+- G3-0059 invoke: **completeness**: a4: executed (running) but missing from trace
+- G3-0059 stream: **completeness**: a4: executed (running) but missing from trace
+- G3-0060 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0060 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0060 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0060 invoke: **completeness**: a6: executed (running) but missing from trace
+- G3-0060 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0060 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0060 stream: **completeness**: a5: executed (ok) but missing from trace
+- G3-0060 stream: **completeness**: a6: executed (running) but missing from trace
+- G3-0061 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0061 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0061 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0061 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0061 stream: **completeness**: a4: executed (ok) but missing from trace
+- G3-0061 stream: **completeness**: a5: executed (ok) but missing from trace
+- G3-0061 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0061 stream: **completeness**: a7: executed (ok) but missing from trace
+- G3-0062 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0062 invoke: **completeness**: a2: executed (error) but missing from trace
+- G3-0062 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0062 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0062 stream: **completeness**: a2: executed (error) but missing from trace
+- G3-0062 stream: **completeness**: a3: executed (ok) but missing from trace
+- G3-0063 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0063 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0063 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0063 invoke: **completeness**: a6: executed (error) but missing from trace
+- G3-0063 invoke: **completeness**: a7: executed (error) but missing from trace
+- G3-0063 invoke: **completeness**: a8: executed (ok) but missing from trace
+- G3-0063 invoke: **completeness**: a9: executed (ok) but missing from trace
+- G3-0063 invoke: **completeness**: a10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0063 invoke: **completeness**: a11: executed (ok) but missing from trace
+- G3-0063 invoke: **completeness**: a14: executed (running) but missing from trace
+- G3-0063 stream: **completeness**: a3: executed (ok) but missing from trace
+- G3-0063 stream: **completeness**: a4: executed (ok) but missing from trace
+- G3-0063 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0063 stream: **completeness**: a6: executed (error) but missing from trace
+- G3-0063 stream: **completeness**: a7: executed (error) but missing from trace
+- G3-0063 stream: **completeness**: a8: executed (ok) but missing from trace
+- G3-0063 stream: **completeness**: a9: executed (ok) but missing from trace
+- G3-0063 stream: **completeness**: a10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0063 stream: **completeness**: a11: executed (ok) but missing from trace
+- G3-0063 stream: **completeness**: a14: executed (running) but missing from trace
+- G3-0064 invoke: **completeness**: a1: executed (error) but missing from trace
+- G3-0064 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0064 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0064 invoke: **completeness**: a4: executed (running) but missing from trace
+- G3-0064 stream: **completeness**: a1: executed (error) but missing from trace
+- G3-0064 stream: **completeness**: a2: executed (ok) but missing from trace
+- G3-0064 stream: **completeness**: a3: executed (ok) but missing from trace
+- G3-0064 stream: **completeness**: a4: executed (running) but missing from trace
+- G3-0065 invoke: **completeness**: a1: executed (error) but missing from trace
+- G3-0065 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0065 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0065 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0065 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0065 invoke: **completeness**: a6: executed (error) but missing from trace
+- G3-0065 invoke: **completeness**: a7: executed (running) but missing from trace
+- G3-0065 stream: **completeness**: a1: executed (error) but missing from trace
+- G3-0065 stream: **completeness**: a2: executed (ok) but missing from trace
+- G3-0065 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0065 stream: **completeness**: a4: executed (ok) but missing from trace
+- G3-0065 stream: **completeness**: a5: executed (ok) but missing from trace
+- G3-0065 stream: **completeness**: a6: executed (error) but missing from trace
+- G3-0065 stream: **completeness**: a7: executed (running) but missing from trace
+- G3-0067 invoke: **completeness**: a6: executed (running) but missing from trace
+- G3-0067 stream: **completeness**: a6: executed (running) but missing from trace
+- G3-0068 invoke: **completeness**: a6: executed (error) but missing from trace
+- G3-0068 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0068 invoke: **completeness**: a8: executed (ok) but missing from trace
+- G3-0068 invoke: **completeness**: a9: executed (error) but missing from trace
+- G3-0068 invoke: **completeness**: a10: executed (ok) but missing from trace
+- G3-0068 stream: **completeness**: a6: executed (error) but missing from trace
+- G3-0068 stream: **completeness**: a7: executed (ok) but missing from trace
+- G3-0068 stream: **completeness**: a8: executed (ok) but missing from trace
+- G3-0068 stream: **completeness**: a9: executed (error) but missing from trace
+- G3-0068 stream: **completeness**: a10: executed (ok) but missing from trace
+- G3-0069 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0069 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0069 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0069 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0069 invoke: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0069 invoke: **completeness**: a10: executed (ok) but missing from trace
+- G3-0069 invoke: **completeness**: a11: executed (ok) but missing from trace
+- G3-0069 invoke: **completeness**: a12: executed (ok) but missing from trace
+- G3-0069 stream: **completeness**: a1: executed (ok) but missing from trace
+- G3-0069 stream: **completeness**: a2: executed (ok) but missing from trace
+- G3-0069 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0069 stream: **completeness**: a4: executed (ok) but missing from trace
+- G3-0069 stream: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0069 stream: **completeness**: a10: executed (ok) but missing from trace
+- G3-0069 stream: **completeness**: a11: executed (ok) but missing from trace
+- G3-0069 stream: **completeness**: a12: executed (ok) but missing from trace
+- G3-0072 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0072 invoke: **completeness**: a2: executed (error) but missing from trace
+- G3-0072 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0072 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0072 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0072 stream: **completeness**: a2: executed (error) but missing from trace
+- G3-0072 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0072 stream: **completeness**: a4: executed (ok) but missing from trace
+- G3-0073 invoke: **completeness**: a1: executed (error) but missing from trace
+- G3-0073 stream: **completeness**: a1: executed (error) but missing from trace
+- G3-0074 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0074 invoke: **completeness**: a2: executed (error) but missing from trace
+- G3-0074 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0074 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0074 stream: **completeness**: a1: executed (ok) but missing from trace
+- G3-0074 stream: **completeness**: a2: executed (error) but missing from trace
+- G3-0074 stream: **completeness**: a3: executed (ok) but missing from trace
+- G3-0074 stream: **completeness**: a4: executed (ok) but missing from trace
+- G3-0076 invoke: **completeness**: a2: executed (error) but missing from trace
+- G3-0076 stream: **completeness**: a2: executed (error) but missing from trace
+- G3-0077 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0077 invoke: **completeness**: a2: executed (error) but missing from trace
+- G3-0077 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0077 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0077 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0077 stream: **completeness**: a2: executed (error) but missing from trace
+- G3-0077 stream: **completeness**: a3: executed (ok) but missing from trace
+- G3-0077 stream: **completeness**: a4: executed (ok) but missing from trace
+- G3-0078 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0078 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0078 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0078 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0078 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0078 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0078 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0078 invoke: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0078 invoke: **completeness**: a9: executed (ok) but missing from trace
+- G3-0078 invoke: **completeness**: a10: executed (error) but missing from trace
+- G3-0078 stream: **completeness**: a1: executed (ok) but missing from trace
+- G3-0078 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0078 stream: **completeness**: a3: executed (ok) but missing from trace
+- G3-0078 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0078 stream: **completeness**: a5: executed (ok) but missing from trace
+- G3-0078 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0078 stream: **completeness**: a7: executed (ok) but missing from trace
+- G3-0078 stream: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0078 stream: **completeness**: a9: executed (ok) but missing from trace
+- G3-0078 stream: **completeness**: a10: executed (error) but missing from trace
+- G3-0079 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0079 invoke: **completeness**: a6: executed (error) but missing from trace
+- G3-0079 invoke: **completeness**: a7: executed (error) but missing from trace
+- G3-0079 invoke: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0079 invoke: **completeness**: a9: executed (ok) but missing from trace
+- G3-0079 invoke: **completeness**: a10: executed (running) but missing from trace
+- G3-0079 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0079 stream: **completeness**: a6: executed (error) but missing from trace
+- G3-0079 stream: **completeness**: a7: executed (error) but missing from trace
+- G3-0079 stream: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0079 stream: **completeness**: a9: executed (ok) but missing from trace
+- G3-0079 stream: **completeness**: a10: executed (running) but missing from trace
+- G3-0080 invoke: **completeness**: a1: executed (error) but missing from trace
+- G3-0080 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0080 stream: **completeness**: a1: executed (error) but missing from trace
+- G3-0080 stream: **completeness**: a2: executed (ok) but missing from trace
+- G3-0081 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0081 invoke: **completeness**: a3: executed (error) but missing from trace
+- G3-0081 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0081 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0081 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0081 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0081 invoke: **completeness**: a12: executed (running) but missing from trace
+- G3-0081 stream: **completeness**: a2: executed (ok) but missing from trace
+- G3-0081 stream: **completeness**: a3: executed (error) but missing from trace
+- G3-0081 stream: **completeness**: a4: executed (ok) but missing from trace
+- G3-0081 stream: **completeness**: a5: executed (ok) but missing from trace
+- G3-0081 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0081 stream: **completeness**: a7: executed (ok) but missing from trace
+- G3-0081 stream: **completeness**: a12: executed (running) but missing from trace
+- G3-0082 invoke: **completeness**: a3: executed (error) but missing from trace
+- G3-0082 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0082 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0082 invoke: **completeness**: a6: executed (running) but missing from trace
+- G3-0082 stream: **completeness**: a3: executed (error) but missing from trace
+- G3-0082 stream: **completeness**: a4: executed (ok) but missing from trace
+- G3-0082 stream: **completeness**: a5: executed (ok) but missing from trace
+- G3-0082 stream: **completeness**: a6: executed (running) but missing from trace
+- G3-0083 invoke: **completeness**: a4: executed (running) but missing from trace
+- G3-0083 stream: **completeness**: a4: executed (running) but missing from trace
+- G3-0084 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0084 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0084 invoke: **completeness**: a6: executed (error) but missing from trace
+- G3-0084 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0084 stream: **completeness**: a4: executed (ok) but missing from trace
+- G3-0084 stream: **completeness**: a5: executed (ok) but missing from trace
+- G3-0084 stream: **completeness**: a6: executed (error) but missing from trace
+- G3-0084 stream: **completeness**: a7: executed (ok) but missing from trace
+- G3-0085 invoke: **completeness**: n1: executed (error) but missing from trace
+- G3-0085 invoke: **completeness**: n2: executed (error) but missing from trace
+- G3-0085 invoke: **completeness**: n3: executed (error) but missing from trace
+- G3-0085 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0085 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0085 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0085 invoke: **completeness**: a8: executed (ok) but missing from trace
+- G3-0085 stream: **completeness**: n1: executed (error) but missing from trace
+- G3-0085 stream: **completeness**: n2: executed (error) but missing from trace
+- G3-0085 stream: **completeness**: n3: executed (error) but missing from trace
+- G3-0085 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0085 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0085 stream: **completeness**: a7: executed (ok) but missing from trace
+- G3-0085 stream: **completeness**: a8: executed (ok) but missing from trace
+- G3-0086 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0086 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0086 invoke: **completeness**: a5: executed (error) but missing from trace
+- G3-0086 stream: **completeness**: a3: executed (ok) but missing from trace
+- G3-0086 stream: **completeness**: a4: executed (ok) but missing from trace
+- G3-0086 stream: **completeness**: a5: executed (error) but missing from trace
+- G3-0087 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0087 invoke: **completeness**: a2: executed (error) but missing from trace
+- G3-0087 invoke: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0087 stream: **completeness**: a1: executed (ok) but missing from trace
+- G3-0087 stream: **completeness**: a2: executed (error) but missing from trace
+- G3-0087 stream: **completeness**: a7: emitted but never executed, and the attempt is invisible in the trace
+- G3-0088 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0088 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0088 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0088 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0088 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0088 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0088 stream: **completeness**: a2: executed (ok) but missing from trace
+- G3-0088 stream: **completeness**: a3: executed (ok) but missing from trace
+- G3-0088 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0088 stream: **completeness**: a5: executed (ok) but missing from trace
+- G3-0089 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0089 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0089 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0089 invoke: **completeness**: a7: executed (running) but missing from trace
+- G3-0089 stream: **completeness**: a1: executed (ok) but missing from trace
+- G3-0089 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0089 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0089 stream: **completeness**: a7: executed (running) but missing from trace
+- G3-0090 invoke: **completeness**: a1: executed (error) but missing from trace
+- G3-0090 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0090 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0090 invoke: **completeness**: a6: executed (ok) but missing from trace
+- G3-0090 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0090 invoke: **completeness**: a8: executed (ok) but missing from trace
+- G3-0090 invoke: **completeness**: a9: executed (ok) but missing from trace
+- G3-0090 invoke: **completeness**: a10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0090 invoke: **completeness**: a11: executed (running) but missing from trace
+- G3-0090 stream: **completeness**: a1: executed (error) but missing from trace
+- G3-0090 stream: **completeness**: a2: executed (ok) but missing from trace
+- G3-0090 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0090 stream: **completeness**: a6: executed (ok) but missing from trace
+- G3-0090 stream: **completeness**: a7: executed (ok) but missing from trace
+- G3-0090 stream: **completeness**: a8: executed (ok) but missing from trace
+- G3-0090 stream: **completeness**: a9: executed (ok) but missing from trace
+- G3-0090 stream: **completeness**: a10: emitted but never executed, and the attempt is invisible in the trace
+- G3-0090 stream: **completeness**: a11: executed (running) but missing from trace
+- G3-0091 invoke: **completeness**: a1: executed (error) but missing from trace
+- G3-0091 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0091 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0091 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0091 invoke: **completeness**: a6: executed (ok) but missing from trace
+- G3-0091 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0091 invoke: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0091 invoke: **completeness**: a9: executed (ok) but missing from trace
+- G3-0091 stream: **completeness**: a1: executed (error) but missing from trace
+- G3-0091 stream: **completeness**: a2: executed (ok) but missing from trace
+- G3-0091 stream: **completeness**: a3: executed (ok) but missing from trace
+- G3-0091 stream: **completeness**: a4: executed (ok) but missing from trace
+- G3-0091 stream: **completeness**: a6: executed (ok) but missing from trace
+- G3-0091 stream: **completeness**: a7: executed (ok) but missing from trace
+- G3-0091 stream: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0091 stream: **completeness**: a9: executed (ok) but missing from trace
+- G3-0092 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0092 invoke: **completeness**: a2: executed (error) but missing from trace
+- G3-0092 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0092 invoke: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0092 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0092 invoke: **completeness**: b2: executed (ok) but missing from trace
+- G3-0092 invoke: **completeness**: b3: executed (ok) but missing from trace
+- G3-0092 invoke: **completeness**: b4: executed (error) but missing from trace
+- G3-0092 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0092 stream: **completeness**: a2: executed (error) but missing from trace
+- G3-0092 stream: **completeness**: a3: executed (ok) but missing from trace
+- G3-0092 stream: **completeness**: a4: emitted but never executed, and the attempt is invisible in the trace
+- G3-0092 stream: **completeness**: a5: executed (ok) but missing from trace
+- G3-0092 stream: **completeness**: b2: executed (ok) but missing from trace
+- G3-0092 stream: **completeness**: b3: executed (ok) but missing from trace
+- G3-0092 stream: **completeness**: b4: executed (error) but missing from trace
+- G3-0093 invoke: **completeness**: a4: executed (error) but missing from trace
+- G3-0093 stream: **completeness**: a4: executed (error) but missing from trace
+- G3-0094 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0094 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0094 invoke: **completeness**: a3: executed (error) but missing from trace
+- G3-0094 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0094 invoke: **completeness**: a5: executed (ok) but missing from trace
+- G3-0094 invoke: **completeness**: a6: executed (error) but missing from trace
+- G3-0094 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0094 stream: **completeness**: a2: executed (ok) but missing from trace
+- G3-0094 stream: **completeness**: a3: executed (error) but missing from trace
+- G3-0094 stream: **completeness**: a4: executed (ok) but missing from trace
+- G3-0094 stream: **completeness**: a5: executed (ok) but missing from trace
+- G3-0094 stream: **completeness**: a6: executed (error) but missing from trace
+- G3-0095 invoke: **completeness**: a14: executed (running) but missing from trace
+- G3-0095 stream: **completeness**: a14: executed (running) but missing from trace
+- G3-0096 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0096 invoke: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 invoke: **completeness**: a3: executed (ok) but missing from trace
+- G3-0096 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0096 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 invoke: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0096 invoke: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 invoke: **completeness**: a9: executed (ok) but missing from trace
+- G3-0096 invoke: **completeness**: a10: executed (running) but missing from trace
+- G3-0096 stream: **completeness**: a1: executed (ok) but missing from trace
+- G3-0096 stream: **completeness**: a2: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 stream: **completeness**: a3: executed (ok) but missing from trace
+- G3-0096 stream: **completeness**: a4: executed (ok) but missing from trace
+- G3-0096 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 stream: **completeness**: a6: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 stream: **completeness**: a7: executed (ok) but missing from trace
+- G3-0096 stream: **completeness**: a8: emitted but never executed, and the attempt is invisible in the trace
+- G3-0096 stream: **completeness**: a9: executed (ok) but missing from trace
+- G3-0096 stream: **completeness**: a10: executed (running) but missing from trace
+- G3-0097 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0097 invoke: **completeness**: a8: executed (ok) but missing from trace
+- G3-0097 invoke: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0097 stream: **completeness**: a7: executed (ok) but missing from trace
+- G3-0097 stream: **completeness**: a8: executed (ok) but missing from trace
+- G3-0097 stream: **completeness**: a9: emitted but never executed, and the attempt is invisible in the trace
+- G3-0098 invoke: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0098 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0098 invoke: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0098 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0098 invoke: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0098 invoke: **completeness**: a6: executed (error) but missing from trace
+- G3-0098 invoke: **completeness**: a7: executed (ok) but missing from trace
+- G3-0098 stream: **completeness**: a1: emitted but never executed, and the attempt is invisible in the trace
+- G3-0098 stream: **completeness**: a2: executed (ok) but missing from trace
+- G3-0098 stream: **completeness**: a3: emitted but never executed, and the attempt is invisible in the trace
+- G3-0098 stream: **completeness**: a4: executed (ok) but missing from trace
+- G3-0098 stream: **completeness**: a5: emitted but never executed, and the attempt is invisible in the trace
+- G3-0098 stream: **completeness**: a6: executed (error) but missing from trace
+- G3-0098 stream: **completeness**: a7: executed (ok) but missing from trace
+- G3-0100 invoke: **completeness**: a1: executed (ok) but missing from trace
+- G3-0100 invoke: **completeness**: a2: executed (ok) but missing from trace
+- G3-0100 invoke: **completeness**: a3: executed (error) but missing from trace
+- G3-0100 invoke: **completeness**: a4: executed (ok) but missing from trace
+- G3-0100 stream: **completeness**: a1: executed (ok) but missing from trace
+- G3-0100 stream: **completeness**: a2: executed (ok) but missing from trace
+- G3-0100 stream: **completeness**: a3: executed (error) but missing from trace
+- G3-0100 stream: **completeness**: a4: executed (ok) but missing from trace
+
+## Tools still running after the run ended (informational)
+
+- autogen/messages G3-0010 invoke
+- autogen/messages G3-0010 stream
+- autogen/messages G3-0019 invoke
+- autogen/messages G3-0019 stream
+- autogen/messages G3-0027 invoke
+- autogen/messages G3-0027 stream
+- autogen/messages G3-0029 invoke
+- autogen/messages G3-0029 stream
+- autogen/messages G3-0034 invoke
+- autogen/messages G3-0034 stream
+- autogen/messages G3-0037 invoke
+- autogen/messages G3-0037 stream
+- autogen/messages G3-0039 invoke
+- autogen/messages G3-0039 stream
+- autogen/messages G3-0046 invoke
+- autogen/messages G3-0046 stream
+- autogen/messages G3-0056 invoke
+- autogen/messages G3-0056 stream
+- autogen/messages G3-0059 invoke
+- autogen/messages G3-0059 stream
+- autogen/messages G3-0060 invoke
+- autogen/messages G3-0060 stream
+- autogen/messages G3-0063 invoke
+- autogen/messages G3-0063 stream
+- autogen/messages G3-0064 invoke
+- autogen/messages G3-0064 stream
+- autogen/messages G3-0065 invoke
+- autogen/messages G3-0065 stream
+- autogen/messages G3-0067 invoke
+- autogen/messages G3-0067 stream
+- autogen/messages G3-0079 invoke
+- autogen/messages G3-0079 stream
+- autogen/messages G3-0081 invoke
+- autogen/messages G3-0081 stream
+- autogen/messages G3-0082 invoke
+- autogen/messages G3-0082 stream
+- autogen/messages G3-0083 invoke
+- autogen/messages G3-0083 stream
+- autogen/messages G3-0089 invoke
+- autogen/messages G3-0089 stream
+- autogen/messages G3-0090 invoke
+- autogen/messages G3-0090 stream
+- autogen/messages G3-0095 invoke
+- autogen/messages G3-0095 stream
+- autogen/messages G3-0096 invoke
+- autogen/messages G3-0096 stream
+- autogen/otel G3-0010 invoke
+- autogen/otel G3-0010 stream
+- autogen/otel G3-0019 invoke
+- autogen/otel G3-0019 stream
+- autogen/otel G3-0027 invoke
+- autogen/otel G3-0027 stream
+- autogen/otel G3-0029 invoke
+- autogen/otel G3-0029 stream
+- autogen/otel G3-0034 invoke
+- autogen/otel G3-0034 stream
+- autogen/otel G3-0037 invoke
+- autogen/otel G3-0037 stream
+- autogen/otel G3-0039 invoke
+- autogen/otel G3-0039 stream
+- autogen/otel G3-0046 invoke
+- autogen/otel G3-0046 stream
+- autogen/otel G3-0056 invoke
+- autogen/otel G3-0056 stream
+- autogen/otel G3-0059 invoke
+- autogen/otel G3-0059 stream
+- autogen/otel G3-0060 invoke
+- autogen/otel G3-0060 stream
+- autogen/otel G3-0063 invoke
+- autogen/otel G3-0063 stream
+- autogen/otel G3-0064 invoke
+- autogen/otel G3-0064 stream
+- autogen/otel G3-0065 invoke
+- autogen/otel G3-0065 stream
+- autogen/otel G3-0067 invoke
+- autogen/otel G3-0067 stream
+- autogen/otel G3-0079 invoke
+- autogen/otel G3-0079 stream
+- autogen/otel G3-0081 invoke
+- autogen/otel G3-0081 stream
+- autogen/otel G3-0082 invoke
+- autogen/otel G3-0082 stream
+- autogen/otel G3-0083 invoke
+- autogen/otel G3-0083 stream
+- autogen/otel G3-0089 invoke
+- autogen/otel G3-0089 stream
+- autogen/otel G3-0090 invoke
+- autogen/otel G3-0090 stream
+- autogen/otel G3-0095 invoke
+- autogen/otel G3-0095 stream
+- autogen/otel G3-0096 invoke
+- autogen/otel G3-0096 stream
+- smolagents/memory G3-0010 invoke
+- smolagents/memory G3-0010 stream
+- smolagents/memory G3-0019 invoke
+- smolagents/memory G3-0019 stream
+- smolagents/memory G3-0027 invoke
+- smolagents/memory G3-0027 stream
+- smolagents/memory G3-0029 invoke
+- smolagents/memory G3-0029 stream
+- smolagents/memory G3-0034 invoke
+- smolagents/memory G3-0034 stream
+- smolagents/memory G3-0037 invoke
+- smolagents/memory G3-0037 stream
+- smolagents/memory G3-0039 invoke
+- smolagents/memory G3-0039 stream
+- smolagents/memory G3-0046 invoke
+- smolagents/memory G3-0046 stream
+- smolagents/memory G3-0056 invoke
+- smolagents/memory G3-0056 stream
+- smolagents/memory G3-0059 invoke
+- smolagents/memory G3-0059 stream
+- smolagents/memory G3-0060 invoke
+- smolagents/memory G3-0060 stream
+- smolagents/memory G3-0063 invoke
+- smolagents/memory G3-0063 stream
+- smolagents/memory G3-0064 invoke
+- smolagents/memory G3-0064 stream
+- smolagents/memory G3-0065 invoke
+- smolagents/memory G3-0065 stream
+- smolagents/memory G3-0067 invoke
+- smolagents/memory G3-0067 stream
+- smolagents/memory G3-0079 invoke
+- smolagents/memory G3-0079 stream
+- smolagents/memory G3-0081 invoke
+- smolagents/memory G3-0081 stream
+- smolagents/memory G3-0082 invoke
+- smolagents/memory G3-0082 stream
+- smolagents/memory G3-0083 invoke
+- smolagents/memory G3-0083 stream
+- smolagents/memory G3-0089 invoke
+- smolagents/memory G3-0089 stream
+- smolagents/memory G3-0090 invoke
+- smolagents/memory G3-0090 stream
+- smolagents/memory G3-0095 invoke
+- smolagents/memory G3-0095 stream
+- smolagents/memory G3-0096 invoke
+- smolagents/memory G3-0096 stream
+- smolagents/openinference G3-0010 invoke
+- smolagents/openinference G3-0010 stream
+- smolagents/openinference G3-0019 invoke
+- smolagents/openinference G3-0019 stream
+- smolagents/openinference G3-0027 invoke
+- smolagents/openinference G3-0027 stream
+- smolagents/openinference G3-0029 invoke
+- smolagents/openinference G3-0029 stream
+- smolagents/openinference G3-0034 invoke
+- smolagents/openinference G3-0034 stream
+- smolagents/openinference G3-0037 invoke
+- smolagents/openinference G3-0037 stream
+- smolagents/openinference G3-0039 invoke
+- smolagents/openinference G3-0039 stream
+- smolagents/openinference G3-0046 invoke
+- smolagents/openinference G3-0046 stream
+- smolagents/openinference G3-0056 invoke
+- smolagents/openinference G3-0056 stream
+- smolagents/openinference G3-0059 invoke
+- smolagents/openinference G3-0059 stream
+- smolagents/openinference G3-0060 invoke
+- smolagents/openinference G3-0060 stream
+- smolagents/openinference G3-0063 invoke
+- smolagents/openinference G3-0063 stream
+- smolagents/openinference G3-0064 invoke
+- smolagents/openinference G3-0064 stream
+- smolagents/openinference G3-0065 invoke
+- smolagents/openinference G3-0065 stream
+- smolagents/openinference G3-0067 invoke
+- smolagents/openinference G3-0067 stream
+- smolagents/openinference G3-0079 invoke
+- smolagents/openinference G3-0079 stream
+- smolagents/openinference G3-0081 invoke
+- smolagents/openinference G3-0081 stream
+- smolagents/openinference G3-0082 invoke
+- smolagents/openinference G3-0082 stream
+- smolagents/openinference G3-0083 invoke
+- smolagents/openinference G3-0083 stream
+- smolagents/openinference G3-0089 invoke
+- smolagents/openinference G3-0089 stream
+- smolagents/openinference G3-0090 invoke
+- smolagents/openinference G3-0090 stream
+- smolagents/openinference G3-0095 invoke
+- smolagents/openinference G3-0095 stream
+- smolagents/openinference G3-0096 invoke
+- smolagents/openinference G3-0096 stream
+- llamaindex/events G3-0010 invoke
+- llamaindex/events G3-0010 stream
+- llamaindex/events G3-0019 invoke
+- llamaindex/events G3-0019 stream
+- llamaindex/events G3-0027 invoke
+- llamaindex/events G3-0027 stream
+- llamaindex/events G3-0029 invoke
+- llamaindex/events G3-0029 stream
+- llamaindex/events G3-0034 invoke
+- llamaindex/events G3-0034 stream
+- llamaindex/events G3-0037 invoke
+- llamaindex/events G3-0037 stream
+- llamaindex/events G3-0039 invoke
+- llamaindex/events G3-0039 stream
+- llamaindex/events G3-0046 invoke
+- llamaindex/events G3-0046 stream
+- llamaindex/events G3-0056 invoke
+- llamaindex/events G3-0056 stream
+- llamaindex/events G3-0059 invoke
+- llamaindex/events G3-0059 stream
+- llamaindex/events G3-0060 invoke
+- llamaindex/events G3-0060 stream
+- llamaindex/events G3-0063 invoke
+- llamaindex/events G3-0063 stream
+- llamaindex/events G3-0064 invoke
+- llamaindex/events G3-0064 stream
+- llamaindex/events G3-0065 invoke
+- llamaindex/events G3-0065 stream
+- llamaindex/events G3-0067 invoke
+- llamaindex/events G3-0067 stream
+- llamaindex/events G3-0079 invoke
+- llamaindex/events G3-0079 stream
+- llamaindex/events G3-0081 invoke
+- llamaindex/events G3-0081 stream
+- llamaindex/events G3-0082 invoke
+- llamaindex/events G3-0082 stream
+- llamaindex/events G3-0083 invoke
+- llamaindex/events G3-0083 stream
+- llamaindex/events G3-0089 invoke
+- llamaindex/events G3-0089 stream
+- llamaindex/events G3-0090 invoke
+- llamaindex/events G3-0090 stream
+- llamaindex/events G3-0095 invoke
+- llamaindex/events G3-0095 stream
+- llamaindex/events G3-0096 invoke
+- llamaindex/events G3-0096 stream
+- llamaindex/openinference G3-0010 invoke
+- llamaindex/openinference G3-0010 stream
+- llamaindex/openinference G3-0019 invoke
+- llamaindex/openinference G3-0019 stream
+- llamaindex/openinference G3-0027 invoke
+- llamaindex/openinference G3-0027 stream
+- llamaindex/openinference G3-0029 invoke
+- llamaindex/openinference G3-0029 stream
+- llamaindex/openinference G3-0034 invoke
+- llamaindex/openinference G3-0034 stream
+- llamaindex/openinference G3-0037 invoke
+- llamaindex/openinference G3-0037 stream
+- llamaindex/openinference G3-0039 invoke
+- llamaindex/openinference G3-0039 stream
+- llamaindex/openinference G3-0046 invoke
+- llamaindex/openinference G3-0046 stream
+- llamaindex/openinference G3-0056 invoke
+- llamaindex/openinference G3-0056 stream
+- llamaindex/openinference G3-0059 invoke
+- llamaindex/openinference G3-0059 stream
+- llamaindex/openinference G3-0060 invoke
+- llamaindex/openinference G3-0060 stream
+- llamaindex/openinference G3-0063 invoke
+- llamaindex/openinference G3-0063 stream
+- llamaindex/openinference G3-0064 invoke
+- llamaindex/openinference G3-0064 stream
+- llamaindex/openinference G3-0065 invoke
+- llamaindex/openinference G3-0065 stream
+- llamaindex/openinference G3-0067 invoke
+- llamaindex/openinference G3-0067 stream
+- llamaindex/openinference G3-0079 invoke
+- llamaindex/openinference G3-0079 stream
+- llamaindex/openinference G3-0081 invoke
+- llamaindex/openinference G3-0081 stream
+- llamaindex/openinference G3-0082 invoke
+- llamaindex/openinference G3-0082 stream
+- llamaindex/openinference G3-0083 invoke
+- llamaindex/openinference G3-0083 stream
+- llamaindex/openinference G3-0089 invoke
+- llamaindex/openinference G3-0089 stream
+- llamaindex/openinference G3-0090 invoke
+- llamaindex/openinference G3-0090 stream
+- llamaindex/openinference G3-0095 invoke
+- llamaindex/openinference G3-0095 stream
+- llamaindex/openinference G3-0096 invoke
+- llamaindex/openinference G3-0096 stream
+- crewai/events G3-0010 invoke
+- crewai/events G3-0010 stream
+- crewai/events G3-0019 invoke
+- crewai/events G3-0019 stream
+- crewai/events G3-0027 invoke
+- crewai/events G3-0027 stream
+- crewai/events G3-0029 invoke
+- crewai/events G3-0029 stream
+- crewai/events G3-0034 invoke
+- crewai/events G3-0034 stream
+- crewai/events G3-0037 invoke
+- crewai/events G3-0037 stream
+- crewai/events G3-0039 invoke
+- crewai/events G3-0039 stream
+- crewai/events G3-0046 invoke
+- crewai/events G3-0046 stream
+- crewai/events G3-0056 invoke
+- crewai/events G3-0056 stream
+- crewai/events G3-0059 invoke
+- crewai/events G3-0059 stream
+- crewai/events G3-0060 invoke
+- crewai/events G3-0060 stream
+- crewai/events G3-0063 invoke
+- crewai/events G3-0063 stream
+- crewai/events G3-0064 invoke
+- crewai/events G3-0064 stream
+- crewai/events G3-0065 invoke
+- crewai/events G3-0065 stream
+- crewai/events G3-0067 invoke
+- crewai/events G3-0067 stream
+- crewai/events G3-0079 invoke
+- crewai/events G3-0079 stream
+- crewai/events G3-0081 invoke
+- crewai/events G3-0081 stream
+- crewai/events G3-0082 invoke
+- crewai/events G3-0082 stream
+- crewai/events G3-0083 invoke
+- crewai/events G3-0083 stream
+- crewai/events G3-0089 invoke
+- crewai/events G3-0089 stream
+- crewai/events G3-0090 invoke
+- crewai/events G3-0090 stream
+- crewai/events G3-0095 invoke
+- crewai/events G3-0095 stream
+- crewai/events G3-0096 invoke
+- crewai/events G3-0096 stream
+
+## Versions
+
+- autogen/messages: autogen-agentchat 0.7.5, autogen-core 0.7.5
+- autogen/otel: autogen-agentchat 0.7.5, autogen-core 0.7.5
+- langgraph/callbacks: langgraph 1.2.12, langchain-core 1.6.6
+- openai-agents/tracing: openai-agents 0.23.1
+- pydantic-ai/history: pydantic-ai-slim 2.54.0
+- pydantic-ai/otel: pydantic-ai-slim 2.54.0
+- smolagents/memory: smolagents 1.26.0
+- smolagents/openinference: smolagents 1.26.0
+- llamaindex/events: llama-index-core 0.14.25
+- llamaindex/openinference: llama-index-core 0.14.25
+- semantic-kernel/filters: semantic-kernel 1.44.1
+- semantic-kernel/otel: semantic-kernel 1.44.1
+- google-adk/events: google-adk 2.11.0
+- google-adk/otel: google-adk 2.11.0
+- crewai/events: crewai 1.15.23

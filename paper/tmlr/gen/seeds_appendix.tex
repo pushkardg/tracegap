@@ -1,0 +1,12 @@
+Stable-tier completeness (\%) per surface on independently generated suites: seed 1 ($n{=}200$, the released suite) and seeds 2, 3 ($n{=}100$).
+
+\begin{center}\small
+\begin{tabular}{lccc}
+\toprule
+Surface & Seed 1 & Seed 2 & Seed 3 \\
+\midrule
+\inputtable{gen/tab_seeds.tex}
+\bottomrule
+\end{tabular}
+\end{center}
+Individual rates move by up to 16 points between suites (largest for \texttt{langgraph/callbacks}), consistent with the bootstrap intervals in Figure~\ref{fig:ci}. \texttt{crewai/events} ranks first in every suite and the same three surfaces (\texttt{semantic-kernel/otel}, \texttt{smolagents/memory}, \texttt{smolagents/openinference}) occupy the last three places in every suite.

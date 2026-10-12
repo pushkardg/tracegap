@@ -1,0 +1,13 @@
+{
+  "title": "TraceGap: Measuring Whether LLM Agent Frameworks Record the Tool Calls Their Agents Make",
+  "upload_type": "software",
+  "version": "1.0.0",
+  "description": "<p>TraceGap is the agent tracing correctness benchmark: does your agent framework record what actually happened? It drives LLM agent frameworks with scripted models through fault scenarios (tool failures, cancellation, parallel calls, rejected calls, nested agents) and compares each framework's own trace surface (callbacks, tracing spans, OpenTelemetry and OpenInference spans, events, message history) with ground truth that does not depend on the framework: the calls the model emitted and an execution ledger written by the tools. Each case is scored for completeness and fidelity.</p><p>This release contains the benchmark software, 22 hand-written scenarios and a seeded scenario generator, adapters for 9 frameworks and 15 trace surfaces, Stable and Stress tiers, results for current releases and 65 past releases, a labeled corpus of about 11,500 cases with four learning tasks, fixes with regression tests for defects found in five frameworks, and the paper. Code is MIT-licensed; scenarios, results and the corpus are CC BY 4.0.</p>",
+  "creators": [
+    {"name": "Gopalakrishna, Pushkar Devanahalli"}
+  ],
+  "license": "MIT",
+  "access_right": "open",
+  "keywords": ["LLM agents", "observability", "tracing", "OpenTelemetry", "provenance", "benchmark", "dataset", "tool calling"],
+  "notes": "Scenario specifications, results and the labeled trace corpus are licensed CC BY 4.0. Cite the concept DOI to refer to all versions, or a version DOI for exact reproducibility."
+}
